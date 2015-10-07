@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
+ */
+
+ using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing.Imaging;

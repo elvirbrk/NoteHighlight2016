@@ -1,8 +1,5 @@
 ﻿/*
- * Code from:
- *		TOC Power Toy 2010 by Nani (Microsoft)
- *		See: http://blogs.msdn.com/b/johnguin/archive/2010/10/25/code-for-the-table-sorting-powertoy-for-onenote-2010.aspx
- *		
+ *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  */
 
 using System;
