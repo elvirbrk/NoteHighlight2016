@@ -1,27 +1,20 @@
 README: VanillaAddIn Add-In for OneNote
 __________________________________________/
 
-TODO:
-replace add-in GUID in vdproj - D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB with a new GUID
-replace Guid in AddIn.cs - D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB
-replace add-in progid in vdproj "MyApplication.VanillaAddIn" with a new ProgId
-replace ProgId in AddIn.cs
-replace all "VanillaAddIn" strings
-replace ProductCode and UpgradeCode in .vdproj
-replace Guid in [assembly: Guid("45FCCCEB-10CB-4C29-B8D2-1C8033139534")]
-update license.rtf
-
-1- Overview
-2- Dependencies
-3- Building
-4- Installation
-5- Debugging
-6- Known Issues
-
 ===================
 1 - Overview
 ===================
-The VanillaAddIn Addin is an addin for OneNote designed to allow a user to upload OneNote pages to Sway.
+The VanillaAddIn Addin is a sample template that a developer can use to bootstrap her own OneNote COM Add-In project.
+
+In order to replace properly use this in your own project, you should:
+* replace add-in GUID in vdproj - D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB with a new GUID
+* replace Guid in AddIn.cs - D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB
+* replace add-in progid in vdproj "MyApplication.VanillaAddIn" with a new ProgId
+* replace ProgId in AddIn.cs
+* replace all "VanillaAddIn" strings
+* replace ProductCode and UpgradeCode in .vdproj
+* replace Guid in [assembly: Guid("45FCCCEB-10CB-4C29-B8D2-1C8033139534")]
+* update license.rtf
 
 ===================
 2 - Dependencies
