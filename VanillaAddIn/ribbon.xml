@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="GetImage">
+    <ribbon>
+        <tabs>
+          <tab idMso="TabHome">
+                <group id="groupVanillaAddIn" label="VanillaAddIn">
+                    <button id="buttonVanillaAddIn" label="VanillaAddIn" size="large" screentip="VanillaAddIn" onAction="VanillaAddInButtonClicked" image="Logo.png"/>
+                </group>
+            
+          </tab>
+            <tab id="tabVanillaAddIn2" label="VanillaAddIn2">
+                <group id="groupVanillaAddIn2" label="VanillaAddIn2">
+					<button id="buttonNewSetu2p" label="VanillaAddIn" size="large" screentip="VanillaAddIn2" onAction="VanillaAddInButtonClicked" image="Logo.png"/>
+				</group>
+            </tab>
+        </tabs>
+    </ribbon>
+</customUI>
+
