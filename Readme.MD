@@ -1,8 +1,8 @@
-README: VanillaAddIn Add-In for OneNote
+README: OneNote COM Vanilla AddIn 
 ===================
 1 - Overview
 ===================
-The VanillaAddIn Addin is a sample template that a developer can use to bootstrap her own OneNote COM Add-In project.
+The VanillaAddIn is a sample template that a developer can use to bootstrap her own OneNote COM Add-In project.
 
 In order to replace properly use this in your own project, you should:
 * replace add-in GUID in vdproj - D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB with a new GUID
