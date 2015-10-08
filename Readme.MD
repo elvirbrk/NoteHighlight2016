@@ -10,7 +10,7 @@ In order to replace properly use this in your own project, you should:
 * replace add-in progid in vdproj "MyApplication.VanillaAddIn" with a new ProgId
 * replace ProgId in AddIn.cs
 * replace all "VanillaAddIn" strings
-* replace ProductCode and UpgradeCode in .vdproj
+* replace ProductCode, PackageCode, and UpgradeCode in .vdproj
 * replace Guid in [assembly: Guid("45FCCCEB-10CB-4C29-B8D2-1C8033139534")]
 * update license.rtf
 
@@ -23,6 +23,7 @@ An installer component is also included and requires Visual Studio 2010 to build
 to use Visual Studio 2015 or above to build this project, then you can install the Visual Studio Installer
 Project Extension available here 
 for VS2013: https://visualstudiogallery.msdn.microsoft.com/9abe329c-9bba-44a1-be59-0fbf6151054d
+
 for VS2015: https://visualstudiogallery.msdn.microsoft.com/f1cc3f3e-c300-40a7-8797-c509fb8933b9
 
 ==================
