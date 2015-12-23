@@ -108,8 +108,8 @@ namespace MyApplication.VanillaAddIn
 
 		private void ShowForm()
 		{
-			this.mainForm = new MainForm();
-			System.Windows.Forms.Application.Run(this.mainForm);
+			this.mainForm = new MainForm(this.OneNoteApplication);
+            System.Windows.Forms.Application.Run(this.mainForm);
 		}
 
 		/// <summary>
