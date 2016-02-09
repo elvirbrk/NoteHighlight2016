@@ -35,6 +35,9 @@ namespace MyApplication.VanillaAddIn
 			string xml;
 			this.onenoteApplication.GetPageContent(pageId, out xml);
 			this.xmlTextBox.Text = xml;
-		}
-	}
+
+            this.onenoteApplication.GetHierarchy(null, HierarchyScope.hsPages, out xml);
+            this.hierarchyXmlTextBox.Text = xml;
+        }
+    }
 }
