@@ -34,6 +34,14 @@ Open Visual Studio as an administrator. This is required because the build modif
 Provided that you have all of the indicated dependencies, then you should be able to build this project directly
 from the VS interface.
 
+If you get a build break where Microsoft.Office.Core cannot be detected, you may need to modify the csproj manually. 
+It depends on what Office version you have installed. Try swapping:
+     "VersionMinor" to either "7" or "8"
+     and/or
+     "WrapperTool" to either "tlbimp" or "primary"
+      <VersionMinor>8</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+
 ==================
 4 - Installation
 ==================
