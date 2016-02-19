@@ -101,7 +101,7 @@ namespace MyApplication.VanillaAddIn
 
 		public async Task VanillaAddInButtonClicked(IRibbonControl control)
 		{
-			MessageBox.Show("VanillaAddIn button pushed!");
+			MessageBox.Show("VanillaAddIn button pushed! Now we'll load up the full XML hierarchy as well as the current page XML. This may take some time.");
 			ShowForm();
 			return;
 		}
