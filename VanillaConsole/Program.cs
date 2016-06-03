@@ -32,6 +32,9 @@ namespace VanillaConsole
             app.GetPageContent(pageId, out xmlPage);
             Console.WriteLine("Page XML:\n" + xmlPage);
 
+            // sample - this is how to update content - normally you would modify the xml.
+            app.UpdatePageContent(xmlPage);
+
             // bonus - if there are any images, get the binary content of the first one
             var xPage = XDocument.Parse(xmlPage);
             var xImage = xPage.Descendants(ns + "Image").FirstOrDefault();
