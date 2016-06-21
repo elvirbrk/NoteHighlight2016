@@ -71,3 +71,5 @@ This ensures that when the msi is run, it will not ask the user to uninstall the
 ==================
 There is an issue that can occur whereby the addin will stop installing. To remedy this make sure that all of the project's
 interop dlls reference points are set to %systemroot%\assemblies\GAC_MSIL and that they have Embed Interop Types set to false.
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
