@@ -21,11 +21,12 @@ namespace VanillaConsole
 
             Console.WriteLine("Hierarchy:\n" + xmlHierarchy);
 
-            // now find the first page, print out its ID
+            // now find the current page, print out its ID
             var xdoc = XDocument.Parse(xmlHierarchy);
             var ns = xdoc.Root.Name.Namespace;
-            var pageId = xdoc.Descendants(ns + "Page").First().Attribute("ID").Value;
-            Console.WriteLine("First Page ID: " + pageId);
+
+            var pageId = app.Windows.CurrentWindow.CurrentPageId;
+            Console.WriteLine("Current Page ID: " + pageId);
 
             // get the page content, print it out
             string xmlPage;
