@@ -1,7 +1,11 @@
-README: OneNote COM Vanilla AddIn 
+For the README of the console app sample, see: [Readme-console.MD](Readme-console.MD)
+
+README: OneNote COM Vanilla AddIn
+
 ===================
 1 - Overview
 ===================
+
 The VanillaAddIn is a sample template that a developer can use to bootstrap her own OneNote COM Add-In project.
 
 In order to replace properly use this in your own project, you should:
