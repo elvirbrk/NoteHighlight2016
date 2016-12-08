@@ -65,7 +65,7 @@ namespace NoteHighLightForm
             sb.Replace("<<<<<<<3", To8DigitString(fragmentStart));
             sb.Replace("<<<<<<<4", To8DigitString(fragmentEnd));
 
-            // Finally copy to clipboard.
+            //Finally copy to clipboard.
             Clipboard.Clear();
             DataObject obj = new DataObject();
             obj.SetData(DataFormats.Html, new System.IO.MemoryStream(Encoding.UTF8.GetBytes(sb.ToString())));

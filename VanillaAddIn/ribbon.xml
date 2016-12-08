@@ -4,18 +4,18 @@
         <tabs>
             <tab id="tabNoteHighlight" label="NoteHighlight">
                 <group id="groupLanguage" label="Language">
-                  <button id="buttonCSharp" label="C#" size="large" screentip="Entry C# Code" onAction="VanillaAddInButtonClicked" tag="cs" keytip="C" image="CSharp.png"/>
-                  <button id="buttonSQL" label="SQL" size="large" screentip="Entry SQL Code" onAction="VanillaAddInButtonClicked" tag="sql" keytip="S"  image="SQL.png"/>
-                  <button id="buttonCSS" label="CSS" size="large" screentip="Entry CSS Code" onAction="VanillaAddInButtonClicked" image="CSS.png" tag="css" keytip="E"/>
-                  <button id="buttonJS" label="JS" size="large" screentip="Entry JS Code" onAction="VanillaAddInButtonClicked" tag="js" keytip="J" image="JS.png"/>
-                  <button id="buttonHTML" label="HTML" size="large" screentip="Entry HTML Code" onAction="VanillaAddInButtonClicked" tag="html" keytip="H"  image="HTML.png"/>
-                  <button id="buttonXML" label="XML" size="large" screentip="Entry XML Code" onAction="VanillaAddInButtonClicked" tag="xml" keytip="X"  image="XML.png"/>
-                  <button id="buttonJAVA" label="JAVA" size="large" screentip="Entry JAVA Code" onAction="VanillaAddInButtonClicked" tag="java" keytip="V"  image="JAVA.png"/>
-                  <button id="buttonPHP" label="PHP" size="large" screentip="Entry PHP Code" onAction="VanillaAddInButtonClicked" tag="php" keytip="P"  image="PHP.png"/>
-                  <button id="buttonPerl" label="Perl" size="large" screentip="Entry Perl Code" onAction="VanillaAddInButtonClicked" tag="perl" keytip="B"  image="Perl.png"/>
-                  <button id="buttonPython" label="Python" size="large" screentip="Entry Python Code" onAction="VanillaAddInButtonClicked" tag="py" keytip="A"  image="Python.png"/>
-                  <button id="buttonRuby" label="Ruby" size="large" screentip="Entry Ruby Code" onAction="VanillaAddInButtonClicked" tag="ruby" keytip="R"  image="Ruby.png"/>
-                  <button id="buttonCpp" label="CPP" size="large" screentip="Entry C++ Code" onAction="VanillaAddInButtonClicked" tag="c" keytip="D"  image="CPP.png"/>
+                  <button id="buttonCSharp" label="C#" size="large" screentip="Entry C# Code" onAction="AddInButtonClicked" tag="cs" keytip="C" image="CSharp.png"/>
+                  <button id="buttonSQL" label="SQL" size="large" screentip="Entry SQL Code" onAction="AddInButtonClicked" tag="sql" keytip="S"  image="SQL.png"/>
+                  <button id="buttonCSS" label="CSS" size="large" screentip="Entry CSS Code" onAction="AddInButtonClicked" image="CSS.png" tag="css" keytip="E"/>
+                  <button id="buttonJS" label="JS" size="large" screentip="Entry JS Code" onAction="AddInButtonClicked" tag="js" keytip="J" image="JS.png"/>
+                  <button id="buttonHTML" label="HTML" size="large" screentip="Entry HTML Code" onAction="AddInButtonClicked" tag="html" keytip="H"  image="HTML.png"/>
+                  <button id="buttonXML" label="XML" size="large" screentip="Entry XML Code" onAction="AddInButtonClicked" tag="xml" keytip="X"  image="XML.png"/>
+                  <button id="buttonJAVA" label="JAVA" size="large" screentip="Entry JAVA Code" onAction="AddInButtonClicked" tag="java" keytip="V"  image="JAVA.png"/>
+                  <button id="buttonPHP" label="PHP" size="large" screentip="Entry PHP Code" onAction="AddInButtonClicked" tag="php" keytip="P"  image="PHP.png"/>
+                  <button id="buttonPerl" label="Perl" size="large" screentip="Entry Perl Code" onAction="AddInButtonClicked" tag="perl" keytip="B"  image="Perl.png"/>
+                  <button id="buttonPython" label="Python" size="large" screentip="Entry Python Code" onAction="AddInButtonClicked" tag="py" keytip="A"  image="Python.png"/>
+                  <button id="buttonRuby" label="Ruby" size="large" screentip="Entry Ruby Code" onAction="AddInButtonClicked" tag="ruby" keytip="R"  image="Ruby.png"/>
+                  <button id="buttonCpp" label="CPP" size="large" screentip="Entry C++ Code" onAction="AddInButtonClicked" tag="c" keytip="D"  image="CPP.png"/>
 				</group>
             </tab>
         </tabs>

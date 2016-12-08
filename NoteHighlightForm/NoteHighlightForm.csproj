@@ -69,30 +69,78 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="highlight\COPYING" />
-    <None Include="highlight\filetypes.conf" />
-    <None Include="highlight\langDefs\c.lang" />
-    <None Include="highlight\langDefs\csharp.lang" />
-    <None Include="highlight\langDefs\css.lang" />
-    <None Include="highlight\langDefs\html.lang" />
-    <None Include="highlight\langDefs\java.lang" />
-    <None Include="highlight\langDefs\js.lang" />
-    <None Include="highlight\langDefs\perl.lang" />
-    <None Include="highlight\langDefs\php.lang" />
-    <None Include="highlight\langDefs\python.lang" />
-    <None Include="highlight\langDefs\ruby.lang" />
-    <None Include="highlight\langDefs\sql.lang" />
-    <None Include="highlight\langDefs\xml.lang" />
-    <None Include="highlight\rand01.theme" />
-    <None Include="highlight\themes\bclear.theme" />
-    <None Include="highlight\themes\bright.theme" />
-    <None Include="highlight\themes\edit-eclipse.theme" />
-    <None Include="highlight\themes\edit-emacs.theme" />
-    <None Include="highlight\themes\edit-flashdevelop.theme" />
-    <None Include="highlight\themes\edit-jedit.theme" />
-    <None Include="highlight\themes\edit-msvs2008.theme" />
-    <None Include="highlight\themes\fruit.theme" />
-    <None Include="highlight\themes\rand01.theme" />
+    <None Include="highlight\COPYING">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\filetypes.conf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\c.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\csharp.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\css.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\html.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\java.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\js.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\perl.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\php.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\python.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\ruby.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\sql.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\langDefs\xml.lang">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\rand01.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\bclear.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\bright.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\edit-eclipse.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\edit-emacs.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\edit-flashdevelop.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\edit-jedit.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\edit-msvs2008.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\fruit.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="highlight\themes\rand01.theme">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,18 +152,26 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="highlight\highlight.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="highlight\libgcc_s_dw2-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="highlight\mingwm10.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GenerateHighlightContent\GenerateHighlightContent.csproj">
       <Project>{04f98cff-6895-4b84-ac32-23ab8684ea43}</Project>
       <Name>GenerateHighlightContent</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="highlight\highlight.exe" />
-    <Content Include="highlight\libgcc_s_dw2-1.dll" />
-    <Content Include="highlight\mingwm10.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

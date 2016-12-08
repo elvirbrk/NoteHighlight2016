@@ -22,6 +22,7 @@ using NoteHighLightForm;
 using System.Text;
 using System.Linq;
 using Helper;
+using System.Threading;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -38,6 +39,8 @@ namespace MyApplication.VanillaAddIn
         private XNamespace ns;
 
         private CodeForm mainForm;
+
+        string tag;
 
 		public AddIn()
 		{
@@ -106,15 +109,29 @@ namespace MyApplication.VanillaAddIn
 		{
 		}
 
-		public async Task VanillaAddInButtonClicked(IRibbonControl control)
-		{
+		//public async Task AddInButtonClicked(IRibbonControl control)
+        public void AddInButtonClicked(IRibbonControl control)
+        {
+            tag = control.Tag;
+            Thread t = new Thread(new ThreadStart(ShowForm));
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
+
+            t.Join(5000);
+        }
+
+        private void ShowForm()
+        {
             string outFileName = Guid.NewGuid().ToString();
 
             try
             {
-                ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
-                processHelper.IsWaitForInputIdle = true;
-                processHelper.ProcessStart();
+                //ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
+                //processHelper.IsWaitForInputIdle = true;
+                //processHelper.ProcessStart();
+
+                CodeForm form = new CodeForm(tag, outFileName);
+                form.ShowDialog();
             }
             catch (Exception ex)
             {
@@ -132,12 +149,12 @@ namespace MyApplication.VanillaAddIn
 
 
 
-		/// <summary>
-		/// Specified in Ribbon.xml, this method returns the image to display on the ribbon button
-		/// </summary>
-		/// <param name="imageName"></param>
-		/// <returns></returns>
-		public IStream GetImage(string imageName)
+        /// <summary>
+        /// Specified in Ribbon.xml, this method returns the image to display on the ribbon button
+        /// </summary>
+        /// <param name="imageName"></param>
+        /// <returns></returns>
+        public IStream GetImage(string imageName)
 		{
 			MemoryStream imageStream = new MemoryStream();
             //switch (imageName)
