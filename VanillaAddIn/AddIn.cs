@@ -2,7 +2,7 @@
  *  Copyright (c) Microsoft. All rights reserved. Licensed under the MIT license.
  */
 
- using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing.Imaging;
@@ -17,6 +17,8 @@ using Extensibility;
 using Microsoft.Office.Core;
 using MyApplication.VanillaAddIn.Utilities;
 using Application = Microsoft.Office.Interop.OneNote.Application;  // Conflicts with System.Windows.Forms
+using System.Reflection;
+using System.Drawing;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -120,8 +122,22 @@ namespace MyApplication.VanillaAddIn
 		public IStream GetImage(string imageName)
 		{
 			MemoryStream imageStream = new MemoryStream();
-			Properties.Resources.Logo.Save(imageStream, ImageFormat.Png);
-			return new CCOMStreamWrapper(imageStream);
+            //switch (imageName)
+            //{
+            //    case "CSharp.png":
+            //        Properties.Resources.CSharp.Save(imageStream, ImageFormat.Png);
+            //        break;
+            //    default:
+            //        Properties.Resources.Logo.Save(imageStream, ImageFormat.Png);
+            //        break;
+            //}
+
+            BindingFlags flags = BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+
+            var b = typeof(Properties.Resources).GetProperty(imageName.Substring(0, imageName.IndexOf('.')), flags).GetValue(null, null) as Bitmap;
+            b.Save(imageStream, ImageFormat.Png);
+
+            return new CCOMStreamWrapper(imageStream);
 		}
 	}
 }

@@ -62,6 +62,15 @@
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Debug\</OutputPath>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -100,8 +109,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\CPP.png" />
+    <Content Include="Resources\CSharp.png" />
+    <Content Include="Resources\CSS.png" />
+    <Content Include="Resources\HTML.png" />
+    <Content Include="Resources\JAVA.png" />
+    <Content Include="Resources\JS.png" />
     <Content Include="Resources\Logo.ico" />
     <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\Perl.png" />
+    <Content Include="Resources\PHP.png" />
+    <Content Include="Resources\Python.png" />
+    <Content Include="Resources\Ruby.png" />
+    <Content Include="Resources\SQL.png" />
+    <Content Include="Resources\XHTML.png" />
+    <Content Include="Resources\XML.png" />
     <Content Include="ribbon.xml">
       <SubType>Designer</SubType>
     </Content>
