@@ -3,13 +3,11 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.ComTypes;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
@@ -19,20 +17,27 @@ using MyApplication.VanillaAddIn.Utilities;
 using Application = Microsoft.Office.Interop.OneNote.Application;  // Conflicts with System.Windows.Forms
 using System.Reflection;
 using System.Drawing;
+using Microsoft.Office.Interop.OneNote;
+using NoteHighLightForm;
+using System.Text;
+using System.Linq;
+using Helper;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
 namespace MyApplication.VanillaAddIn
 {
 	[ComVisible(true)]
-	[Guid("D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB"), ProgId("MyApplication.VanillaAddIn")]
+	[Guid("D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB"), ProgId("NoteHighlight2016.AddIn")]
 
 	public class AddIn : IDTExtensibility2, IRibbonExtensibility
 	{
 		protected Application OneNoteApplication
 		{ get; set; }
 
-		private MainForm mainForm;
+        private XNamespace ns;
+
+        private CodeForm mainForm;
 
 		public AddIn()
 		{
@@ -103,16 +108,29 @@ namespace MyApplication.VanillaAddIn
 
 		public async Task VanillaAddInButtonClicked(IRibbonControl control)
 		{
-			MessageBox.Show("VanillaAddIn button pushed! Now we'll load up the full XML hierarchy as well as the current page XML. This may take some time.");
-			ShowForm();
-			return;
-		}
+            string outFileName = Guid.NewGuid().ToString();
 
-		private void ShowForm()
-		{
-			this.mainForm = new MainForm(this.OneNoteApplication);
-            System.Windows.Forms.Application.Run(this.mainForm);
-		}
+            try
+            {
+                ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
+                processHelper.IsWaitForInputIdle = true;
+                processHelper.ProcessStart();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error executing NoteHighLightForm.exe：" + ex.Message);
+                return;
+            }
+
+            string fileName = Path.Combine(Path.GetTempPath(), outFileName + ".html");
+
+            if (File.Exists(fileName))
+            {
+                InsertHighLightCodeToCurrentSide(fileName);
+            }
+        }
+
+
 
 		/// <summary>
 		/// Specified in Ribbon.xml, this method returns the image to display on the ribbon button
@@ -139,5 +157,107 @@ namespace MyApplication.VanillaAddIn
 
             return new CCOMStreamWrapper(imageStream);
 		}
-	}
+
+        /// <summary>
+        /// 插入 HighLight Code 至滑鼠游標的位置
+        /// Insert HighLight Code To Mouse Position  
+        /// </summary>
+        private void InsertHighLightCodeToCurrentSide(string fileName)
+        {
+            // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
+            string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
+
+            string notebookXml;
+            try
+            {
+                OneNoteApplication.GetHierarchy(null, HierarchyScope.hsPages, out notebookXml, XMLSchema.xs2013);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception from onApp.GetHierarchy:" + ex.Message);
+                return;
+            }
+
+            var doc = XDocument.Parse(notebookXml);
+            ns = doc.Root.Name.Namespace;
+
+            var pageNode = doc.Descendants(ns + "Page")
+                              .Where(n => n.Attribute("isCurrentlyViewed") != null && n.Attribute("isCurrentlyViewed").Value == "true")
+                              .FirstOrDefault();
+
+            if (pageNode != null)
+            {
+                var existingPageId = pageNode.Attribute("ID").Value;
+
+                string[] position = GetMousePointPosition(existingPageId);
+
+                var page = InsertHighLightCode(htmlContent, position);
+                page.Root.SetAttributeValue("ID", existingPageId);
+
+                OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
+            }
+        }
+
+        /// <summary>
+        /// 取得滑鼠所在的點
+        /// Get Mouse Point
+        /// </summary>
+        private string[] GetMousePointPosition(string pageID)
+        {
+            string pageXml;
+            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
+
+            var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
+                                               .Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "partial")
+                                               .FirstOrDefault();
+            if (node != null)
+            {
+                var attrPos = node.Descendants(ns + "Position").FirstOrDefault();
+                if (attrPos != null)
+                {
+                    var x = attrPos.Attribute("x").Value;
+                    var y = attrPos.Attribute("y").Value;
+                    return new string[] { x, y };
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// 產生 XML 插入至 OneNote
+        /// Generate XML Insert To OneNote
+        /// </summary>
+        public XDocument InsertHighLightCode(string htmlContent, string[] position)
+        {
+            XElement children = new XElement(ns + "OEChildren");
+
+            var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+            foreach (var item in arrayLine)
+            {
+                children.Add(new XElement(ns + "OE",
+                                new XElement(ns + "T",
+                                    new XCData(item))));
+            }
+
+            XElement outline = new XElement(ns + "Outline");
+
+            if (position != null && position.Length == 2)
+            {
+                XElement pos = new XElement(ns + "Position");
+                pos.Add(new XAttribute("x", position[0]));
+                pos.Add(new XAttribute("y", position[1]));
+                outline.Add(pos);
+            }
+            outline.Add(children);
+
+            XElement page = new XElement(ns + "Page");
+            page.Add(outline);
+
+            XDocument doc = new XDocument();
+            doc.Add(page);
+
+            return doc;
+        }
+
+    }
 }
