@@ -113,31 +113,40 @@ namespace MyApplication.VanillaAddIn
         public void AddInButtonClicked(IRibbonControl control)
         {
             tag = control.Tag;
+
             Thread t = new Thread(new ThreadStart(ShowForm));
             t.SetApartmentState(ApartmentState.STA);
             t.Start();
 
-            t.Join(5000);
+            //t.Join(5000);
+
+            //ShowForm();
         }
 
         private void ShowForm()
         {
             string outFileName = Guid.NewGuid().ToString();
 
-            try
-            {
-                //ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
-                //processHelper.IsWaitForInputIdle = true;
-                //processHelper.ProcessStart();
+            //try
+            //{
+            //ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
+            //processHelper.IsWaitForInputIdle = true;
+            //processHelper.ProcessStart();
 
-                CodeForm form = new CodeForm(tag, outFileName);
-                form.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error executing NoteHighLightForm.exe：" + ex.Message);
-                return;
-            }
+            //CodeForm form = new CodeForm(tag, outFileName);
+            //form.ShowDialog();
+
+            //TestForm t = new TestForm();
+
+            TestForm form = new TestForm(tag, outFileName);
+
+            System.Windows.Forms.Application.Run(form);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show("Error executing NoteHighLightForm.exe：" + ex.Message);
+            //    return;
+            //}
 
             string fileName = Path.Combine(Path.GetTempPath(), outFileName + ".html");
 
