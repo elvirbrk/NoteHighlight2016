@@ -1,0 +1,44 @@
+
+Description="Javascript"
+
+Keywords={
+  { Id=1,
+    List={"abstract", "break", "class", "const", "continue", "debugger",
+"default", "delete", "enum", "export", "extends", "finally",
+"instanceof", "import", "implements", "in", "goto", "native", "package",
+"private", "protected", "public", "super", "throw", "throws",
+"transient", "typeof", "void", "false", "with", "for", "this", "switch", "try",
+"while", "if", "do", "else", "return", "null", "case", "catch", "true", "new",
+"prototype", "var", "function", "namespace","use", "internal", "interface",
+"yields", "let"
+    },
+  },
+  { Id=2,
+    List={"boolean", "byte", "char", "double", "float", "int", "long", "short",
+"static", "decimal", "enum", "sbyte", "uint", "ulong", "ushort", "void"},
+  },
+    { Id=3,
+    Regex=[[ \[\w+\] ]],
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]],
+  },
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[\/\/]] },
+  },
+  { Block=true,
+    Nested=false,
+    Delimiter= { [[\/\*]],[[\*\/]],}
+  }
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|\<|\>|\!|\=|\/|\*|\%|\+|\-|\.]]
