@@ -25,10 +25,16 @@ namespace GenerateHighlightContent
         public string FileName { get; set; }
 
         /// <summary> highlight.exe 參數 設定於 App.config 的 HighLightSection 區塊 </summary>
-        private static HighLightSection _section = ConfigurationManager.GetSection("HighLightSection") as HighLightSection;
+        private static HighLightSection _section;
         #endregion
 
         #region -- IGenerageHighLight Member --
+
+        public GenerateHighLight()
+        {
+            Configuration c = ConfigurationManager.OpenExeConfiguration(Assembly.GetCallingAssembly().Location);
+            _section = c.GetSection("HighLightSection") as HighLightSection;
+        }
 
         /// <summary> 呼叫highlight.exe 產生高亮後的html </summary>
         /// <returns>回傳 Html 所在的路徑</returns>

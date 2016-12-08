@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace MyApplication.VanillaAddIn
 {
-    public partial class TestForm : Form
+    public partial class MainForm : Form
     {
         #region -- Field and Property --
         private const string span = "</span>";
@@ -41,7 +41,7 @@ namespace MyApplication.VanillaAddIn
 
         #region -- Constructor --
 
-        public TestForm(string codeType, string fileName)
+        public MainForm(string codeType, string fileName)
         {
             _codeType = codeType;
             _fileName = fileName;

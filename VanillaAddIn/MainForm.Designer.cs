@@ -1,6 +1,6 @@
-﻿namespace NoteHighLightForm
+﻿namespace MyApplication.VanillaAddIn
 {
-    partial class CodeForm
+    partial class MainForm
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -192,4 +192,3 @@
         private System.Windows.Forms.Panel panel3;
     }
 }
-

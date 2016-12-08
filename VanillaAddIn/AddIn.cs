@@ -38,7 +38,7 @@ namespace MyApplication.VanillaAddIn
 
         private XNamespace ns;
 
-        private CodeForm mainForm;
+        private MainForm mainForm;
 
         string tag;
 
@@ -138,7 +138,7 @@ namespace MyApplication.VanillaAddIn
 
             //TestForm t = new TestForm();
 
-            TestForm form = new TestForm(tag, outFileName);
+            MainForm form = new MainForm(tag, outFileName);
 
             System.Windows.Forms.Application.Run(form);
             //}
