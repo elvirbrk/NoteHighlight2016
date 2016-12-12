@@ -130,9 +130,8 @@
     <Content Include="highlight\mingwm10.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="App.config" />
-    <None Include="Lib\ICSharpCode.TextEditor.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
     </None>
     <Content Include="icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
