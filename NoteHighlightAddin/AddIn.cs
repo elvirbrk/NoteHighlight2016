@@ -260,9 +260,10 @@ namespace NoteHighlightAddin
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (var item in arrayLine)
             {
+                string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
                 children.Add(new XElement(ns + "OE",
                                 new XElement(ns + "T",
-                                    new XCData(item))));
+                                    new XCData(s))));
             }
 
             XElement outline = new XElement(ns + "Outline");
