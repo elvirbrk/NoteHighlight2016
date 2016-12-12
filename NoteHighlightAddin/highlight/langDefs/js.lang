@@ -1,32 +1,41 @@
 
 Description="Javascript"
 
+Digits=[[ (?:0x)[0-9a-fA-F]+|(?:0b)[01]+|(?:0o)[0-8]+|\d*[\.]?\d+(?:[eE][\-\+]\d+)?[lLuU]* ]]
+
 Keywords={
   { Id=1,
     List={"abstract", "break", "class", "const", "continue", "debugger",
-"default", "delete", "enum", "export", "extends", "finally",
-"instanceof", "import", "implements", "in", "goto", "native", "package",
-"private", "protected", "public", "super", "throw", "throws",
-"transient", "typeof", "void", "false", "with", "for", "this", "switch", "try",
-"while", "if", "do", "else", "return", "null", "case", "catch", "true", "new",
-"prototype", "var", "function", "namespace","use", "internal", "interface",
-"yields", "let"
+        "default", "delete", "enum", "export", "extends", "finally",
+        "instanceof", "import", "implements", "in", "goto", "native", "package",
+        "private", "protected", "public", "super", "throw", "throws",
+        "transient", "typeof", "void", "false", "with", "for", "this", "switch", "try",
+        "while", "if", "do", "else", "return", "null", "case", "catch", "true", "new",
+        "prototype", "var", "function", "namespace","use", "internal", "interface",
+        "yields", "let", "get", "set", "of", "from", "constructor", "move", "yield", "static",
     },
   },
   { Id=2,
     List={"boolean", "byte", "char", "double", "float", "int", "long", "short",
-"static", "decimal", "enum", "sbyte", "uint", "ulong", "ushort", "void"},
+         "decimal", "enum", "sbyte", "uint", "ulong", "ushort", "void", "undefined"},
   },
-    { Id=3,
-    Regex=[[ \[\w+\] ]],
+
+  -- may be replaced by NestedSections
+  { Id=3,
+    Regex=[[\/[^*\s/].*?[^\\]/[msixpodualgcy]*]],
+    Group=0
   },
+
   { Id=4,
-    Regex=[[(\w+)\s*\(]],
+    Regex=[[(\w+)(\s*[:=]\s*function)?\s*\(]],
+    Group=1
   },
 }
 
 Strings={
-  Delimiter=[["|']],
+  Delimiter=[["|'|`]],
+  Interpolation=[[ \$\{.+?\} ]],
+  Escape = [=[ \\u\{?[[:xdigit:]]{4,6}\}?|\\\d{3}|\\x[[:xdigit:]]{2}|\\[ntvbrfa\\\?'\"] ]=]
 }
 
 IgnoreCase=false
@@ -41,4 +50,24 @@ Comments={
   }
 }
 
-Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|\<|\>|\!|\=|\/|\*|\%|\+|\-|\.]]
+-- FIXME: division oerator, comments
+--NestedSections = { -- regex as nested language seems to work?
+--  {
+--    Lang = "js_regex", -- js.lang might want to use this too
+--    Delimiter = { [[/(?![/\*])]], [[/[msixpodualgcy]*]] },
+--    --State=HL_STRING
+--  }
+--}
+
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|.]]
+
+EnableIndentation=true
+
+-- resolve issue with regex expression which spans strings like "</i>" + VAR + "</i>"
+function OnStateChange(oldState, newState, token, groupID)
+   if string.sub(token,1,1)=="/" and oldState==HL_STRING and newState==HL_KEYWORD and groupID == 3 then
+      return HL_REJECT
+   end
+   return newState
+end
