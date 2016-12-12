@@ -575,7 +575,7 @@
         }
         "Product"
         {
-        "Name" = "8:VanillaAddIn"
+        "Name" = "8:NoteHighlightAddin"
         "ProductName" = "8:NoteHighlight2016"
         "ProductCode" = "8:{94B72EF8-A523-4ECB-8AC8-82ED8A18362B}"
         "PackageCode" = "8:{BFC083F2-021E-444F-9C5E-CFE54BDCB5AD}"
