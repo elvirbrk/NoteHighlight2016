@@ -7,8 +7,8 @@
     <ProjectGuid>{D874E185-08FE-48C5-BADE-0FE84060C978}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyApplication.VanillaAddIn</RootNamespace>
-    <AssemblyName>MyApplication.VanillaAddIn</AssemblyName>
+    <RootNamespace>NoteHighlightAddin</RootNamespace>
+    <AssemblyName>NoteHighlightAddin</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -136,6 +136,7 @@
     <Content Include="icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Lib\ICSharpCode.TextEditor.dll" />
     <Content Include="Resources\CPP.png" />
     <Content Include="Resources\CSharp.png" />
     <Content Include="Resources\CSS.png" />
@@ -151,9 +152,9 @@
     <Content Include="Resources\SQL.png" />
     <Content Include="Resources\XHTML.png" />
     <Content Include="Resources\XML.png" />
-    <Content Include="ribbon.xml">
+    <None Include="ribbon.xml">
       <SubType>Designer</SubType>
-    </Content>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">

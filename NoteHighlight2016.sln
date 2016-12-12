@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteHighlightAddin", "VanillaAddIn\NoteHighlightAddin.csproj", "{D874E185-08FE-48C5-BADE-0FE84060C978}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteHighlightAddin", "NoteHighlightAddin\NoteHighlightAddin.csproj", "{D874E185-08FE-48C5-BADE-0FE84060C978}"
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{288265D6-3A52-46A9-9B15-2BAD1B9F3C02}"
 EndProject

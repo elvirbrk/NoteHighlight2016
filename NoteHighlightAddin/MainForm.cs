@@ -12,7 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MyApplication.VanillaAddIn
+namespace NoteHighlightAddin
 {
     public partial class MainForm : Form
     {

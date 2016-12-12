@@ -1,5 +1,5 @@
-﻿namespace MyApplication.VanillaAddIn
-{
+﻿namespace NoteHighlightAddin
+{ 
     partial class MainForm
     {
         /// <summary>
