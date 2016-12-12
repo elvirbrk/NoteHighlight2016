@@ -15,31 +15,19 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_0C148D8691AE4AC9A42A4AB007D94A58"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2309285B8933C7C3F19F1692FECD3220"
         "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_3CD290BA1BFD62DCD8F6BC8C61B60EE4"
-        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3CD290BA1BFD62DCD8F6BC8C61B60EE4"
-        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3CD290BA1BFD62DCD8F6BC8C61B60EE4"
-        "OwnerKey" = "8:_2309285B8933C7C3F19F1692FECD3220"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_5CE8F317FE404086B66A772319CA138C"
+        "MsmKey" = "8:_47AFBE13144648689D856D43F6F054E6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -51,32 +39,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_75BD8418CDA6441EB586AD111E89444C"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_806C8DD816BAE1C8751B115DCDF72E50"
-        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
+        "MsmKey" = "8:_BF0DDD11259532587F856D651F450ECC"
+        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_BF0DDD11259532587F856D651F450ECC"
         "OwnerKey" = "8:_CBF51C0C38434D629FC3271C5390E247"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BF0DDD11259532587F856D651F450ECC"
-        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -87,13 +63,31 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_FC6916A4E033A8EE4C76E2744764EEB7"
+        "MsmKey" = "8:_DD1A49F9A295CF0FCE7823B12AC215CE"
         "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_UNDEFINED"
+        "MsmKey" = "8:_DF718BA2B4ECE47FA5E80A6DC6274BBF"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF718BA2B4ECE47FA5E80A6DC6274BBF"
+        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF718BA2B4ECE47FA5E80A6DC6274BBF"
+        "OwnerKey" = "8:_2309285B8933C7C3F19F1692FECD3220"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E93DE067BC9E7E9EE8643EB89993F4E8"
         "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -106,19 +100,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CBF51C0C38434D629FC3271C5390E247"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BF0DDD11259532587F856D651F450ECC"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_FC6916A4E033A8EE4C76E2744764EEB7"
+        "OwnerKey" = "8:_E93DE067BC9E7E9EE8643EB89993F4E8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -130,7 +118,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3CD290BA1BFD62DCD8F6BC8C61B60EE4"
+        "OwnerKey" = "8:_CBF51C0C38434D629FC3271C5390E247"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_DF718BA2B4ECE47FA5E80A6DC6274BBF"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BF0DDD11259532587F856D651F450ECC"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -260,6 +260,26 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0C148D8691AE4AC9A42A4AB007D94A58"
+            {
+            "SourcePath" = "8:..\\NoteHighlightAddin\\icon.ico"
+            "TargetName" = "8:icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2309285B8933C7C3F19F1692FECD3220"
             {
             "AssemblyRegister" = "3:1"
@@ -287,45 +307,14 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3CD290BA1BFD62DCD8F6BC8C61B60EE4"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_47AFBE13144648689D856D43F6F054E6"
             {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=609b64b0cf912098, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3CD290BA1BFD62DCD8F6BC8C61B60EE4"
-                    {
-                    "Name" = "8:Helper.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Helper.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:TRUE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5CE8F317FE404086B66A772319CA138C"
-            {
-            "SourcePath" = "8:..\\VanillaAddIn\\icon.ico"
-            "TargetName" = "8:icon.ico"
+            "SourcePath" = "8:..\\NoteHighlightAddin\\App.config"
+            "TargetName" = "8:NoteHighlightAddin.dll.config"
             "Tag" = "8:"
             "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
             "Condition" = "8:"
@@ -340,46 +329,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_75BD8418CDA6441EB586AD111E89444C"
-            {
-            "SourcePath" = "8:..\\VanillaAddIn\\App.config"
-            "TargetName" = "8:MyApplication.VanillaAddIn.dll.config"
-            "Tag" = "8:"
-            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_806C8DD816BAE1C8751B115DCDF72E50"
-            {
-            "SourcePath" = "8:MyApplication.VanillaAddIn.tlb"
-            "TargetName" = "8:MyApplication.VanillaAddIn.tlb"
-            "Tag" = "8:"
-            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:2"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BF0DDD11259532587F856D651F450ECC"
@@ -413,14 +362,65 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_FC6916A4E033A8EE4C76E2744764EEB7"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_DD1A49F9A295CF0FCE7823B12AC215CE"
+            {
+            "SourcePath" = "8:NoteHighlightAddin.tlb"
+            "TargetName" = "8:NoteHighlightAddin.tlb"
+            "Tag" = "8:"
+            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:2"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF718BA2B4ECE47FA5E80A6DC6274BBF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=609b64b0cf912098, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DF718BA2B4ECE47FA5E80A6DC6274BBF"
+                    {
+                    "Name" = "8:Helper.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:Helper.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:TRUE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E93DE067BC9E7E9EE8643EB89993F4E8"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:ICSharpCode.TextEditor, Version=3.0.0.3437, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_FC6916A4E033A8EE4C76E2744764EEB7"
+                    "_E93DE067BC9E7E9EE8643EB89993F4E8"
                     {
                     "Name" = "8:ICSharpCode.TextEditor.dll"
                     "Attributes" = "3:512"
@@ -578,7 +578,7 @@
         "Name" = "8:VanillaAddIn"
         "ProductName" = "8:NoteHighlight2016"
         "ProductCode" = "8:{94B72EF8-A523-4ECB-8AC8-82ED8A18362B}"
-        "PackageCode" = "8:{01DB35EA-CA89-4AAC-9FC2-295EE4BB3858}"
+        "PackageCode" = "8:{BFC083F2-021E-444F-9C5E-CFE54BDCB5AD}"
         "UpgradeCode" = "8:{0025873C-20C5-48D6-A93A-FBD3891A9233}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -595,7 +595,7 @@
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
-        "ARPPRODUCTICON" = "8:_5CE8F317FE404086B66A772319CA138C"
+        "ARPPRODUCTICON" = "8:_0C148D8691AE4AC9A42A4AB007D94A58"
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
@@ -657,7 +657,7 @@
                                                         {
                                                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_4CBE6A756F7B498480396E23C0912D91"
                                                             {
-                                                            "Name" = "8:MyApplication.VanillaAddIn.dll"
+                                                            "Name" = "8:NoteHighlightAddin.dll"
                                                             "Condition" = "8:"
                                                             "AlwaysCreate" = "11:FALSE"
                                                             "DeleteAtUninstall" = "11:TRUE"
@@ -673,7 +673,7 @@
                                                                     "Condition" = "8:"
                                                                     "Transitive" = "11:FALSE"
                                                                     "ValueTypes" = "3:1"
-                                                                    "Value" = "8:[TARGETDIR]MyApplication.VanillaAddIn.dll"
+                                                                    "Value" = "8:[TARGETDIR]NoteHighlightAddin.dll"
                                                                     }
                                                                 }
                                                             }
@@ -721,7 +721,7 @@
                                                         {
                                                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_F7AC1B508D9C4A8D812B74D423321C9B"
                                                             {
-                                                            "Name" = "8:MyApplication.VanillaAddIn"
+                                                            "Name" = "8:NoteHighlightAddin"
                                                             "Condition" = "8:"
                                                             "AlwaysCreate" = "11:FALSE"
                                                             "DeleteAtUninstall" = "11:TRUE"
@@ -753,7 +753,7 @@
                                                                     "Condition" = "8:"
                                                                     "Transitive" = "11:FALSE"
                                                                     "ValueTypes" = "3:1"
-                                                                    "Value" = "8:VanillaAddIn"
+                                                                    "Value" = "8:NoteHighlightAddIn"
                                                                     }
                                                                 }
                                                             }
@@ -797,7 +797,7 @@
                                         {
                                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_88A39E02EF2D463CB938160AC101CB31"
                                             {
-                                            "Name" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                                            "Name" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                                             "Condition" = "8:"
                                             "AlwaysCreate" = "11:FALSE"
                                             "DeleteAtUninstall" = "11:TRUE"
@@ -813,7 +813,7 @@
                                                     "Condition" = "8:"
                                                     "Transitive" = "11:FALSE"
                                                     "ValueTypes" = "3:1"
-                                                    "Value" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                                                    "Value" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                                                     }
                                                 }
                                             }
@@ -833,7 +833,7 @@
                                         {
                                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_8F6F08870AB84046A3518DDF84C3466A"
                                             {
-                                            "Name" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                                            "Name" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                                             "Condition" = "8:"
                                             "AlwaysCreate" = "11:FALSE"
                                             "DeleteAtUninstall" = "11:TRUE"
@@ -891,7 +891,7 @@
                         {
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_80EFEB6F8B61425B8FBD17728928F551"
                             {
-                            "Name" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                            "Name" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                             "Condition" = "8:"
                             "AlwaysCreate" = "11:FALSE"
                             "DeleteAtUninstall" = "11:TRUE"
@@ -927,7 +927,7 @@
                         {
                             "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_FEA1447FA6204611896D7C380A1DBAF8"
                             {
-                            "Name" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                            "Name" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                             "Condition" = "8:"
                             "AlwaysCreate" = "11:FALSE"
                             "DeleteAtUninstall" = "11:TRUE"
@@ -952,7 +952,7 @@
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
-                                            "Value" = "8:MyApplication.VanillaAddIn"
+                                            "Value" = "8:NoteHighlight2016.AddIn"
                                             }
                                         }
                                     }
@@ -1004,7 +1004,7 @@
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
-                                            "Value" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                                            "Value" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                                             }
                                         }
                                     }
@@ -1026,7 +1026,7 @@
                                             "Condition" = "8:"
                                             "Transitive" = "11:FALSE"
                                             "ValueTypes" = "3:1"
-                                            "Value" = "8:MyApplication.VanillaAddIn.1"
+                                            "Value" = "8:NoteHighlight2016.AddIn"
                                             }
                                         }
                                     }
@@ -1061,7 +1061,7 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "ValueTypes" = "3:1"
-                                    "Value" = "8:VanillaAddIn Class"
+                                    "Value" = "8:NoteHighlightAddIn Class"
                                     }
                                     "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_75BFBC491AF3480F8F7187FB6D48D560"
                                     {
@@ -1069,7 +1069,7 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "ValueTypes" = "3:1"
-                                    "Value" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                                    "Value" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                                     }
                                 }
                             }
@@ -1080,7 +1080,7 @@
                     }
                     "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_716C060777B448F9AD2A0270AD2CB963"
                     {
-                    "Name" = "8:MyApplication.VanillaAddIn"
+                    "Name" = "8:NoteHighlightAddin"
                     "Condition" = "8:"
                     "AlwaysCreate" = "11:FALSE"
                     "DeleteAtUninstall" = "11:TRUE"
@@ -1105,7 +1105,7 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "ValueTypes" = "3:1"
-                                    "Value" = "8:MyApplication.VanillaAddIn.1"
+                                    "Value" = "8:NoteHighlightAddin"
                                     }
                                 }
                             }
@@ -1127,7 +1127,7 @@
                                     "Condition" = "8:"
                                     "Transitive" = "11:FALSE"
                                     "ValueTypes" = "3:1"
-                                    "Value" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
+                                    "Value" = "8:{4C6B0362-F139-417F-9661-3663C268B9E9}"
                                     }
                                 }
                             }
@@ -1135,50 +1135,6 @@
                         "Values"
                         {
                             "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_CA767166FD144ED595585B3B9A835D89"
-                            {
-                            "Name" = "8:"
-                            "Condition" = "8:"
-                            "Transitive" = "11:FALSE"
-                            "ValueTypes" = "3:1"
-                            "Value" = "8:Addin class"
-                            }
-                        }
-                    }
-                    "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_C57D5C2276C14FFFB597211BAA1352D4"
-                    {
-                    "Name" = "8:MyApplication.VanillaAddIn.1"
-                    "Condition" = "8:"
-                    "AlwaysCreate" = "11:FALSE"
-                    "DeleteAtUninstall" = "11:TRUE"
-                    "Transitive" = "11:FALSE"
-                        "Keys"
-                        {
-                            "{60EA8692-D2D5-43EB-80DC-7906BF13D6EF}:_CF74CFE5DD5D4CCCBAAECAED2AC7BA82"
-                            {
-                            "Name" = "8:CLSID"
-                            "Condition" = "8:"
-                            "AlwaysCreate" = "11:FALSE"
-                            "DeleteAtUninstall" = "11:FALSE"
-                            "Transitive" = "11:FALSE"
-                                "Keys"
-                                {
-                                }
-                                "Values"
-                                {
-                                    "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_4D4A09B0CF53474190F232D82039B6C1"
-                                    {
-                                    "Name" = "8:"
-                                    "Condition" = "8:"
-                                    "Transitive" = "11:FALSE"
-                                    "ValueTypes" = "3:1"
-                                    "Value" = "8:{D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB}"
-                                    }
-                                }
-                            }
-                        }
-                        "Values"
-                        {
-                            "{ADCFDA98-8FDD-45E4-90BC-E3D20B029870}:_0AC271BD00F34B178E5B00B922A95568"
                             {
                             "Name" = "8:"
                             "Condition" = "8:"
@@ -1609,7 +1565,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_692D7E391D074D36AD2530720FB8D6C4"
             {
-            "SourcePath" = "8:..\\VanillaAddIn\\obj\\Debug\\MyApplication.VanillaAddIn.dll"
+            "SourcePath" = "8:..\\NoteHighlightAddin\\obj\\Debug\\NoteHighlightAddin.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"

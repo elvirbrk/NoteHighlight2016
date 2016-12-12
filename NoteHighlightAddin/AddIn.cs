@@ -13,7 +13,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Extensibility;
 using Microsoft.Office.Core;
-using MyApplication.VanillaAddIn.Utilities;
+using NoteHighlightAddin.Utilities;
 using Application = Microsoft.Office.Interop.OneNote.Application;  // Conflicts with System.Windows.Forms
 using System.Reflection;
 using System.Drawing;
@@ -26,10 +26,10 @@ using System.Threading;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
-namespace MyApplication.VanillaAddIn
+namespace NoteHighlightAddin
 {
 	[ComVisible(true)]
-	[Guid("D5ECCD00-CF2D-409B-B65A-BDBACB9F21DB"), ProgId("NoteHighlight2016.AddIn")]
+	[Guid("4C6B0362-F139-417F-9661-3663C268B9E9"), ProgId("NoteHighlight2016.AddIn")]
 
 	public class AddIn : IDTExtensibility2, IRibbonExtensibility
 	{

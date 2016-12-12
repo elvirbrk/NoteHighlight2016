@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyApplication.VanillaAddIn.Properties {
+namespace NoteHighlightAddin.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace MyApplication.VanillaAddIn.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("MyApplication.VanillaAddIn.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("NoteHighlightAddin.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace MyApplication.VanillaAddIn.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to VanillaAddIn.
+        ///   Looks up a localized string similar to NoteHighlightAddin.
         /// </summary>
         internal static string AddInTitle {
             get {
@@ -174,13 +174,10 @@ namespace MyApplication.VanillaAddIn.Properties {
         ///&lt;customUI xmlns=&quot;http://schemas.microsoft.com/office/2006/01/customui&quot; loadImage=&quot;GetImage&quot;&gt;
         ///    &lt;ribbon&gt;
         ///        &lt;tabs&gt;
-        ///          &lt;!--&lt;tab idMso=&quot;TabHome&quot;&gt;
-        ///                &lt;group id=&quot;groupVanillaAddIn&quot; label=&quot;VanillaAddIn&quot;&gt;
-        ///                    &lt;button id=&quot;buttonVanillaAddIn&quot; label=&quot;VanillaAddIn&quot; size=&quot;large&quot; screentip=&quot;VanillaAddIn&quot; onAction=&quot;VanillaAddInButtonClicked&quot; image=&quot;Logo.png&quot;/&gt;
-        ///                &lt;/group&gt;
-        ///            
-        ///          &lt;/tab&gt;--&gt;
-        ///             [rest of string was truncated]&quot;;.
+        ///            &lt;tab id=&quot;tabNoteHighlight&quot; label=&quot;NoteHighlight&quot;&gt;
+        ///                &lt;group id=&quot;groupLanguage&quot; label=&quot;Language&quot;&gt;
+        ///                  &lt;button id=&quot;buttonCSharp&quot; label=&quot;C#&quot; size=&quot;large&quot; screentip=&quot;Entry C# Code&quot; onAction=&quot;AddInButtonClicked&quot; tag=&quot;cs&quot; keytip=&quot;C&quot; image=&quot;CSharp.png&quot;/&gt;
+        ///                  &lt;button id=&quot;buttonSQL&quot; label=&quot;SQL&quot; size [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ribbon {
             get {

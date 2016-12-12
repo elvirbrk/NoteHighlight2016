@@ -6,23 +6,23 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Add-in for OneNote")]
-[assembly: AssemblyDescription("An Add-in for OneNote")]
+[assembly: AssemblyTitle("NoteHighLightAddins")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("VanillaAddIn")]
-[assembly: AssemblyCopyright("Copyright © 2015 Corporation")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("NoteHighLightAddins")]
+[assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
 // COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 [assembly: CLSCompliant(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("45FCCCEB-10CB-4C29-B8D2-1C8033139534")]
+[assembly: Guid("65efa870-a49d-4ba4-a864-500052c09421")]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,5 +33,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-[assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("2.0.*")]
+[assembly: AssemblyFileVersion("2.0.*")]
