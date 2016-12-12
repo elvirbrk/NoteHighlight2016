@@ -30,10 +30,11 @@ namespace Helper
         {
             get
             {
-                string assemblyDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                string assemblyDirectory = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location);
                 return assemblyDirectory;
             }
         }
+
 
         #endregion
 
@@ -74,6 +75,14 @@ namespace Helper
                 if (IsWaitForInputIdle) p.WaitForInputIdle();
                 if (!p.HasExited) p.WaitForExit();
             }
+        }
+
+
+        public static string GetDirectoryFromPath(string path)
+        {
+            string assemblyDirectory = Path.GetDirectoryName(path);
+            return assemblyDirectory;
+
         }
     }
 }
