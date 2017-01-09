@@ -23,6 +23,7 @@ using System.Text;
 using System.Linq;
 using Helper;
 using System.Threading;
+using System.Web;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -261,7 +262,8 @@ namespace NoteHighlightAddin
             foreach (var item in arrayLine)
             {
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
-                string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + item + "</body>";
+                string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
+                            HttpUtility.HtmlDecode(item) + "</body>";
                 children.Add(new XElement(ns + "OE",
                                 new XElement(ns + "T",
                                     new XCData(s))));
