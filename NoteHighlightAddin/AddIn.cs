@@ -258,16 +258,59 @@ namespace NoteHighlightAddin
         {
             XElement children = new XElement(ns + "OEChildren");
 
+            XElement table = new XElement(ns + "Table");
+            table.Add(new XAttribute("bordersVisible", "false"));
+
+            XElement columns = new XElement(ns + "Columns");
+            XElement column1 = new XElement(ns + "Column");
+            column1.Add(new XAttribute("index", "0"));
+            column1.Add(new XAttribute("width", "25"));
+            columns.Add(column1);
+            XElement column2 = new XElement(ns + "Column");
+            column2.Add(new XAttribute("index", "1"));
+            column2.Add(new XAttribute("width", "100"));
+            columns.Add(column2);
+
+            table.Add(columns);
+
+            XElement row = new XElement(ns + "Row");
+            XElement cell1 = new XElement(ns + "Cell");
+            cell1.Add(new XAttribute("shadingColor", "#FF0000"));
+            XElement cell2 = new XElement(ns + "Cell");
+            cell2.Add(new XAttribute("shadingColor", "#FF0000"));
+
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (var item in arrayLine)
             {
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
                 string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
                             HttpUtility.HtmlDecode(item) + "</body>";
-                children.Add(new XElement(ns + "OE",
+                //children.Add(new XElement(ns + "OE",
+                //                new XElement(ns + "T",
+                //                    new XCData(s))));
+
+                
+
+                cell1.Add(new XElement(ns + "OEChildren",
+                            new XElement(ns + "OE",
                                 new XElement(ns + "T",
-                                    new XCData(s))));
+                                    new XCData("1")))));
+
+                cell2.Add(new XElement(ns + "OEChildren",
+                            new XElement(ns + "OE",
+                                new XElement(ns + "T",
+                                    new XCData(s)))));
+
             }
+
+            row.Add(cell1);
+
+            row.Add(cell2);
+
+            table.Add(row);
+
+            children.Add(new XElement(ns + "OE",
+                                table));
 
             XElement outline = new XElement(ns + "Outline");
 
