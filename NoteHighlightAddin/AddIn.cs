@@ -264,11 +264,11 @@ namespace NoteHighlightAddin
             XElement columns = new XElement(ns + "Columns");
             XElement column1 = new XElement(ns + "Column");
             column1.Add(new XAttribute("index", "0"));
-            column1.Add(new XAttribute("width", "25"));
+            column1.Add(new XAttribute("width", "40"));
             columns.Add(column1);
             XElement column2 = new XElement(ns + "Column");
             column2.Add(new XAttribute("index", "1"));
-            column2.Add(new XAttribute("width", "100"));
+            column2.Add(new XAttribute("width", "1000"));
             columns.Add(column2);
 
             table.Add(columns);
@@ -320,6 +320,11 @@ namespace NoteHighlightAddin
                 pos.Add(new XAttribute("x", position[0]));
                 pos.Add(new XAttribute("y", position[1]));
                 outline.Add(pos);
+
+                XElement size = new XElement(ns + "Size");
+                size.Add(new XAttribute("width", "1100"));
+                size.Add(new XAttribute("height", "200"));
+                outline.Add(size);
             }
             outline.Add(children);
 
