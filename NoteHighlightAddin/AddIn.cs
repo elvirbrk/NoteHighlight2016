@@ -266,9 +266,20 @@ namespace NoteHighlightAddin
             XElement column1 = new XElement(ns + "Column");
             column1.Add(new XAttribute("index", "0"));
             column1.Add(new XAttribute("width", "40"));
-            columns.Add(column1);
+            if (parameters.ShowLineNumber)
+            {
+                columns.Add(column1);
+            }
             XElement column2 = new XElement(ns + "Column");
-            column2.Add(new XAttribute("index", "1"));
+            if (parameters.ShowLineNumber)
+            {
+                column2.Add(new XAttribute("index", "1"));
+            }
+            else
+            {
+                column2.Add(new XAttribute("index", "0"));
+            }
+            
             column2.Add(new XAttribute("width", "1400"));
             columns.Add(column2);
 
@@ -286,19 +297,37 @@ namespace NoteHighlightAddin
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (var item in arrayLine)
             {
+                var itemNr = "";
+                var itemLine = "";
+                if (parameters.ShowLineNumber)
+                {
+                    if (item.Contains("</span>"))
+                    {
+                        int ind = item.IndexOf("</span>");
+                        itemNr = item.Substring(0, ind + ("</span>").Length);
+                        itemLine = item.Substring(ind);
+                    }
+                    else
+                    {
+                        itemNr = "";
+                        itemLine = item;
+                    }
+
+                    string nr = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) +
+                            itemNr.Replace("&apos;", "'") + "</body>";
+
+                    cell1.Add(new XElement(ns + "OEChildren",
+                                new XElement(ns + "OE",
+                                    new XElement(ns + "T",
+                                        new XCData(nr)))));
+                }
+                else
+                {
+                    itemLine = item;
+                }
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
                 string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
-                            item.Replace("&apos;", "'") + "</body>";
-                //children.Add(new XElement(ns + "OE",
-                //                new XElement(ns + "T",
-                //                    new XCData(s))));
-
-                
-
-                cell1.Add(new XElement(ns + "OEChildren",
-                            new XElement(ns + "OE",
-                                new XElement(ns + "T",
-                                    new XCData("1")))));
+                            itemLine.Replace("&apos;", "'") + "</body>";
 
                 cell2.Add(new XElement(ns + "OEChildren",
                             new XElement(ns + "OE",
@@ -307,8 +336,10 @@ namespace NoteHighlightAddin
 
             }
 
-            row.Add(cell1);
-
+            if (parameters.ShowLineNumber)
+            {
+                row.Add(cell1);
+            }
             row.Add(cell2);
 
             table.Add(row);
