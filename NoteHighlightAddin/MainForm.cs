@@ -39,7 +39,7 @@ namespace NoteHighlightAddin
         //是否存到剪貼簿
         private bool IsClipboard { get { return this.cbx_Clipboard.Checked; } }
 
-        private Color BackgroundColor { get { return this.colorDialog1.Color; } }
+        private Color BackgroundColor { get { return this.btnBackground.BackColor; } }
 
         public HighLightParameter Parameters { get { return _parameters; } }
 
@@ -67,6 +67,7 @@ namespace NoteHighlightAddin
             this.txtCode.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy(CodeTypeTransform(_codeType));
             this.txtCode.Encoding = Encoding.UTF8;
             this.cbx_style.SelectedIndex = NoteHighlightForm.Properties.Settings.Default.HighLightStyle;
+            this.btnBackground.BackColor = NoteHighlightForm.Properties.Settings.Default.BackgroundColor;
             this.TopMost = true;
             this.TopMost = false;
         }
@@ -221,6 +222,7 @@ namespace NoteHighlightAddin
             defaultSettings.ShowLineNumber = this.cbx_lineNumber.Checked;
             defaultSettings.SaveOnClipboard = this.cbx_Clipboard.Checked;
             defaultSettings.HighLightStyle = this.cbx_style.SelectedIndex;
+            defaultSettings.BackgroundColor = this.btnBackground.BackColor;
             defaultSettings.Save();
         }
 
