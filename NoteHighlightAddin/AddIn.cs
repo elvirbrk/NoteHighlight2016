@@ -268,7 +268,7 @@ namespace NoteHighlightAddin
             columns.Add(column1);
             XElement column2 = new XElement(ns + "Column");
             column2.Add(new XAttribute("index", "1"));
-            column2.Add(new XAttribute("width", "1000"));
+            column2.Add(new XAttribute("width", "1400"));
             columns.Add(column2);
 
             table.Add(columns);
@@ -284,7 +284,7 @@ namespace NoteHighlightAddin
             {
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
                 string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
-                            HttpUtility.HtmlDecode(item) + "</body>";
+                            item.Replace("&apos;", "'") + "</body>";
                 //children.Add(new XElement(ns + "OE",
                 //                new XElement(ns + "T",
                 //                    new XCData(s))));
@@ -322,7 +322,7 @@ namespace NoteHighlightAddin
                 outline.Add(pos);
 
                 XElement size = new XElement(ns + "Size");
-                size.Add(new XAttribute("width", "1100"));
+                size.Add(new XAttribute("width", "1600"));
                 size.Add(new XAttribute("height", "200"));
                 outline.Add(size);
             }
