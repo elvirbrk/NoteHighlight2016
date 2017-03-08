@@ -24,6 +24,7 @@ using System.Linq;
 using Helper;
 using System.Threading;
 using System.Web;
+using GenerateHighlightContent;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -153,7 +154,7 @@ namespace NoteHighlightAddin
 
             if (File.Exists(fileName))
             {
-                InsertHighLightCodeToCurrentSide(fileName);
+                InsertHighLightCodeToCurrentSide(fileName, form.Parameters);
             }
         }
 
@@ -189,7 +190,7 @@ namespace NoteHighlightAddin
         /// 插入 HighLight Code 至滑鼠游標的位置
         /// Insert HighLight Code To Mouse Position  
         /// </summary>
-        private void InsertHighLightCodeToCurrentSide(string fileName)
+        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters)
         {
             // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
@@ -218,7 +219,7 @@ namespace NoteHighlightAddin
 
                 string[] position = GetMousePointPosition(existingPageId);
 
-                var page = InsertHighLightCode(htmlContent, position);
+                var page = InsertHighLightCode(htmlContent, position, parameters);
                 page.Root.SetAttributeValue("ID", existingPageId);
 
                 OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -254,7 +255,7 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters)
         {
             XElement children = new XElement(ns + "OEChildren");
 
@@ -273,11 +274,14 @@ namespace NoteHighlightAddin
 
             table.Add(columns);
 
+            Color color = parameters.HighlightColor;
+            string colorString = string.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
+
             XElement row = new XElement(ns + "Row");
             XElement cell1 = new XElement(ns + "Cell");
-            cell1.Add(new XAttribute("shadingColor", "#FF0000"));
+            cell1.Add(new XAttribute("shadingColor", colorString));
             XElement cell2 = new XElement(ns + "Cell");
-            cell2.Add(new XAttribute("shadingColor", "#FF0000"));
+            cell2.Add(new XAttribute("shadingColor", colorString));
 
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (var item in arrayLine)

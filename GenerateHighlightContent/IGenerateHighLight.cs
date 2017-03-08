@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 
@@ -28,5 +29,7 @@ namespace GenerateHighlightContent
 
         /// <summary> 檔案名稱 </summary>
         public string FileName { get; set; }
+
+        public Color HighlightColor { get; set; }
     }
 }
