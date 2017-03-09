@@ -38,6 +38,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnBackground = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -138,6 +140,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnBackground);
             this.panel2.Controls.Add(this.btnCodeHighLight);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 534);
@@ -156,7 +159,17 @@
             this.panel3.Size = new System.Drawing.Size(689, 469);
             this.panel3.TabIndex = 0;
             // 
-            // CodeForm
+            // btnBackground
+            // 
+            this.btnBackground.Location = new System.Drawing.Point(12, 3);
+            this.btnBackground.Name = "btnBackground";
+            this.btnBackground.Size = new System.Drawing.Size(105, 50);
+            this.btnBackground.TabIndex = 1;
+            this.btnBackground.Text = "Background Color";
+            this.btnBackground.UseVisualStyleBackColor = true;
+            this.btnBackground.Click += new System.EventHandler(btnBackground_Click);
+            // 
+            // MainForm
             // 
             this.AcceptButton = this.btnCodeHighLight;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -190,5 +203,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button btnBackground;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

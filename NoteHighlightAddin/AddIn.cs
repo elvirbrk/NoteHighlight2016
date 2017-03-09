@@ -24,6 +24,7 @@ using System.Linq;
 using Helper;
 using System.Threading;
 using System.Web;
+using GenerateHighlightContent;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -153,7 +154,7 @@ namespace NoteHighlightAddin
 
             if (File.Exists(fileName))
             {
-                InsertHighLightCodeToCurrentSide(fileName);
+                InsertHighLightCodeToCurrentSide(fileName, form.Parameters);
             }
         }
 
@@ -189,7 +190,7 @@ namespace NoteHighlightAddin
         /// 插入 HighLight Code 至滑鼠游標的位置
         /// Insert HighLight Code To Mouse Position  
         /// </summary>
-        private void InsertHighLightCodeToCurrentSide(string fileName)
+        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters)
         {
             // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
@@ -218,7 +219,7 @@ namespace NoteHighlightAddin
 
                 string[] position = GetMousePointPosition(existingPageId);
 
-                var page = InsertHighLightCode(htmlContent, position);
+                var page = InsertHighLightCode(htmlContent, position, parameters);
                 page.Root.SetAttributeValue("ID", existingPageId);
 
                 OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -254,20 +255,97 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters)
         {
             XElement children = new XElement(ns + "OEChildren");
+
+            XElement table = new XElement(ns + "Table");
+            table.Add(new XAttribute("bordersVisible", "false"));
+
+            XElement columns = new XElement(ns + "Columns");
+            XElement column1 = new XElement(ns + "Column");
+            column1.Add(new XAttribute("index", "0"));
+            column1.Add(new XAttribute("width", "40"));
+            if (parameters.ShowLineNumber)
+            {
+                columns.Add(column1);
+            }
+            XElement column2 = new XElement(ns + "Column");
+            if (parameters.ShowLineNumber)
+            {
+                column2.Add(new XAttribute("index", "1"));
+            }
+            else
+            {
+                column2.Add(new XAttribute("index", "0"));
+            }
+            
+            column2.Add(new XAttribute("width", "1400"));
+            columns.Add(column2);
+
+            table.Add(columns);
+
+            Color color = parameters.HighlightColor;
+            string colorString = string.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
+
+            XElement row = new XElement(ns + "Row");
+            XElement cell1 = new XElement(ns + "Cell");
+            cell1.Add(new XAttribute("shadingColor", colorString));
+            XElement cell2 = new XElement(ns + "Cell");
+            cell2.Add(new XAttribute("shadingColor", colorString));
 
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
             foreach (var item in arrayLine)
             {
+                var itemNr = "";
+                var itemLine = "";
+                if (parameters.ShowLineNumber)
+                {
+                    if (item.Contains("</span>"))
+                    {
+                        int ind = item.IndexOf("</span>");
+                        itemNr = item.Substring(0, ind + ("</span>").Length);
+                        itemLine = item.Substring(ind);
+                    }
+                    else
+                    {
+                        itemNr = "";
+                        itemLine = item;
+                    }
+
+                    string nr = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) +
+                            itemNr.Replace("&apos;", "'") + "</body>";
+
+                    cell1.Add(new XElement(ns + "OEChildren",
+                                new XElement(ns + "OE",
+                                    new XElement(ns + "T",
+                                        new XCData(nr)))));
+                }
+                else
+                {
+                    itemLine = item;
+                }
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
                 string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
-                            HttpUtility.HtmlDecode(item) + "</body>";
-                children.Add(new XElement(ns + "OE",
+                            itemLine.Replace("&apos;", "'") + "</body>";
+
+                cell2.Add(new XElement(ns + "OEChildren",
+                            new XElement(ns + "OE",
                                 new XElement(ns + "T",
-                                    new XCData(s))));
+                                    new XCData(s)))));
+
             }
+
+            if (parameters.ShowLineNumber)
+            {
+                row.Add(cell1);
+            }
+            row.Add(cell2);
+
+            table.Add(row);
+
+            children.Add(new XElement(ns + "OE",
+                                table));
 
             XElement outline = new XElement(ns + "Outline");
 
@@ -277,6 +355,11 @@ namespace NoteHighlightAddin
                 pos.Add(new XAttribute("x", position[0]));
                 pos.Add(new XAttribute("y", position[1]));
                 outline.Add(pos);
+
+                XElement size = new XElement(ns + "Size");
+                size.Add(new XAttribute("width", "1600"));
+                size.Add(new XAttribute("height", "200"));
+                outline.Add(size);
             }
             outline.Add(children);
 

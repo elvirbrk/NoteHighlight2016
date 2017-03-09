@@ -25,6 +25,8 @@ namespace NoteHighlightAddin
         //檔案名稱
         private string _fileName;
 
+        private HighLightParameter _parameters;
+
         //要HighLight的Code
         private string CodeContent { get { return this.txtCode.Text; } }
 
@@ -36,6 +38,10 @@ namespace NoteHighlightAddin
 
         //是否存到剪貼簿
         private bool IsClipboard { get { return this.cbx_Clipboard.Checked; } }
+
+        private Color BackgroundColor { get { return this.btnBackground.BackColor; } }
+
+        public HighLightParameter Parameters { get { return _parameters; } }
 
         #endregion
 
@@ -61,6 +67,7 @@ namespace NoteHighlightAddin
             this.txtCode.Document.HighlightingStrategy = HighlightingStrategyFactory.CreateHighlightingStrategy(CodeTypeTransform(_codeType));
             this.txtCode.Encoding = Encoding.UTF8;
             this.cbx_style.SelectedIndex = NoteHighlightForm.Properties.Settings.Default.HighLightStyle;
+            this.btnBackground.BackColor = NoteHighlightForm.Properties.Settings.Default.BackgroundColor;
             this.TopMost = true;
             this.TopMost = false;
         }
@@ -82,18 +89,19 @@ namespace NoteHighlightAddin
 
             string outputFileName = String.Empty;
 
-            HighLightParameter parameter = new HighLightParameter()
+            _parameters = new HighLightParameter()
             {
                 FileName = _fileName,
                 Content = CodeContent,
                 CodeType = _codeType,
                 HighLightStyle = CodeStyle,
-                ShowLineNumber = IsShowLineNumber
+                ShowLineNumber = IsShowLineNumber,
+                HighlightColor = BackgroundColor
             };
 
             try
             {
-                outputFileName = generate.GenerateHighLightCode(parameter);
+                outputFileName = generate.GenerateHighLightCode(_parameters);
             }
             catch (Exception ex)
             {
@@ -214,7 +222,16 @@ namespace NoteHighlightAddin
             defaultSettings.ShowLineNumber = this.cbx_lineNumber.Checked;
             defaultSettings.SaveOnClipboard = this.cbx_Clipboard.Checked;
             defaultSettings.HighLightStyle = this.cbx_style.SelectedIndex;
+            defaultSettings.BackgroundColor = this.btnBackground.BackColor;
             defaultSettings.Save();
+        }
+
+        private void btnBackground_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                btnBackground.BackColor = colorDialog1.Color;
+            }
         }
     }
 }
