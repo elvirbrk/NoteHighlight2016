@@ -6,6 +6,8 @@
 
 Based on NoteHighlight 2013 (https://notehighlight2013.codeplex.com) and VanillaAddin (https://github.com/OneNoteDev/VanillaAddIn) to create working addin for OneNote 2016 (32-bit and 64-bit) 
 
+Syntax highlighting performed using https://github.com/andre-simon/highlight
+
 # Install
 To install just run MSI file from releases.
 
