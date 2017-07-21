@@ -1,5 +1,7 @@
 Description="Python"
 
+Digits=[[ (?:0x|0X|0o|0O|0b|0B)[0-9a-fA-F\_]+|\d*[\.\_]?[\d\_]+(?:[eE][\-\+]\d+)?[lLuU]* ]]
+
 Keywords={
   { Id=1,
     List={  "break", "continue", "del", "except", "exec", "finally", "pass", 
@@ -44,7 +46,7 @@ Strings={
   Delimiter=[["""|'''|"|']],
   RawPrefix="r",
   Escape=[=[\\[ntvbrfa\\\?'"]|\\\d{3}|\\x[[:xdigit:]]{2}]=],
-  Interpolation=[[ %[%#0\-\+diouxXeEfFgGcrs]+|%\(\w+\)[sd]? ]]
+  Interpolation=[[ %[%#0\-\+diouxXeEfFgGcrs]+|%\(\w+\)[sd]?|\{\w+\} ]]
 }
 
 IgnoreCase=false

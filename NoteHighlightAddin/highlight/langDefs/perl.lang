@@ -40,7 +40,7 @@ Keywords={
     "getprotobyname", "getprotobynumber", "getservbyname",
     "getservbyport", "getpwuid", "getpwnam", "getgrgid", "getgrnam", "getlogin", 
     "getpwent", "getgrent", "gmtime", "localtime", "time", "warn", "formline", 
-    "reset", "scalar", "prototype", "lock", "tied", "untie", "qw", "qq", "qx", "q", "eval" },
+    "reset", "scalar", "prototype", "lock", "tied", "untie", "qq", "qx", "eval" },
   },
   { Id=4,
 	Regex=[[->([a-zA-Z0-9_]+)]],
@@ -53,6 +53,10 @@ Keywords={
     Regex=[[\/.*?\/[msixpodualgc]*|m\/.*?\/[msixpodualgc]*|qr\/.*?\/[msixpodual]*|s\/.*?\/.*?\/[msixpodualgcer]*|(?:tr|y)\/.*?\/.*?\/[cdsr]*|m!.*?![msixpodualgc]*|qr!.*?![msixpodual]*|s!.*?!.*?![msixpodualgcer]*|(?:tr|y)!.*?!.*?![cdsr]*|m\?.*?\?[msixpodualgc]*|m\{.*?\}[msixpodualgc]*|qr\{.*?\}[msixpodual]*|s\{.*?\}\s*\{.*?\}[msixpodualgcer]*|(?:tr|y)\{.*?\}\s*\{.*?\}[cdsr]*]],
     Group=0
   },
+  
+   { Id=4,
+    Regex=[[q[qxwr]?\{|qw\(]]
+  },
 }
 
 -- hereDoc opening delimiter, see OnStateChange to handle end of string
@@ -60,6 +64,7 @@ Keywords={
 Strings={
   Delimiter=[=["|'|`|<<["']?[[:alpha:]]+["']?]=],
   Interpolation=[[ [@\$%]\w+ ]],
+  
 }
 
 IgnoreCase=false
@@ -75,7 +80,7 @@ Comments={
 
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|~|\=|\/|\*|\+|\-|\$|\.|\^|\~|\%|\|]]
 
--- fix recognition of $
+-- fix recognition of $ and other Perl perversions
 function OnStateChange(oldState, newState, token, groupID)
 
    -- resolve issue with regex expression which spans strings like "</i>" + VAR + "</i>"
@@ -90,14 +95,39 @@ function OnStateChange(oldState, newState, token, groupID)
    --recognize hereDoc multine strings
    --do not clear hereDoc if token is ",' or `
    if (oldState==HL_STANDARD or oldState==HL_STRING) and newState==HL_STRING  and not string.find("\"'`", token) then
-      
       hereDoc = string.match(token, "<<'?\"?(%a+)" )
-
    end
+   
    if oldState==HL_STRING and token==hereDoc then
       hereDoc = nil
       return HL_STRING_END
    end
+  
+  -- fix issue in CGI.pm testcase (line 1060 ff)
+   if oldState~=HL_STRING  then
+      qString=0
+    end
+    
+   if newState==HL_KEYWORD and token=="q{" then
+      qString=1
+      return HL_STRING
+   end
+ 
+   if newState==HL_KEYWORD and token=="qw(" then
+      qString=2
+      return HL_STRING
+   end
+ 
+   if oldState==HL_STRING and qString==1 and token=="}" then
+      qString=0
+      return HL_STRING_END
+   end
+   
+   if oldState==HL_STRING and qString==2 and token==")" then
+      qString=0
+      return HL_STRING_END
+   end
+  
    
    return newState
 end
