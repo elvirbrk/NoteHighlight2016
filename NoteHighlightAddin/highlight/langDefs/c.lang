@@ -26,6 +26,9 @@ Keywords={
            "register", "template", "private", "protected", "public", "typeid", "virtual", "volatile", "constexpr", "nullptr", "decltype"
           }
   },
+  { Id=3,
+    Regex=[[(\w+)\s*\:\:]]
+  },
   { Id=4,
     Regex=[[(\w+)\s*\(]]
   }

@@ -21,7 +21,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1368D25DED3D7619A6ECC45AF44CC44B"
+        "MsmKey" = "8:_0FFDD9474C2B804E2E2B2C7C6360577B"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3F5A6705A6B31EBC4C5DA3FC2A052289"
         "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -29,12 +35,6 @@
         {
         "MsmKey" = "8:_47AFBE13144648689D856D43F6F054E6"
         "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_48F0573F2B8540064386DCFBA7665E8F"
-        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -51,6 +51,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
+        "OwnerKey" = "8:_0FFDD9474C2B804E2E2B2C7C6360577B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BF0DDD11259532587F856D651F450ECC"
         "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
         "MsmSig" = "8:_UNDEFINED"
@@ -63,26 +75,14 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CB47DF720F0D7129EABD42EA460E48CA"
-        "OwnerKey" = "8:_1368D25DED3D7619A6ECC45AF44CC44B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CB47DF720F0D7129EABD42EA460E48CA"
-        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_CB47DF720F0D7129EABD42EA460E48CA"
-        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_CBF51C0C38434D629FC3271C5390E247"
         "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E4014126696E456F7FC66801CBFEEE19"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -112,19 +112,19 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_48F0573F2B8540064386DCFBA7665E8F"
+        "OwnerKey" = "8:_E4014126696E456F7FC66801CBFEEE19"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1368D25DED3D7619A6ECC45AF44CC44B"
+        "OwnerKey" = "8:_0FFDD9474C2B804E2E2B2C7C6360577B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CB47DF720F0D7129EABD42EA460E48CA"
+        "OwnerKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -274,14 +274,14 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1368D25DED3D7619A6ECC45AF44CC44B"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_0FFDD9474C2B804E2E2B2C7C6360577B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:GenerateHighlightContent, Version=2.0.0.0, Culture=neutral, PublicKeyToken=77d9ec1ac4fb0cdc, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_1368D25DED3D7619A6ECC45AF44CC44B"
+                    "_0FFDD9474C2B804E2E2B2C7C6360577B"
                     {
                     "Name" = "8:GenerateHighlightContent.dll"
                     "Attributes" = "3:512"
@@ -301,6 +301,26 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3F5A6705A6B31EBC4C5DA3FC2A052289"
+            {
+            "SourcePath" = "8:NoteHighlightAddin.tlb"
+            "TargetName" = "8:NoteHighlightAddin.tlb"
+            "Tag" = "8:"
+            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:2"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
@@ -325,20 +345,20 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_48F0573F2B8540064386DCFBA7665E8F"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_805E0317B9E0B1539EEBB800C533393B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ICSharpCode.TextEditor, Version=3.0.0.3437, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=609b64b0cf912098, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_48F0573F2B8540064386DCFBA7665E8F"
+                    "_805E0317B9E0B1539EEBB800C533393B"
                     {
-                    "Name" = "8:ICSharpCode.TextEditor.dll"
+                    "Name" = "8:Helper.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:ICSharpCode.TextEditor.dll"
+            "SourcePath" = "8:Helper.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
@@ -352,7 +372,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:FALSE"
+            "Exclude" = "11:TRUE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -387,20 +407,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CB47DF720F0D7129EABD42EA460E48CA"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E4014126696E456F7FC66801CBFEEE19"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Helper, Version=1.0.0.0, Culture=neutral, PublicKeyToken=609b64b0cf912098, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ICSharpCode.TextEditor, Version=3.0.0.3437, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_CB47DF720F0D7129EABD42EA460E48CA"
+                    "_E4014126696E456F7FC66801CBFEEE19"
                     {
-                    "Name" = "8:Helper.dll"
+                    "Name" = "8:ICSharpCode.TextEditor.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:Helper.dll"
+            "SourcePath" = "8:ICSharpCode.TextEditor.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
@@ -414,7 +434,7 @@
             "SharedLegacy" = "11:FALSE"
             "PackageAs" = "3:1"
             "Register" = "3:1"
-            "Exclude" = "11:TRUE"
+            "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
@@ -551,15 +571,15 @@
         {
         "Name" = "8:NoteHighlightAddin"
         "ProductName" = "8:NoteHighlight2016"
-        "ProductCode" = "8:{7D175A2A-59FB-42BD-AF66-FBC5608C9A80}"
-        "PackageCode" = "8:{E1E264E8-50A6-4D87-9C9C-28D9F29A9DA4}"
+        "ProductCode" = "8:{0320059E-5CCF-4D53-B546-1AC788EEFFF2}"
+        "PackageCode" = "8:{2BF3BB79-955B-46E2-B3D5-C5B8566F417D}"
         "UpgradeCode" = "8:{0025873C-20C5-48D6-A93A-FBD3891A9233}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:2.2"
+        "ProductVersion" = "8:2.3"
         "Manufacturer" = "8:CodingRoad"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

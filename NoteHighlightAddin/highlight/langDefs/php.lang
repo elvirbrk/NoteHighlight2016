@@ -72,5 +72,9 @@ function OnStateChange(oldState, newState, token)
       hereDoc = string.match(token, "<<<'?(%a+)" )
    end
    
+   if oldState~=HL_STRING and newState==HL_ESC_SEQ then
+      return oldState
+   end
+   
    return newState
 end

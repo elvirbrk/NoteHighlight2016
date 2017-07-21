@@ -294,9 +294,24 @@ namespace NoteHighlightAddin
             XElement cell2 = new XElement(ns + "Cell");
             cell2.Add(new XAttribute("shadingColor", colorString));
 
+            string defaultStyle = "";
+
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-            foreach (var item in arrayLine)
+            foreach (var it in arrayLine)
             {
+                string item = it;
+
+                if(item.StartsWith("<pre"))
+                {
+                    defaultStyle = item.Substring(0,item.IndexOf("<span"));
+                    item = item.Substring(item.IndexOf("<span"));
+                }
+
+                if (item == "</pre>")
+                {
+                    continue;
+                }
+
                 var itemNr = "";
                 var itemLine = "";
                 if (parameters.ShowLineNumber)
@@ -313,8 +328,9 @@ namespace NoteHighlightAddin
                         itemLine = item;
                     }
 
-                    string nr = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) +
-                            itemNr.Replace("&apos;", "'") + "</body>";
+                    //string nr = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) +
+                    //        itemNr.Replace("&apos;", "'") + "</body>";
+                    string nr = defaultStyle + itemNr.Replace("&apos;", "'") + "</pre>";
 
                     cell1.Add(new XElement(ns + "OEChildren",
                                 new XElement(ns + "OE",
@@ -326,8 +342,9 @@ namespace NoteHighlightAddin
                     itemLine = item;
                 }
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
-                string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
-                            itemLine.Replace("&apos;", "'") + "</body>";
+                //string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
+                //            itemLine.Replace("&apos;", "'") + "</body>";
+                string s = defaultStyle + itemLine.Replace("&apos;", "'") + "</body>";
 
                 cell2.Add(new XElement(ns + "OEChildren",
                             new XElement(ns + "OE",
