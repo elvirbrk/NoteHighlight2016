@@ -19,6 +19,9 @@ namespace GenerateHighlightContent
         [ConfigurationProperty("ProcessName", DefaultValue = "highlight.exe")]
         public string ProcessName { get { return base["ProcessName"].ToString(); } }
 
+        [ConfigurationProperty("ThemeFolder", DefaultValue = "themes")]
+        public string ThemeFolder { get { return base["ThemeFolder"].ToString(); } }
+
         [ConfigurationProperty("GeneralArguments", IsRequired = true, IsDefaultCollection = true)]
         public GeneralArgumentsCollection GeneralArguments
         {

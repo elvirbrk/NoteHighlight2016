@@ -1,13 +1,16 @@
 ﻿using GenerateHighlightContent;
+using Helper;
 using ICSharpCode.TextEditor.Document;
 using NoteHighLightForm;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -52,7 +55,34 @@ namespace NoteHighlightAddin
             _codeType = codeType;
             _fileName = fileName;
             InitializeComponent();
+            LoadThemes();
 
+        }
+
+        private void LoadThemes()
+        {
+            try
+            {
+                Configuration c = ConfigurationManager.OpenExeConfiguration(Assembly.GetCallingAssembly().Location);
+                HighLightSection section = c.GetSection("HighLightSection") as HighLightSection;
+
+                var workingDirectory = Path.Combine(ProcessHelper.GetDirectoryFromPath(Assembly.GetCallingAssembly().Location), section.FolderName, section.ThemeFolder);
+
+                string[] files = Directory.GetFiles(workingDirectory, "*.theme");
+
+                foreach (var item in files)
+                {
+                    cbx_style.Items.Add(Path.GetFileNameWithoutExtension(item));
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from MainForm.LoadThemes:" + e.Message);
+                return;
+            }
+
+            
+            
         }
 
         #endregion
