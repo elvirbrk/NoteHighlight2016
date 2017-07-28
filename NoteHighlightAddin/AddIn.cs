@@ -139,8 +139,16 @@ namespace NoteHighlightAddin
             //form.ShowDialog();
 
             //TestForm t = new TestForm();
+            var pageNode = GetPageNode();
+            string selectedText = "";
 
-            MainForm form = new MainForm(tag, outFileName);
+            if (pageNode != null)
+            {
+                var existingPageId = pageNode.Attribute("ID").Value;
+                selectedText = GetSelectedText(existingPageId);
+            }
+
+                MainForm form = new MainForm(tag, outFileName, selectedText);
 
             System.Windows.Forms.Application.Run(form);
             //}
@@ -195,23 +203,7 @@ namespace NoteHighlightAddin
             // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
 
-            string notebookXml;
-            try
-            {
-                OneNoteApplication.GetHierarchy(null, HierarchyScope.hsPages, out notebookXml, XMLSchema.xs2013);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Exception from onApp.GetHierarchy:" + ex.Message);
-                return;
-            }
-
-            var doc = XDocument.Parse(notebookXml);
-            ns = doc.Root.Name.Namespace;
-
-            var pageNode = doc.Descendants(ns + "Page")
-                              .Where(n => n.Attribute("isCurrentlyViewed") != null && n.Attribute("isCurrentlyViewed").Value == "true")
-                              .FirstOrDefault();
+            var pageNode = GetPageNode();
 
             if (pageNode != null)
             {
@@ -224,6 +216,28 @@ namespace NoteHighlightAddin
 
                 OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
             }
+        }
+
+        XElement GetPageNode()
+        {
+            string notebookXml;
+            try
+            {
+                OneNoteApplication.GetHierarchy(null, HierarchyScope.hsPages, out notebookXml, XMLSchema.xs2013);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Exception from onApp.GetHierarchy:" + ex.Message);
+                return null; ;
+            }
+
+            var doc = XDocument.Parse(notebookXml);
+            ns = doc.Root.Name.Namespace;
+
+            var pageNode = doc.Descendants(ns + "Page")
+                              .Where(n => n.Attribute("isCurrentlyViewed") != null && n.Attribute("isCurrentlyViewed").Value == "true")
+                              .FirstOrDefault();
+            return pageNode;
         }
 
         /// <summary>
@@ -249,6 +263,27 @@ namespace NoteHighlightAddin
                 }
             }
             return null;
+        }
+
+        private string GetSelectedText(string pageID)
+        {
+            string pageXml;
+            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
+
+            var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
+                                               .Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")
+                                               .FirstOrDefault();
+            
+            StringBuilder sb = new StringBuilder();
+            if (node != null)
+            {
+                var attrPos = node.Descendants(ns + "OEChildren").Descendants(ns + "T");
+                foreach (var line in attrPos)
+                {
+                    sb.AppendLine(line.Value);
+                }
+            }
+            return sb.ToString();
         }
 
         /// <summary>

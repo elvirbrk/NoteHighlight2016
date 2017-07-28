@@ -50,12 +50,13 @@ namespace NoteHighlightAddin
 
         #region -- Constructor --
 
-        public MainForm(string codeType, string fileName)
+        public MainForm(string codeType, string fileName, string selectedText)
         {
             _codeType = codeType;
             _fileName = fileName;
             InitializeComponent();
             LoadThemes();
+            txtCode.Text = selectedText;
 
         }
 
