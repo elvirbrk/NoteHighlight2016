@@ -75,6 +75,10 @@
     <Reference Include="extensibility, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.5.1.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.5.1\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="ICSharpCode.TextEditor, Version=3.0.0.3437, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Lib\ICSharpCode.TextEditor.dll</HintPath>
@@ -159,6 +163,7 @@
     <Content Include="Resources\SQL.png" />
     <Content Include="Resources\XHTML.png" />
     <Content Include="Resources\XML.png" />
+    <None Include="packages.config" />
     <None Include="ribbon.xml">
       <SubType>Designer</SubType>
     </None>
