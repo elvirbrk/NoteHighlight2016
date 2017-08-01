@@ -306,10 +306,24 @@ namespace NoteHighlightAddin
             StringBuilder sb = new StringBuilder();
             if (node != null)
             {
-                var attrPos = node.Descendants(ns + "OEChildren").Descendants(ns + "T");
+                var table = node.Descendants(ns + "Table").FirstOrDefault();
+
+                System.Collections.Generic.IEnumerable<XElement> attrPos;
+                if (table == null)
+                {
+                    attrPos = node.Descendants(ns + "OEChildren").Descendants(ns + "T");
+                }
+                else
+                {
+                    attrPos = table.Descendants(ns + "Cell").LastOrDefault().Descendants(ns + "T");
+                }
+
                 foreach (var line in attrPos)
                 {
-                    sb.AppendLine(line.Value);
+                    var htmlDocument = new HtmlAgilityPack.HtmlDocument();
+                    htmlDocument.LoadHtml(line.Value);
+                    
+                    sb.AppendLine(HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
                 }
             }
             return sb.ToString();
