@@ -141,11 +141,14 @@ namespace NoteHighlightAddin
             //TestForm t = new TestForm();
             var pageNode = GetPageNode();
             string selectedText = "";
+            XElement outline = null;
 
             if (pageNode != null)
             {
                 var existingPageId = pageNode.Attribute("ID").Value;
                 selectedText = GetSelectedText(existingPageId);
+
+                outline = GetOutline(existingPageId);
             }
 
                 MainForm form = new MainForm(tag, outFileName, selectedText);
@@ -162,7 +165,7 @@ namespace NoteHighlightAddin
 
             if (File.Exists(fileName))
             {
-                InsertHighLightCodeToCurrentSide(fileName, form.Parameters);
+                InsertHighLightCodeToCurrentSide(fileName, form.Parameters, outline);
             }
         }
 
@@ -198,7 +201,7 @@ namespace NoteHighlightAddin
         /// 插入 HighLight Code 至滑鼠游標的位置
         /// Insert HighLight Code To Mouse Position  
         /// </summary>
-        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters)
+        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters, XElement outline)
         {
             // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
@@ -208,10 +211,13 @@ namespace NoteHighlightAddin
             if (pageNode != null)
             {
                 var existingPageId = pageNode.Attribute("ID").Value;
+                string[] position=null;
+                if (outline == null)
+                {
+                    position = GetMousePointPosition(existingPageId);
+                }
 
-                string[] position = GetMousePointPosition(existingPageId);
-
-                var page = InsertHighLightCode(htmlContent, position, parameters);
+                var page = InsertHighLightCode(htmlContent, position, parameters, outline);
                 page.Root.SetAttributeValue("ID", existingPageId);
 
                 OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -265,6 +271,29 @@ namespace NoteHighlightAddin
             return null;
         }
 
+        private XElement GetOutline(string pageID)
+        {
+            string pageXml;
+            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
+
+            var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
+                                               .Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")
+                                               .FirstOrDefault();
+            //if (node != null)
+            //{
+            //    var attrPos = node.Descendants(ns + "Position").FirstOrDefault();
+            //    if (attrPos != null)
+            //    {
+            //        var x = attrPos.Attribute("x").Value;
+            //        var y = attrPos.Attribute("y").Value;
+            //        return new string[] { x, y };
+            //    }
+            //}
+            //return null;
+
+            return node;
+        }
+
         private string GetSelectedText(string pageID)
         {
             string pageXml;
@@ -290,7 +319,7 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline)
         {
             XElement children = new XElement(ns + "OEChildren");
 
@@ -399,29 +428,46 @@ namespace NoteHighlightAddin
             children.Add(new XElement(ns + "OE",
                                 table));
 
-            XElement outline = new XElement(ns + "Outline");
-
-            if (position != null && position.Length == 2)
+            bool update = false;
+            if (outline == null)
             {
-                XElement pos = new XElement(ns + "Position");
-                pos.Add(new XAttribute("x", position[0]));
-                pos.Add(new XAttribute("y", position[1]));
-                outline.Add(pos);
+                outline = new XElement(ns + "Outline");
 
-                XElement size = new XElement(ns + "Size");
-                size.Add(new XAttribute("width", "1600"));
-                size.Add(new XAttribute("height", "200"));
-                outline.Add(size);
+                if (position != null && position.Length == 2)
+                {
+                    XElement pos = new XElement(ns + "Position");
+                    pos.Add(new XAttribute("x", position[0]));
+                    pos.Add(new XAttribute("y", position[1]));
+                    outline.Add(pos);
+
+                    XElement size = new XElement(ns + "Size");
+                    size.Add(new XAttribute("width", "1600"));
+                    size.Add(new XAttribute("height", "200"));
+                    outline.Add(size);
+                }
             }
+            else
+            {
+                update = true;
+                outline.RemoveNodes();
+            }
+
             outline.Add(children);
+            if (update)
+            {
+                return outline.Parent.Document;
+            }
+            else
+            {
+                XElement page = new XElement(ns + "Page");
+                page.Add(outline);
 
-            XElement page = new XElement(ns + "Page");
-            page.Add(outline);
+                XDocument doc = new XDocument();
+                doc.Add(page);
+                return doc;
+            }
 
-            XDocument doc = new XDocument();
-            doc.Add(page);
-
-            return doc;
+            
         }
 
     }
