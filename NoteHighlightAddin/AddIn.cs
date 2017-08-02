@@ -149,7 +149,10 @@ namespace NoteHighlightAddin
                 var existingPageId = pageNode.Attribute("ID").Value;
                 selectedText = GetSelectedText(existingPageId, out selectedTextFormated);
 
-                outline = GetOutline(existingPageId);
+                if (selectedText.Trim() != "")
+                {
+                    outline = GetOutline(existingPageId);
+                }
             }
 
                 MainForm form = new MainForm(tag, outFileName, selectedText);
@@ -475,12 +478,11 @@ namespace NoteHighlightAddin
                 }
                 else
                 {
-                    outline.Descendants().Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
-                    outline.Descendants().Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
+                    outline.Descendants(ns+"T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
+                    outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
                 }
             }
 
-            
             if (update)
             {
                 return outline.Parent.Document;
