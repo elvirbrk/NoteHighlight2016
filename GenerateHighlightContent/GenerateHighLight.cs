@@ -110,7 +110,7 @@ namespace GenerateHighlightContent
 
                 sb.Append(item.Key);
                 if (!String.IsNullOrEmpty(item.Value))
-                    sb.Append(" " + item.Value);
+                    sb.Append(" " + (item.Value.Contains(" ") ? String.Format("\"{0}\"", item.Value) : item.Value));
                 sb.Append(" ");
             }
         }
