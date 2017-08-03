@@ -4,19 +4,40 @@
         <tabs>
             <tab id="tabNoteHighlight" label="NoteHighlight">
                 <group id="groupLanguage" label="Language">
-                  <button id="buttonCSharp" label="C#" size="large" screentip="Entry C# Code" onAction="AddInButtonClicked" tag="cs" keytip="C" image="CSharp.png"/>
-                  <button id="buttonSQL" label="SQL" size="large" screentip="Entry SQL Code" onAction="AddInButtonClicked" tag="sql" keytip="S"  image="SQL.png"/>
-                  <button id="buttonCSS" label="CSS" size="large" screentip="Entry CSS Code" onAction="AddInButtonClicked" image="CSS.png" tag="css" keytip="E"/>
-                  <button id="buttonJS" label="JS" size="large" screentip="Entry JS Code" onAction="AddInButtonClicked" tag="js" keytip="J" image="JS.png"/>
-                  <button id="buttonHTML" label="HTML" size="large" screentip="Entry HTML Code" onAction="AddInButtonClicked" tag="html" keytip="H"  image="HTML.png"/>
-                  <button id="buttonXML" label="XML" size="large" screentip="Entry XML Code" onAction="AddInButtonClicked" tag="xml" keytip="X"  image="XML.png"/>
-                  <button id="buttonJAVA" label="JAVA" size="large" screentip="Entry JAVA Code" onAction="AddInButtonClicked" tag="java" keytip="V"  image="JAVA.png"/>
-                  <button id="buttonPHP" label="PHP" size="large" screentip="Entry PHP Code" onAction="AddInButtonClicked" tag="php" keytip="P"  image="PHP.png"/>
-                  <button id="buttonPerl" label="Perl" size="large" screentip="Entry Perl Code" onAction="AddInButtonClicked" tag="perl" keytip="B"  image="Perl.png"/>
-                  <button id="buttonPython" label="Python" size="large" screentip="Entry Python Code" onAction="AddInButtonClicked" tag="py" keytip="A"  image="Python.png"/>
-                  <button id="buttonRuby" label="Ruby" size="large" screentip="Entry Ruby Code" onAction="AddInButtonClicked" tag="ruby" keytip="R"  image="Ruby.png"/>
-                  <button id="buttonCpp" label="CPP" size="large" screentip="Entry C++ Code" onAction="AddInButtonClicked" tag="c" keytip="D"  image="CPP.png"/>
-                  <button id="buttonPS" label="PS" size="large" screentip="Entry PS Code" onAction="AddInButtonClicked" tag="ps"  image="CPP.png" visible="false"/>
+                  <button id="buttonCSharp" label="C#" size="large" screentip="Enter C# Code" onAction="AddInButtonClicked" tag="cs" keytip="C" image="CSharp.png" visible="true"/>
+                  <button id="buttonSQL" label="SQL" size="large" screentip="Enter SQL Code" onAction="AddInButtonClicked" tag="sql" keytip="S"  image="SQL.png" visible="true"/>
+                  <button id="buttonCSS" label="CSS" size="large" screentip="Enter CSS Code" onAction="AddInButtonClicked" image="CSS.png" tag="css" keytip="E" visible="true"/>
+                  <button id="buttonJS" label="JS" size="large" screentip="Enter JS Code" onAction="AddInButtonClicked" tag="js" keytip="J" image="JS.png" visible="true"/>
+                  <button id="buttonHTML" label="HTML" size="large" screentip="Enter HTML Code" onAction="AddInButtonClicked" tag="html" keytip="H"  image="HTML.png" visible="true"/>
+                  <button id="buttonXML" label="XML" size="large" screentip="Enter XML Code" onAction="AddInButtonClicked" tag="xml" keytip="X"  image="XML.png" visible="true"/>
+                  <button id="buttonJAVA" label="JAVA" size="large" screentip="Enter JAVA Code" onAction="AddInButtonClicked" tag="java" keytip="V"  image="JAVA.png" visible="true"/>
+                  <button id="buttonPHP" label="PHP" size="large" screentip="Enter PHP Code" onAction="AddInButtonClicked" tag="php" keytip="P"  image="PHP.png" visible="true"/>
+                  <button id="buttonPerl" label="Perl" size="large" screentip="Enter Perl Code" onAction="AddInButtonClicked" tag="perl" keytip="B"  image="Perl.png" visible="true"/>
+                  <button id="buttonPython" label="Python" size="large" screentip="Enter Python Code" onAction="AddInButtonClicked" tag="py" keytip="A"  image="Python.png" visible="true"/>
+                  <button id="buttonRuby" label="Ruby" size="large" screentip="Enter Ruby Code" onAction="AddInButtonClicked" tag="ruby" keytip="R"  image="Ruby.png" visible="true"/>
+                  <button id="buttonCpp" label="CPP" size="large" screentip="Enter C++ Code" onAction="AddInButtonClicked" tag="c" keytip="D"  image="CPP.png" visible="true"/>
+                  
+                  <button id="buttonDOSBatch" label="DOS Batch" size="large" screentip="Enter DOS Batch Code" onAction="AddInButtonClicked" tag="bat"  image="Other.png" visible="false"/>
+                  <button id="buttonClojure" label="Clojure" size="large" screentip="Enter Clojure Code" onAction="AddInButtonClicked" tag="clojure"  image="Other.png" visible="false"/>
+                  <button id="buttonConfig" label="Generic config" size="large" screentip="Enter Generic config Code" onAction="AddInButtonClicked" tag="conf"  image="Other.png" visible="false"/>
+                  <button id="buttonFS" label="F#" size="large" screentip="Enter F# Code" onAction="AddInButtonClicked" tag="fsharp"  image="Other.png" visible="false"/>
+                  <button id="buttonGo" label="Go" size="large" screentip="Enter Go Code" onAction="AddInButtonClicked" tag="go"  image="Other.png" visible="false"/>
+                  <button id="buttonHaskell" label="Haskell" size="large" screentip="Enter Haskell Code" onAction="AddInButtonClicked" tag="haskell"  image="Other.png" visible="false"/>
+                  <button id="buttonJSON" label="JSON" size="large" screentip="Enter JSON Code" onAction="AddInButtonClicked" tag="json"  image="Other.png" visible="false"/>
+                  <button id="buttonLisp" label="Lisp" size="large" screentip="Enter Lisp Code" onAction="AddInButtonClicked" tag="lisp"  image="Other.png" visible="false"/>
+                  <button id="buttonLogtalk" label="Logtalk" size="large" screentip="Enter Logtalk Code" onAction="AddInButtonClicked" tag="logtalk"  image="Other.png" visible="false"/>
+                  <button id="buttonLua" label="Lua" size="large" screentip="Enter Lua Code" onAction="AddInButtonClicked" tag="lua"  image="Other.png" visible="false"/>
+                  <button id="buttonMake" label="Make" size="large" screentip="Enter Make Code" onAction="AddInButtonClicked" tag="make"  image="Other.png" visible="false"/>
+                  <button id="buttonMatlab" label="Matlab" size="large" screentip="Enter Matlab Code" onAction="AddInButtonClicked" tag="matlab"  image="Other.png" visible="false"/>
+                  <button id="buttonMarkdown" label="Markdown" size="large" screentip="Enter Markdown Code" onAction="AddInButtonClicked" tag="md"  image="Other.png" visible="false"/>
+                  <button id="buttonMSSQL" label="MSSQL" size="large" screentip="Enter MSSQL Code" onAction="AddInButtonClicked" tag="mssql"  image="SQL.png" visible="false"/>
+                  <button id="buttonObjectiveC" label="Objective C" size="large" screentip="Enter Objective C Code" onAction="AddInButtonClicked" tag="objc"  image="CPP.png" visible="false"/>
+                  <button id="buttonPascal" label="Pascal" size="large" screentip="Enter Pascal Code" onAction="AddInButtonClicked" tag="pas"  image="Other.png" visible="false"/>
+                  <button id="buttonPowerShell" label="PowerShell" size="large" screentip="Enter PowerShell Code" onAction="AddInButtonClicked" tag="ps1"  image="Other.png" visible="false"/>
+                  <button id="buttonR" label="R" size="large" screentip="Enter R Code" onAction="AddInButtonClicked" tag="r"  image="Other.png" visible="false"/>
+                  <button id="buttonBash" label="Bash" size="large" screentip="Enter Bash Code" onAction="AddInButtonClicked" tag="sh"  image="Other.png" visible="false"/>
+                  <button id="buttonSwift" label="Swift" size="large" screentip="Enter Swift Code" onAction="AddInButtonClicked" tag="swift"  image="Other.png" visible="false"/>
+                  <button id="buttonVisaulBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
 				</group>
             </tab>
         </tabs>
