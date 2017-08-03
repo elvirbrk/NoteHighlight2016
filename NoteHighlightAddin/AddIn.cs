@@ -332,7 +332,7 @@ namespace NoteHighlightAddin
                     sb.AppendLine(HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
                 }
             }
-            return sb.ToString();
+            return sb.ToString().TrimEnd('\r','\n');
         }
 
         /// <summary>
@@ -479,7 +479,7 @@ namespace NoteHighlightAddin
                 else
                 {
                     outline.Descendants(ns+"T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
-                    outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
+                    outline.Descendants(ns + "OE").Where(t => t.Elements(ns+"T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
                 }
             }
 
