@@ -142,13 +142,17 @@ namespace NoteHighlightAddin
             var pageNode = GetPageNode();
             string selectedText = "";
             XElement outline = null;
+            bool selectedTextFormated = false;
 
             if (pageNode != null)
             {
                 var existingPageId = pageNode.Attribute("ID").Value;
-                selectedText = GetSelectedText(existingPageId);
+                selectedText = GetSelectedText(existingPageId, out selectedTextFormated);
 
-                outline = GetOutline(existingPageId);
+                if (selectedText.Trim() != "")
+                {
+                    outline = GetOutline(existingPageId);
+                }
             }
 
                 MainForm form = new MainForm(tag, outFileName, selectedText);
@@ -165,7 +169,7 @@ namespace NoteHighlightAddin
 
             if (File.Exists(fileName))
             {
-                InsertHighLightCodeToCurrentSide(fileName, form.Parameters, outline);
+                InsertHighLightCodeToCurrentSide(fileName, form.Parameters, outline, selectedTextFormated);
             }
         }
 
@@ -201,7 +205,7 @@ namespace NoteHighlightAddin
         /// 插入 HighLight Code 至滑鼠游標的位置
         /// Insert HighLight Code To Mouse Position  
         /// </summary>
-        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters, XElement outline)
+        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters, XElement outline, bool selectedTextFormated)
         {
             // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
             string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
@@ -217,7 +221,7 @@ namespace NoteHighlightAddin
                     position = GetMousePointPosition(existingPageId);
                 }
 
-                var page = InsertHighLightCode(htmlContent, position, parameters, outline);
+                var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated);
                 page.Root.SetAttributeValue("ID", existingPageId);
 
                 OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -277,7 +281,7 @@ namespace NoteHighlightAddin
             OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
 
             var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
-                                               .Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")
+                                               .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
                                                .FirstOrDefault();
             //if (node != null)
             //{
@@ -294,28 +298,30 @@ namespace NoteHighlightAddin
             return node;
         }
 
-        private string GetSelectedText(string pageID)
+        private string GetSelectedText(string pageID, out bool selectedTextFormated)
         {
             string pageXml;
             OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
 
             var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
-                                               .Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")
+                                               .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
                                                .FirstOrDefault();
             
             StringBuilder sb = new StringBuilder();
+            selectedTextFormated = false;
             if (node != null)
             {
-                var table = node.Descendants(ns + "Table").FirstOrDefault();
+                var table = node.Descendants(ns + "Table").Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial")).FirstOrDefault();
 
                 System.Collections.Generic.IEnumerable<XElement> attrPos;
                 if (table == null)
                 {
-                    attrPos = node.Descendants(ns + "OEChildren").Descendants(ns + "T");
+                    attrPos = node.Descendants(ns + "OEChildren").Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all");
                 }
                 else
                 {
-                    attrPos = table.Descendants(ns + "Cell").LastOrDefault().Descendants(ns + "T");
+                    attrPos = table.Descendants(ns + "Cell").LastOrDefault().Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all");
+                    selectedTextFormated = true;
                 }
 
                 foreach (var line in attrPos)
@@ -333,7 +339,7 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated)
         {
             XElement children = new XElement(ns + "OEChildren");
 
@@ -459,14 +465,24 @@ namespace NoteHighlightAddin
                     size.Add(new XAttribute("height", "200"));
                     outline.Add(size);
                 }
+                outline.Add(children);
             }
             else
             {
                 update = true;
-                outline.RemoveNodes();
+                if (selectedTextFormated)
+                {
+                    outline.Descendants(ns+"Table").Where(n => n.Attribute("selected") != null && 
+                                        (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial")).FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
+                    //outline.Descendants().Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
+                }
+                else
+                {
+                    outline.Descendants(ns+"T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
+                    outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
+                }
             }
 
-            outline.Add(children);
             if (update)
             {
                 return outline.Parent.Document;
