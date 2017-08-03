@@ -142,6 +142,16 @@ namespace NoteHighlightAddin.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Other {
+            get {
+                object obj = ResourceManager.GetObject("Other", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Perl {
             get {
                 object obj = ResourceManager.GetObject("Perl", resourceCulture);
@@ -176,8 +186,8 @@ namespace NoteHighlightAddin.Properties {
         ///        &lt;tabs&gt;
         ///            &lt;tab id=&quot;tabNoteHighlight&quot; label=&quot;NoteHighlight&quot;&gt;
         ///                &lt;group id=&quot;groupLanguage&quot; label=&quot;Language&quot;&gt;
-        ///                  &lt;button id=&quot;buttonCSharp&quot; label=&quot;C#&quot; size=&quot;large&quot; screentip=&quot;Entry C# Code&quot; onAction=&quot;AddInButtonClicked&quot; tag=&quot;cs&quot; keytip=&quot;C&quot; image=&quot;CSharp.png&quot;/&gt;
-        ///                  &lt;button id=&quot;buttonSQL&quot; label=&quot;SQL&quot; size [rest of string was truncated]&quot;;.
+        ///                  &lt;button id=&quot;buttonCSharp&quot; label=&quot;C#&quot; size=&quot;large&quot; screentip=&quot;Enter C# Code&quot; onAction=&quot;AddInButtonClicked&quot; tag=&quot;cs&quot; keytip=&quot;C&quot; image=&quot;CSharp.png&quot; visible=&quot;true&quot;/&gt;
+        ///                  &lt;button id=&quot;buttonSQL&quot; l [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ribbon {
             get {
