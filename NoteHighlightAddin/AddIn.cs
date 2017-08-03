@@ -340,7 +340,7 @@ namespace NoteHighlightAddin
                 System.Collections.Generic.IEnumerable<XElement> attrPos;
                 if (table == null)
                 {
-                    attrPos = node.Descendants(ns + "OEChildren").Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all");
+                    attrPos = node.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all");
                 }
                 else
                 {
