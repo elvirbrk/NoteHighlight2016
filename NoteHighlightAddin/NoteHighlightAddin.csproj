@@ -156,6 +156,7 @@
     <Content Include="Resources\JS.png" />
     <Content Include="Resources\Logo.ico" />
     <Content Include="Resources\Logo.png" />
+    <Content Include="Resources\Other.png" />
     <Content Include="Resources\Perl.png" />
     <Content Include="Resources\PHP.png" />
     <Content Include="Resources\Python.png" />
