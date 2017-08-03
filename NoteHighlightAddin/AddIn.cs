@@ -25,6 +25,7 @@ using Helper;
 using System.Threading;
 using System.Web;
 using GenerateHighlightContent;
+using System.Configuration;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -55,10 +56,33 @@ namespace NoteHighlightAddin
 		/// <returns></returns>
 		public string GetCustomUI(string RibbonID)
 		{
-			return Properties.Resources.ribbon;
-		}
+            return LoadRibbon();
 
-		public void OnAddInsUpdate(ref Array custom)
+        }
+
+        private string LoadRibbon()
+        {
+            try
+            {
+
+                var workingDirectory = Path.Combine(ProcessHelper.GetDirectoryFromPath(Assembly.GetCallingAssembly().Location), "ribbon.xml");
+
+                string file = File.ReadAllText(workingDirectory);
+
+                return file;
+
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from Addin.LoadRibbon:" + e.Message);
+                return "";
+            }
+
+
+
+        }
+
+        public void OnAddInsUpdate(ref Array custom)
 		{
 		}
 

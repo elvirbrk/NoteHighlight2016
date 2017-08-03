@@ -16,6 +16,7 @@
                   <button id="buttonPython" label="Python" size="large" screentip="Entry Python Code" onAction="AddInButtonClicked" tag="py" keytip="A"  image="Python.png"/>
                   <button id="buttonRuby" label="Ruby" size="large" screentip="Entry Ruby Code" onAction="AddInButtonClicked" tag="ruby" keytip="R"  image="Ruby.png"/>
                   <button id="buttonCpp" label="CPP" size="large" screentip="Entry C++ Code" onAction="AddInButtonClicked" tag="c" keytip="D"  image="CPP.png"/>
+                  <button id="buttonPS" label="PS" size="large" screentip="Entry PS Code" onAction="AddInButtonClicked" tag="ps"  image="CPP.png" visible="false"/>
 				</group>
             </tab>
         </tabs>

@@ -164,9 +164,10 @@
     <Content Include="Resources\XHTML.png" />
     <Content Include="Resources\XML.png" />
     <None Include="packages.config" />
-    <None Include="ribbon.xml">
+    <Content Include="ribbon.xml">
       <SubType>Designer</SubType>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
