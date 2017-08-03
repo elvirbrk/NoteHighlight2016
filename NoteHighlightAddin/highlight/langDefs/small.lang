@@ -1,0 +1,32 @@
+
+Description="SMALL"
+
+Keywords={
+  { Id=1,
+    List={"assert", "break", "case", "char", "const", "continue", "default", 
+    "defined", "do", "else", "enum", "exit", "for", "forward", "goto", "if", 
+    "native", "new", "operator", "public", "return", "sizeof", "sleep", "static", 
+    "stock", "switch", "while"},
+  },
+  { Id=2,
+    List={"char", "defined", "sizeof"},
+  },
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+IgnoreCase=true
+
+Comments={
+  { Block=false,
+    Delimiter= { [[\/\/]] },
+  },
+  { Block=true,
+    Nested=false,
+    Delimiter= { [[\/\*]],[[\*\/]],}
+  }
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\?]]

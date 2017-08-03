@@ -1,0 +1,11 @@
+
+
+dofile(HL_LANG_DIR.."haskell.lang")
+
+Description="Haskell LHS"
+
+Comments={
+  { Block=false,
+    Delimiter= { [[^\s*([^\>].*)]] },
+  },
+}

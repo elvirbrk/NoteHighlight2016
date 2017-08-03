@@ -1,0 +1,22 @@
+Description="Dockerfile"
+
+Keywords={
+  { Id=1,
+    List={ "from", "run", "cmd", "label", "maintainer", "expose", "env", "add", "copy", "entrypoint", "volume", "user", "workdir", "arg", "onbuild", "stopsignal", "healthcheck", "shell" }
+  },
+ 
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+IgnoreCase=true
+
+Comments={
+  { Block=false,
+    Delimiter= { [[#]] },
+  },
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\@]]

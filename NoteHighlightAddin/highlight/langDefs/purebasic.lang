@@ -1,0 +1,140 @@
+--[[******************************************************************************
+    *                                                                            *
+    *                       PureBASIC Language Definition                        *
+    *                                                                            *
+    *                             v1.3 - 2017/05/20                              *
+    *                                                                            *
+    ******************************************************************************
+    PureBASIC v5.00-5.60 -- This language definition emulates the way PureBASIC's
+    native IDE highlights its code, including inline ASM syntax coloring.
+    Keywords from all PureBASIC versions (from 5.00 up to current) are added to
+    the list (deprecated tokens are preserved) to ensure that any code written 
+    for PB >=5.00 will be parsed and highlighted correctcly.
+    ------------------------------------------------------------------------------
+    Written by Tristano Ajmone:
+        <tajmone@gmail.com>
+        https://github.com/tajmone
+    Released into the public domain according to the Unlicense licsense:
+        http://unlicense.org/
+  ]]
+
+Description="PureBASIC"
+
+IgnoreCase=false
+
+Keywords={
+  { Id=1,   -- PureBASIC Keywords > PB IDE color: #006666 (Blue Stone) + Bold
+    List={
+        -- Keywords list built by parsing the tokens inside PureBASIC SDK's
+        -- "SyntaxHilighting.dll" (from each PureBASIC version)...
+        "Align", "And", "Array", "As", "Break", "CallDebugger", "Case", "CompilerCase", "CompilerDefault",
+        "CompilerElse", "CompilerElseIf", "CompilerEndIf", "CompilerEndSelect", "CompilerError",
+        "CompilerIf", "CompilerSelect", "CompilerWarning", "Continue", "Data", "DataSection", "Debug",
+        "DebugLevel", "Declare", "DeclareC", "DeclareCDLL", "DeclareDLL", "DeclareModule", "Default",
+        "Define", "Dim", "DisableASM", "DisableDebugger", "DisableExplicit", "Else", "ElseIf", "EnableASM",
+        "EnableDebugger", "EnableExplicit", "End", "EndDataSection", "EndDeclareModule", "EndEnumeration",
+        "EndIf", "EndImport", "EndInterface", "EndMacro", "EndModule", "EndProcedure", "EndSelect",
+        "EndStructure", "EndStructureUnion", "EndWith", "Enumeration", "EnumerationBinary", "Extends",
+        "FakeReturn", "For", "ForEach", "ForEver", "Global", "Gosub", "Goto", "If", "Import", "ImportC",
+        "IncludeBinary", "IncludeFile", "IncludePath", "Interface", "List", "Macro", "MacroExpandedCount",
+        "Map", "Module", "NewList", "NewMap", "Next", "Not", "Or", "Procedure", "ProcedureC",
+        "ProcedureCDLL", "ProcedureDLL", "ProcedureReturn", "Protected", "Prototype", "PrototypeC", "ReDim",
+        "Read", "Repeat", "Restore", "Return", "Runtime", "Select", "Shared", "Static", "Step", "Structure",
+        "StructureUnion", "Swap", "Threaded", "To", "UndefineMacro", "Until", "Until ", "UnuseModule",
+        "UseModule", "Wend", "While", "With", "XIncludeFile", "XOr",        },
+    },
+  { Id=2,   -- Constants > PB IDE color: #924B72 (Cannon Pink)
+    Regex=[[ (#[a-zA-Z_]\w*\$?) ]]
+    },
+  { Id=2,   -- Inline ASM > PB IDE color: #924B72 (Cannon Pink)
+    Regex=[[ ^\s*(![^;]*) ]], Group=1
+    },  { Id=2,   -- ASM Keywords > PB IDE color: #924B72 (Cannon Pink)
+    List={
+        -- Keywords list built by parsing the tokens inside PureBASIC SDK's
+        -- "SyntaxHilighting.dll" (from each PureBASIC version)...
+        "AAA", "AAD", "AAM", "AAS", "ADC", "ADD", "AND", "ARPL", "BOUND", "BSF", "BSR", "BSWAP", "BT",
+        "BTC", "BTR", "BTS", "CALL", "CBW", "CDQ", "CLC", "CLD", "CLI", "CLTS", "CMC", "CMOVA", "CMOVAE",
+        "CMOVB", "CMOVBE", "CMOVC", "CMOVE", "CMOVG", "CMOVGE", "CMOVL", "CMOVLE", "CMOVNA", "CMOVNAE",
+        "CMOVNB", "CMOVNBE", "CMOVNC", "CMOVNE", "CMOVNG", "CMOVNGE", "CMOVNL", "CMOVNLE", "CMOVNO",
+        "CMOVNP", "CMOVNS", "CMOVNZ", "CMOVO", "CMOVP", "CMOVPE", "CMOVPO", "CMOVS", "CMOVZ", "CMP", "CMPS",
+        "CMPSB", "CMPSD", "CMPSW", "CMPXCHG", "CMPXCHG8B", "CWD", "CWDE", "DAA", "DAS", "DB", "DD", "DEC",
+        "DIV", "DW", "EMMS", "ENTER", "ESC", "F2XM1", "FABS", "FADD", "FADDP", "FBLD", "FBSTP", "FCHS",
+        "FCLEX", "FCMOVB", "FCMOVBE", "FCMOVE", "FCMOVNB", "FCMOVNBE", "FCMOVNE", "FCMOVNU", "FCMOVU",
+        "FCOM", "FCOMI", "FCOMIP", "FCOMP", "FCOMPP", "FCOS", "FDECSTP", "FDIV", "FDIVP", "FDIVR", "FDIVRP",
+        "FFREE", "FIADD", "FICOM", "FICOMP", "FIDIV", "FIDIVR", "FILD", "FIMUL", "FINCSTP", "FINIT", "FIST",
+        "FISTP", "FISUB", "FISUBR", "FLD", "FLD1", "FLDCW", "FLDENV", "FLDL2E", "FLDL2T", "FLDLG2",
+        "FLDLN2", "FLDPI", "FLDZ", "FMUL", "FMULP", "FNCLEX", "FNINIT", "FNOP", "FNSAVE", "FNSTCW",
+        "FNSTENV", "FNSTSW", "FPATAN", "FPREM", "FPREM1", "FPTAN", "FRNDINT", "FRSTOR", "FSAVE", "FSCALE",
+        "FSETPM", "FSIN", "FSINCOS", "FSQRT", "FST", "FSTCW", "FSTENV", "FSTP", "FSTSW", "FSUB", "FSUBP",
+        "FSUBR", "FSUBRP", "FTST", "FUCOM", "FUCOMI", "FUCOMIP", "FUCOMP", "FUCOMPP", "FWAIT", "FXAM",
+        "FXCH", "FXTRACT", "FYL2X", "FYL2XP1", "HLT", "IDIV", "IMUL", "IN", "INC", "INS", "INSB", "INSD",
+        "INSW", "INT", "INTO", "INVD", "INVLPG", "IRET", "IRETD", "JA", "JAE", "JB", "JBE", "JC", "JCXZ",
+        "JE", "JECXZ", "JG", "JGE", "JL", "JLE", "JMP", "JNA", "JNAE", "JNB", "JNBE", "JNC", "JNE", "JNG",
+        "JNGE", "JNL", "JNLE", "JNO", "JNP", "JNS", "JNZ", "JO", "JP", "JPE", "JPO", "JS", "JZ", "LAHF",
+        "LAR", "LDS", "LEA", "LEAVE", "LES", "LFS", "LGDT", "LGS", "LIDT", "LLDT", "LMSW", "LOCK", "LODS",
+        "LODSB", "LODSD", "LODSW", "LOOP", "LOOPE", "LOOPNE", "LOOPNZ", "LOOPZ", "LSL", "LSS", "LTR", "MOV",
+        "MOVD", "MOVQ", "MOVS", "MOVSB", "MOVSD", "MOVSW", "MOVSX", "MOVZX", "MUL", "NEG", "NOP", "NOT",
+        "OR", "OUT", "OUTS", "OUTSB", "OUTSD", "OUTSW", "PACKSSDW", "PACKSSWB", "PACKUSWB", "PADDB",
+        "PADDD", "PADDSB", "PADDSW", "PADDUSB", "PADDUSW", "PADDW", "PAND", "PANDN", "PCMPEQB", "PCMPEQD",
+        "PCMPEQW", "PCMPGTB", "PCMPGTD", "PCMPGTW", "PMADDWD", "PMULHW", "POP", "POPA", "POPAD", "POPF",
+        "POPFD", "POR", "PSLLD", "PSLLQ", "PSLLW", "PSRAD", "PSRAW", "PSRLD", "PSRLQ", "PSRLW", "PSUBB",
+        "PSUBD", "PSUBSB", "PSUBSW", "PSUBUSB", "PSUBUSW", "PSUBW", "PUNPCKHBW", "PUNPCKHDQ", "PUNPCKHWD",
+        "PUNPCKLBW", "PUNPCKLDQ", "PUNPCKLWD", "PUSH", "PUSHA", "PUSHAD", "PUSHF", "PUSHFD", "PXOR", "RCL",
+        "RCR", "RDMSR", "RDPMC", "RDTSC", "REP", "REPE", "REPNE", "REPNZ", "REPZ", "RET", "RETF", "ROL",
+        "ROR", "RSM", "SAHF", "SAL", "SAR", "SBB", "SCAS", "SCASB", "SCASD", "SCASW", "SETA", "SETAE",
+        "SETB", "SETBE", "SETC", "SETE", "SETG", "SETGE", "SETL", "SETLE", "SETNA", "SETNAE", "SETNB",
+        "SETNBE", "SETNC", "SETNE", "SETNG", "SETNGE", "SETNL", "SETNLE", "SETNO", "SETNP", "SETNS",
+        "SETNZ", "SETO", "SETP", "SETPE", "SETPO", "SETS", "SETZ", "SGDT", "SHL", "SHLD", "SHR", "SHRD",
+        "SIDT", "SLDT", "SMSW", "STC", "STD", "STI", "STOS", "STOSB", "STOSD", "STOSW", "STR", "SUB",
+        "TEST", "UD2", "VERR", "VERW", "WAIT", "WBINVD", "WRMSR", "XADD", "XCHG", "XLAT", "XLATB", "XOR" },
+    },
+  { Id=3,   -- Procedure calls > PB IDE color: #006666 (Blue Stone)
+    Regex=[[ ([a-zA-Z_]\w*)(?:(\s*)?\() ]],
+    Group=1
+    },
+  { Id=4,   -- Escaped-String Prefix ("~") > PB IDE color: same as strings
+    Regex=[[ (~)" ]], -- Without this hack the Escaped-Strings Prefix will not color like the rest of the string!
+    Group=1
+    },
+}
+
+Comments={  -- PB IDE color: #00AAAA (Persian Green/Tradewind)
+   { Block=false,
+     Nested=false,
+     Delimiter = { [[ ; ]] }
+   }
+}
+
+Strings={   -- PB IDE color: #0080FF (Azure Radiance)
+  Delimiter=[[ " ]],
+  RawPrefix=[[ ~ ]],
+  Escape=[=[\\[abfnrtv"\\]]=],
+}
+
+Operators=[[\&|<|>|\!|\||\=|\/|\*|\%|\+|\-|~]]
+
+--[[==============================================================================
+                                      CHANGELOG                                   
+    ==============================================================================
+   v1.3 - 2017/05/20 ASim 
+         - fixed single line comment delimiter
+   v1.2 - 2017/05/11 (PureBASIC v5.60)
+         - Added ASM keywords and support for inline ASM (via "!" syntax).
+         - BUG-FIXES:
+           - Repaired missing or mispelled PB Keywords (something went wrong in the
+             keywords list of the v1.1 of this lang definition, some tokens were
+             lost, other fused into a single token -- sorry about that).
+    v1.1 - 2017/04/30 (PureBASIC v5.60)
+         - Keywords list now built by extracting them from the PureBASIC SDK's
+           "SyntaxHilighting.dll" (from each PureBASIC version). Tokens from each
+           version are added to the list, and renamed or removed tokens are kept
+           for the sake of covering all versions of the language from PureBASIC
+           v5.00 upward. (NOTE: currently, there are no renamed or deprecated
+           tokens in the keywords list). For more info, see:
+           -- http://www.purebasic.fr/english/viewtopic.php?&p=506269
+           -- https://github.com/tajmone/purebasic-archives/tree/master/syntax-highlighting/guidelines
+    v1.0 - 2016/10/27 (PureBASIC v5.50)
+         - First release. Keywords list taken and adapted from GuShH's PureBasic 
+           language file for GeSHi:
+           -- https://github.com/easybook/geshi/blob/master/geshi/purebasic.php
+]]

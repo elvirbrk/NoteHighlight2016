@@ -1,0 +1,22 @@
+Description="GitHub Flavored Markdown"
+
+Keywords={
+  { Id=1,
+    Regex=[[^##?#?#?#?#?.+]],
+  },
+  { Id=2,
+    Regex=[[(\[.+?\])\(http]],
+  },
+  { Id=3,
+    Regex=[[\(http.+?\) ]],
+  },
+  { Id=4,
+    Regex=[[ ^\s*(\-|\*|>) ]],
+  },
+}
+
+Strings={
+  Delimiter=[[```|`]]
+}
+
+IgnoreCase=false

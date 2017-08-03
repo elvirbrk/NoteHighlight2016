@@ -1,0 +1,15 @@
+
+Description="BBcode"
+
+Keywords={
+  { Id=1,
+    Regex=[[ \[\/?\w+|\] ]],
+    Group=0,
+  },
+  { Id=2,
+    Regex=[=[#[[:xdigit:]]{6}]=],
+  },
+}
+
+IgnoreCase=true
+

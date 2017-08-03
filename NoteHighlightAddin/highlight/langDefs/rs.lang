@@ -1,0 +1,61 @@
+
+Description="Rust"
+
+Digits=[[ (?:0x|0o|0b)[0-9a-fA-F\_uif]+|\d*[\.]?[\d\_uif]+(?:[eE][\-\+][\d\_uif]+)? ]]
+
+Keywords={
+  {  Id=1,
+   List={"abstract","alignof","as","become","box",
+        "break","const","continue","crate","do",
+        "else","enum","extern","false","final",
+        "fn","for","if","impl","in",
+        "let","loop","macro","match","mod",
+        "move","mut","offsetof","override","priv",
+        "proc","pub","pure","ref","return",
+        "Self","self","sizeof","static","struct",
+        "super","trait","true","type","typeof",
+        "unsafe","unsized","use","virtual","where",
+        "while","yield"
+        }
+  },
+  { Id=2,
+    List= { "u8", "u16", "u32", "u64", "i8", "i16", "i32", "i64",
+            "f32", "f64", "usize", "isize", "char", "str", "struct","enum"
+          }
+  },
+  { Id=3,
+    List= { 
+          }
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  }
+}
+
+Strings = {
+  Delimiter=[["]],
+  RawPrefix="r",
+  Escape = [[ \\u\{\d{4}\}|\\x??|\\\w|\\[\'\\\"] ]]
+}
+
+Comments = {
+   { Block=true,
+     Nested=true,
+     Delimiter = { [[\/\*]], [[\*\/]] }
+   },
+   {
+     Block=false,
+     Delimiter = { [[//]] }
+   }
+}
+
+IgnoreCase=false
+
+PreProcessor = {
+  Prefix=[[#]],
+  Continuation="\\",
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^']]
+
+EnableIndentation=true

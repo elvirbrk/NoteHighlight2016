@@ -1,0 +1,30 @@
+
+Description="Extended Backus-Naur Form"
+
+Keywords={
+  { Id=1,
+    Regex=[[^\s*([^=]+)\s*=]],
+  },
+  { Id=2,
+    Regex=[[ [?][^?]+[?] ]],
+  },
+  { Id=3,
+    Regex=[[ [a-zA-Z][-a-zA-Z0-9]* ]],
+  },
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+Comments = {
+   { Block=true,
+     Nested=false,
+     Delimiter = { [[\(\*]], [[\*\)]] }
+   },
+
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\;|\-|\*]]

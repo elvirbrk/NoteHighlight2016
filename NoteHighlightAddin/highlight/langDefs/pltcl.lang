@@ -1,0 +1,8 @@
+-- Load PL/SQL definition
+dofile(HL_LANG_DIR.."sql.lang")
+
+Description="PL/Tcl"
+
+NestedSections = {
+  { Lang="tcl", Delimiter= { [[\$\$]], [[\$\$\s+LANGUAGE]] } },
+}

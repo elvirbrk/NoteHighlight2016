@@ -1,0 +1,14 @@
+
+Description="Plain text"
+
+Keywords={
+}
+
+Comments={
+}
+
+-- disable highlighting of numbers
+Digits = Identifiers
+
+
+EnableIndentation=true

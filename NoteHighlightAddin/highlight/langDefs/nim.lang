@@ -1,0 +1,51 @@
+
+Description="Nim"
+
+Digits=[[ (?:0[xXbBcCo])[0-9a-fA-F]+|\d+'?[iufd]\d*|\d*[\.\_]?\d+(?:[iu]\d+)?[lLuU]? ]]
+
+Keywords={
+  {  Id=1,
+   List={"addr", "and", "as", "asm", "atomic", "bind", "block", "break", "case", 
+        "cast", "concept", "const", "continue", "converter", "defer", "discard", 
+        "distinct", "div", "do", "elif", "else", "end", "enum", "except", "export", 
+        "finally", "for", "from", "func", "generic", "if", "import", "in", "include", 
+        "interface", "is", "isnot", "iterator", "let", "macro", "method", "mixin", 
+        "mod", "nil", "not", "notin", "object", "of", "or", "out", "proc", "ptr", 
+        "raise", "ref", "return", "shl", "shr", "static", "template", "try", "tuple", 
+        "type", "using", "var", "when", "while", "with", "without", "xor", "yield"
+        }
+  },
+  { Id=2,
+    List= {"int", "int8", "int16", "int32", "int64", "uint", "uint8", "uint16", "uint32", "uint64", 
+           "float", "float32", "float64", "char", "string", "pointer"}
+  },
+  { Id=3,
+    List= {}
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  }
+}
+
+Strings = {
+  Delimiter=[["""|"|'|`]],
+  RawPrefix="r",
+  Escape=[=[\\[ntvbrfa\\\?'"]|\\\d{3}|\\x[[:xdigit:]]{2}]=],
+}
+
+--allow #, ##, #[..]#, ##[..]##
+Comments = {
+  { Block=false,
+    Delimiter= { [=[ ##(?!\[)|#(?![\[#]) ]=] },
+  },
+   { Block=true,
+     Nested=true,
+     Delimiter = { [[ ##?\[ ]], [[ \]##? ]] }
+   }
+
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^]]
+

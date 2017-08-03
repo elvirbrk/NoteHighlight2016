@@ -1,0 +1,278 @@
+
+Description="Logtalk"
+
+Keywords={
+  { Id=1, --conditional compilation directives
+    Regex=[[^\s*:-\s((el)?if)(?=[(])]],
+    Group=1,
+  },
+  { Id=1, --conditional compilation directives
+    Regex=[[^\s*:-\s(e(lse|ndif))(?=\.)]],
+    Group=1,
+  },
+  { Id=2, --variables
+    Regex=[[(?<!0')[A-Z_]\w*]],
+  },
+  { Id=3, -- event handlers
+    Regex=[[(after|before)(?=[(])]],
+    Group=1,
+  },
+  { Id=4, --Logtalk message sending operators
+    Regex=[[(::|\^\^|<<|:)]],
+  },
+
+  { Id=1, --encapsulation directives
+    Regex=[[ ^\s*:-\s(category|protocol|object)(?=[(]) ]],
+    Group=1,
+  },
+  { Id=1,
+    Regex=[[ ^\s+((extend|i(mp(or|lemen)t|nstantiate)|specialize)s)(?=[(]) ]],
+   Group=1,
+  },
+  { Id=1,
+    Regex=[[ ^\s*:-\s(end_(protocol|category|object))(?=\.) ]],
+    Group=1,
+  },
+  { Id=1, -- entity and predicate directives
+    Regex=[[ ^\s*:-\s(calls|public|protected|private|encoding|ensure_loaded|export|info|initialization|alias|dynamic|discontiguous|meta_predicate|mode|module|multifile|reexport|set_logtalk_flag|set_prolog_flag|synchronized|op|uses|use_module)(?=[(]) ]],
+     Group=1,
+  },
+  { Id=1,
+    Regex=[[ ^\s*:-\s(dynamic|synchronized|threaded)(?=\.) ]],
+    Group=1,
+  },
+  { Id=3, --event handlers
+    Regex=[[ (after|before)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (parameter|this|se(lf|nder))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --refelection
+    Regex=[[ (current_predicate|predicate_property)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --dcgs
+    Regex=[[ (expand_(goal|term))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, 
+    Regex=[[ ((?:goal|term)_expansion|phrase)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --entity
+    Regex=[[ ((abolish|c(reate|urrent))_(object|protocol|category))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ ((object|protocol|category)_property)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --entity relations
+    Regex=[[ (complements_object)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (extends_(object|protocol|category))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (imp(lements_protocol|orts_category))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ ((instantiat|specializ)es_class)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --events
+    Regex=[[ (current_event|(abolish|define)_events)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --flags
+    Regex=[[ ((current|set)_logtalk_flag)(?=[\(]) ]],
+    Group=1
+  },
+  { Id=3, --compiling, loading, and library paths
+    Regex=[[ (logtalk_(compile|l(ibrary_path|oad)))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --database
+    Regex=[[ (clause|retract(all)?)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (a(bolish|ssert(a|z)))(?=[(])  ]],
+    Group=1
+  },
+  { Id=3, --control
+    Regex=[[ (call|catch|throw)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (fail|true) ]],
+    Group=1
+  },
+  { Id=3, --all solutions
+    Regex=[[ (bagof|setof|findall|forall)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --multi-threading meta-predicates
+    Regex=[[ (threaded(_(call|once|ignore|exit|peek|wait|notify))?)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --term unification
+    Regex=[[ (unify_with_occurs_check)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, -- term creation and decomposition
+    Regex=[[ (functor|arg|copy_term)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --evaluable functors
+    Regex=[[ (rem|mod|abs|sign)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (float(_(integer|fractional)_part)?)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (floor|truncate|round|ceiling)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (cos|atan|exp|log|s(in|qrt))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --term testing
+    Regex=[[ (var|atomic|atom|integer|float|compound|nonvar|number)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, -- stream selection and control
+    Regex=[[ ((curren|se)t_(in|out)put)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (open|close)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (flush_output)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (flush_output) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (stream_property|at_end_of_stream|set_stream_position)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (at_end_of_stream) ]],
+    Group=1
+  },
+  { Id=3, -- character and byte input/output
+    Regex=[[ (nl|(get|peek|put)_(byte|char|code))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (nl) ]],
+    Group=1
+  },
+  { Id=3, -- term input/output
+    Regex=[[ (read(_term)?)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (write(q|_(canonical|term))?)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ ((current_)?op)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ ((current_)?char_conversion)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --atomic term processing
+    Regex=[[ (atom_(length|c(hars|o(ncat|des))))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (char_code|sub_atom)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (number_c(har|ode)s)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --implementation defined hooks functions
+    Regex=[[ ((?:se|curren)t_prolog_flag)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (halt) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (halt)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --logic and control
+    Regex=[[ (once)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (repeat) ]],
+    Group=1
+  },
+  { Id=4, --Logtalk message sending operators
+    Regex=[[ (::|\^\^|<<|:) ]],
+  },
+  { Id=4, --Logtalk external-call control construct
+    Regex=[[ ([{}]) ]],
+  },
+  { Id=4, --operators
+    Regex=[[ (\\\+|->|=\.\.|;|!|:-|\^) ]],
+  },
+  { Id=4,
+    Regex=[[ (is|mod|rem|//|[+\-]|/(?!\*)|(?<=\*)/|[*][*]) ]],
+  },
+  { Id=4,
+    Regex=[[ (=<|<|=:=|=\\=|>=|>) ]],
+  },
+  { Id=4,
+    Regex=[[ (@<|@=<|==|\\==|@>|@>=) ]],
+  },
+  { Id=4,
+    Regex=[[ (=|\\=) ]],
+  },
+  { Id=4,
+    Regex=[[ (\?|@) ]],
+  },
+  { Id=4,
+    Regex=[[ (/\\|\\/|>>|\\) ]],
+  },
+}
+
+
+Strings={
+  Delimiter=[["|']],
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[%]] },
+  },
+  { Block=true,
+    Nested=false,
+    Delimiter= { [[\/\*]],[[\*\/]],}
+  }
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\+|\-]]
