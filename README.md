@@ -12,6 +12,8 @@ Syntax highlighting performed using https://github.com/andre-simon/highlight
 To install just run MSI file from releases. For Office 64-bit use NoteHighlight2016.msi, and for Office 32-bit use NoteHighlight2016x86.msi.
 See [here](https://support.office.com/en-us/article/About-Office-What-version-of-Office-am-I-using-932788B8-A3CE-44BF-BB09-E334518B8B19?ui=en-US&rs=en-US&ad=US) how to check which Office version you have.
 
+In case AddIn doesn't show after install, check if this helps [Not showing after install](https://github.com/elvirbrk/NoteHighlight2016/issues/7)
+
 # Usage
 ## Add new code
 1. Select language from menu
