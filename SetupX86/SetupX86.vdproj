@@ -69,6 +69,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AC07AB2ED919425EAC5BC37489A2AD26"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BF0DDD11259532587F856D651F450ECC"
         "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
         "MsmSig" = "8:_UNDEFINED"
@@ -419,6 +425,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_AC07AB2ED919425EAC5BC37489A2AD26"
+            {
+            "SourcePath" = "8:..\\NoteHighlightAddin\\ribbon.xml"
+            "TargetName" = "8:ribbon.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:TRUE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BF0DDD11259532587F856D651F450ECC"
             {
             "AssemblyRegister" = "3:1"
@@ -615,7 +641,7 @@
         "Name" = "8:NoteHighlightAddin"
         "ProductName" = "8:NoteHighlight2016"
         "ProductCode" = "8:{455472A6-9763-40E5-B034-9760EA7F7CEB}"
-        "PackageCode" = "8:{4EC9A7A4-6BF8-4F4E-B8CF-39FAE45C8F5C}"
+        "PackageCode" = "8:{D93582F6-076B-4D28-BFCC-972ACDBD422F}"
         "UpgradeCode" = "8:{0025873C-20C5-48D6-A93A-FBD3891A9233}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

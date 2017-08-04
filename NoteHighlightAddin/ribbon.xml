@@ -35,7 +35,7 @@
                   <button id="buttonPascal" label="Pascal" size="large" screentip="Enter Pascal Code" onAction="AddInButtonClicked" tag="pas"  image="Other.png" visible="false"/>
                   <button id="buttonPowerShell" label="PowerShell" size="large" screentip="Enter PowerShell Code" onAction="AddInButtonClicked" tag="ps1"  image="Other.png" visible="false"/>
                   <button id="buttonR" label="R" size="large" screentip="Enter R Code" onAction="AddInButtonClicked" tag="r"  image="Other.png" visible="false"/>
-                  <button id="buttonBash" label="Bash" size="large" screentip="Enter Bash Code" onAction="AddInButtonClicked" tag="sh"  image="Other.png" visible="true"/>
+                  <button id="buttonBash" label="Bash" size="large" screentip="Enter Bash Code" onAction="AddInButtonClicked" tag="sh"  image="Other.png" visible="false"/>
                   <button id="buttonSwift" label="Swift" size="large" screentip="Enter Swift Code" onAction="AddInButtonClicked" tag="swift"  image="Other.png" visible="false"/>
                   <button id="buttonVisaulBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
 				</group>
