@@ -138,11 +138,18 @@ namespace NoteHighlightAddin
 		//public async Task AddInButtonClicked(IRibbonControl control)
         public void AddInButtonClicked(IRibbonControl control)
         {
-            tag = control.Tag;
+            try
+            {
+                tag = control.Tag;
 
-            Thread t = new Thread(new ThreadStart(ShowForm));
-            t.SetApartmentState(ApartmentState.STA);
-            t.Start();
+                Thread t = new Thread(new ThreadStart(ShowForm));
+                t.SetApartmentState(ApartmentState.STA);
+                t.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from AddInButtonClicked: "+ e.ToString());
+            }
 
             //t.Join(5000);
 
@@ -151,49 +158,56 @@ namespace NoteHighlightAddin
 
         private void ShowForm()
         {
-            string outFileName = Guid.NewGuid().ToString();
-
-            //try
-            //{
-            //ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
-            //processHelper.IsWaitForInputIdle = true;
-            //processHelper.ProcessStart();
-
-            //CodeForm form = new CodeForm(tag, outFileName);
-            //form.ShowDialog();
-
-            //TestForm t = new TestForm();
-            var pageNode = GetPageNode();
-            string selectedText = "";
-            XElement outline = null;
-            bool selectedTextFormated = false;
-
-            if (pageNode != null)
+            try
             {
-                var existingPageId = pageNode.Attribute("ID").Value;
-                selectedText = GetSelectedText(existingPageId, out selectedTextFormated);
+                string outFileName = Guid.NewGuid().ToString();
 
-                if (selectedText.Trim() != "")
+                //try
+                //{
+                //ProcessHelper processHelper = new ProcessHelper("NoteHighLightForm.exe", new string[] { control.Tag, outFileName });
+                //processHelper.IsWaitForInputIdle = true;
+                //processHelper.ProcessStart();
+
+                //CodeForm form = new CodeForm(tag, outFileName);
+                //form.ShowDialog();
+
+                //TestForm t = new TestForm();
+                var pageNode = GetPageNode();
+                string selectedText = "";
+                XElement outline = null;
+                bool selectedTextFormated = false;
+
+                if (pageNode != null)
                 {
-                    outline = GetOutline(existingPageId);
+                    var existingPageId = pageNode.Attribute("ID").Value;
+                    selectedText = GetSelectedText(existingPageId, out selectedTextFormated);
+
+                    if (selectedText.Trim() != "")
+                    {
+                        outline = GetOutline(existingPageId);
+                    }
                 }
-            }
 
                 MainForm form = new MainForm(tag, outFileName, selectedText);
 
-            System.Windows.Forms.Application.Run(form);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error executing NoteHighLightForm.exe：" + ex.Message);
-            //    return;
-            //}
+                System.Windows.Forms.Application.Run(form);
+                //}
+                //catch (Exception ex)
+                //{
+                //    MessageBox.Show("Error executing NoteHighLightForm.exe：" + ex.Message);
+                //    return;
+                //}
 
-            string fileName = Path.Combine(Path.GetTempPath(), outFileName + ".html");
+                string fileName = Path.Combine(Path.GetTempPath(), outFileName + ".html");
 
-            if (File.Exists(fileName))
+                if (File.Exists(fileName))
+                {
+                    InsertHighLightCodeToCurrentSide(fileName, form.Parameters, outline, selectedTextFormated);
+                }
+            }
+            catch (Exception e)
             {
-                InsertHighLightCodeToCurrentSide(fileName, form.Parameters, outline, selectedTextFormated);
+                MessageBox.Show("Exception from ShowForm: " + e.ToString());
             }
         }
 
@@ -231,24 +245,31 @@ namespace NoteHighlightAddin
         /// </summary>
         private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters, XElement outline, bool selectedTextFormated)
         {
-            // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
-            string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
-
-            var pageNode = GetPageNode();
-
-            if (pageNode != null)
+            try
             {
-                var existingPageId = pageNode.Attribute("ID").Value;
-                string[] position=null;
-                if (outline == null)
+                // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
+                string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
+
+                var pageNode = GetPageNode();
+
+                if (pageNode != null)
                 {
-                    position = GetMousePointPosition(existingPageId);
+                    var existingPageId = pageNode.Attribute("ID").Value;
+                    string[] position = null;
+                    if (outline == null)
+                    {
+                        position = GetMousePointPosition(existingPageId);
+                    }
+
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated);
+                    page.Root.SetAttributeValue("ID", existingPageId);
+
+                    OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
                 }
-
-                var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated);
-                page.Root.SetAttributeValue("ID", existingPageId);
-
-                OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from InsertHighLightCodeToCurrentSide: "+e.ToString());
             }
         }
 
