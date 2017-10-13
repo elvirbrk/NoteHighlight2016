@@ -37,7 +37,7 @@
                   <button id="buttonR" label="R" size="large" screentip="Enter R Code" onAction="AddInButtonClicked" tag="r"  image="Other.png" visible="false"/>
                   <button id="buttonBash" label="Bash" size="large" screentip="Enter Bash Code" onAction="AddInButtonClicked" tag="sh"  image="Other.png" visible="false"/>
                   <button id="buttonSwift" label="Swift" size="large" screentip="Enter Swift Code" onAction="AddInButtonClicked" tag="swift"  image="Other.png" visible="false"/>
-                  <button id="buttonVisaulBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
+                  <button id="buttonVisualBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
 				</group>
             </tab>
         </tabs>
