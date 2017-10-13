@@ -402,6 +402,7 @@ namespace NoteHighlightAddin
             XElement cell2 = new XElement(ns + "Cell");
             cell2.Add(new XAttribute("shadingColor", colorString));
 
+
             string defaultStyle = "";
 
             var arrayLine = htmlContent.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
@@ -412,6 +413,8 @@ namespace NoteHighlightAddin
                 if(item.StartsWith("<pre"))
                 {
                     defaultStyle = item.Substring(0,item.IndexOf("<span"));
+                    //Sets language to Latin to disable spell check
+                    defaultStyle = defaultStyle.Insert(defaultStyle.Length - 1, " lang=la");
                     item = item.Substring(item.IndexOf("<span"));
                 }
 
