@@ -455,7 +455,7 @@ namespace NoteHighlightAddin
                 //string s = item.Replace(@"style=""", string.Format(@"style=""font-family:{0}; ", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value));
                 //string s = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) + 
                 //            itemLine.Replace("&apos;", "'") + "</body>";
-                string s = defaultStyle + itemLine.Replace("&apos;", "'") + "</body>";
+                string s = defaultStyle + itemLine.Replace("&apos;", "'") + "</pre>";
 
                 cell2.Add(new XElement(ns + "OEChildren",
                             new XElement(ns + "OE",
