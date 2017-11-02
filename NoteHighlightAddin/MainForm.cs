@@ -169,7 +169,7 @@ namespace NoteHighlightAddin
                     {
                         string line = sr.ReadLine();
 
-                        line = line.Replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;") + "<br />";
+                        line = line.Replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").Replace("&apos;", "'") + "<br />";
 
                         var charList = line.ToCharArray().ToList();
 
