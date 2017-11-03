@@ -1,8 +1,8 @@
 # NoteHighlight2016
 ![Alt text](/img/menu.png?raw=true "Menu")
 
-[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.1)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.1)
-[![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.0/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.0)
+[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.2)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.2)
+[![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.1/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.1)
 [![Github All Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases)
 
 Based on NoteHighlight 2013 (https://notehighlight2013.codeplex.com) and VanillaAddin (https://github.com/OneNoteDev/VanillaAddIn) to create working addin for OneNote 2016 (32-bit and 64-bit) 
