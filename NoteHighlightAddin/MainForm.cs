@@ -172,17 +172,26 @@ namespace NoteHighlightAddin
                         string byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
                         line = line.Replace(byteOrderMarkUtf8, "");
 
-                        line = line.Replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").Replace("&apos;", "'") + "<br />";
-
+                        if (!line.StartsWith("</pre>"))
+                        {
+                            line = line.Replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").Replace("&apos;", "'") + "<br />";
+                        }
                         var charList = line.ToCharArray().ToList();
 
                         StringBuilder sbLine = new StringBuilder();
                         int index = 0;
 
-                        if (IsShowLineNumber)
+                        if (IsShowLineNumber && !line.StartsWith("</pre>"))
                         {
                             index = line.IndexOf(span) + span.Length;
-                            sbLine.Append(line.Substring(0, index));
+                            string nrLine = line.Substring(0, index);
+
+                            int endTextIndex = nrLine.IndexOf(span);
+                            int startTextIndex = nrLine.LastIndexOf(">", endTextIndex) + 1;
+
+                            nrLine = nrLine.Substring(0, startTextIndex) + nrLine.Substring(startTextIndex, endTextIndex-startTextIndex).Replace(" ", "&nbsp;") + nrLine.Substring(endTextIndex);
+
+                            sbLine.Append(nrLine);
                         }
 
                         for (int i = index; i < charList.Count; i++)
