@@ -162,12 +162,15 @@ namespace NoteHighlightAddin
 
             using (FileStream fs = new FileStream(outputFileName, FileMode.Open, FileAccess.Read))
             {
-                using (StreamReader sr = new StreamReader(fs, Encoding.UTF8))
+                using (StreamReader sr = new StreamReader(fs, new UTF8Encoding(false)))
                 {
                     //Fix 存到剪貼簿空白不見的問題
                     while (sr.Peek() >= 0)
                     {
                         string line = sr.ReadLine();
+
+                        string byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+                        line = line.Replace(byteOrderMarkUtf8, "");
 
                         line = line.Replace("\t", "&nbsp;&nbsp;&nbsp;&nbsp;").Replace("&apos;", "'") + "<br />";
 

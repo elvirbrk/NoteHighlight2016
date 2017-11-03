@@ -248,7 +248,10 @@ namespace NoteHighlightAddin
             try
             {
                 // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
-                string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
+                string htmlContent = File.ReadAllText(fileName, new UTF8Encoding(false));
+
+                string byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+                htmlContent = htmlContent.Replace(byteOrderMarkUtf8, "");
 
                 var pageNode = GetPageNode();
 
