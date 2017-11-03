@@ -248,7 +248,10 @@ namespace NoteHighlightAddin
             try
             {
                 // Trace.TraceInformation(System.Reflection.MethodBase.GetCurrentMethod().Name);
-                string htmlContent = File.ReadAllText(fileName, Encoding.UTF8);
+                string htmlContent = File.ReadAllText(fileName, new UTF8Encoding(false));
+
+                string byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
+                htmlContent = htmlContent.Replace(byteOrderMarkUtf8, "");
 
                 var pageNode = GetPageNode();
 
@@ -433,10 +436,10 @@ namespace NoteHighlightAddin
 
                 if(item.StartsWith("<pre"))
                 {
-                    defaultStyle = item.Substring(0,item.IndexOf("<span"));
+                    defaultStyle = item.Substring(0,item.IndexOf(">") +1);
                     //Sets language to Latin to disable spell check
                     defaultStyle = defaultStyle.Insert(defaultStyle.Length - 1, " lang=la");
-                    item = item.Substring(item.IndexOf("<span"));
+                    item = item.Substring(item.IndexOf(">")+1);
                 }
 
                 if (item == "</pre>")
