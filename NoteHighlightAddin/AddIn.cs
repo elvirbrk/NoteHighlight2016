@@ -436,10 +436,10 @@ namespace NoteHighlightAddin
 
                 if(item.StartsWith("<pre"))
                 {
-                    defaultStyle = item.Substring(0,item.IndexOf("<span"));
+                    defaultStyle = item.Substring(0,item.IndexOf(">") +1);
                     //Sets language to Latin to disable spell check
                     defaultStyle = defaultStyle.Insert(defaultStyle.Length - 1, " lang=la");
-                    item = item.Substring(item.IndexOf("<span"));
+                    item = item.Substring(item.IndexOf(">")+1);
                 }
 
                 if (item == "</pre>")
