@@ -27,7 +27,7 @@ In case AddIn doesn't show after install, check if this helps [Not showing after
 1. Select text that you want to format or edit (you can select whole or only part of note). In case part on note is already formatted, you can select whole source code box.
 2. From NoteHighlight menu select desired language
 3. NoteHighlight form will open with selected text
-4. Exit text or change formatting same as for new code
+4. Edit text or change formatting same as for new code
 
 # Additional languages
 1. Go to installation folder and find file ribbon.xml and open it with text editor
