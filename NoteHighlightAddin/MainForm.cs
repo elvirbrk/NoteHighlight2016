@@ -46,6 +46,9 @@ namespace NoteHighlightAddin
 
         public HighLightParameter Parameters { get { return _parameters; } }
 
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetForegroundWindow(IntPtr hWnd);
+
         #endregion
 
         #region -- Constructor --
@@ -101,8 +104,8 @@ namespace NoteHighlightAddin
             this.btnBackground.BackColor = NoteHighlightForm.Properties.Settings.Default.BackgroundColor;
             this.cbx_Clipboard.Checked = NoteHighlightForm.Properties.Settings.Default.SaveOnClipboard;
             this.cbx_lineNumber.Checked = NoteHighlightForm.Properties.Settings.Default.ShowLineNumber;
-            this.TopMost = true;
-            this.TopMost = false;
+            //this.TopMost = true;
+            //this.TopMost = false;
         }
 
         /// <summary>
@@ -277,6 +280,17 @@ namespace NoteHighlightAddin
             {
                 btnBackground.BackColor = colorDialog1.Color;
             }
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+
+            // This is necessary in order for SetForegroundWindow to work consistently
+            this.WindowState = FormWindowState.Minimized;
+            this.WindowState = FormWindowState.Normal;
+
+            SetForegroundWindow(this.Handle);
+
         }
     }
 }
