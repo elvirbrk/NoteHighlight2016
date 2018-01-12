@@ -99,6 +99,8 @@ namespace NoteHighlightAddin
             this.txtCode.Encoding = Encoding.UTF8;
             this.cbx_style.SelectedIndex = NoteHighlightForm.Properties.Settings.Default.HighLightStyle;
             this.btnBackground.BackColor = NoteHighlightForm.Properties.Settings.Default.BackgroundColor;
+            this.cbx_Clipboard.Checked = NoteHighlightForm.Properties.Settings.Default.SaveOnClipboard;
+            this.cbx_lineNumber.Checked = NoteHighlightForm.Properties.Settings.Default.ShowLineNumber;
             this.TopMost = true;
             this.TopMost = false;
         }
