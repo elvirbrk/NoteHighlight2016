@@ -264,7 +264,7 @@ namespace NoteHighlightAddin
                         position = GetMousePointPosition(existingPageId);
                     }
 
-                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, (new GenerateHighLight()).Config.LineNrReplaceCh);
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, (new GenerateHighLight()).Config.LineNrReplaceCh, IsSelectedTextInline(existingPageId));
                     page.Root.SetAttributeValue("ID", existingPageId);
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -383,20 +383,46 @@ namespace NoteHighlightAddin
             return sb.ToString().TrimEnd('\r','\n');
         }
 
+        private bool IsSelectedTextInline(string pageID)
+        {
+            string pageXml;
+            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
+
+            var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
+                                               .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
+                                               .FirstOrDefault();
+
+            if (node != null)
+            {
+                var table = node.Descendants(ns + "Table").Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial")).FirstOrDefault();
+
+                System.Collections.Generic.IEnumerable<XElement> attrPos;
+                if (table == null)
+                {
+                    if (node.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Count() > 0
+                        && node.Descendants(ns + "T").Where(n => n.Attribute("selected") == null || n.Attribute("selected").Value == "none").Count() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         /// <summary>
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, string lineNrReplacementCh)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, string lineNrReplacementCh, bool isInline)
         {
-            XElement children = PrepareFormatedContent(htmlContent, parameters, lineNrReplacementCh);
+            XElement children = PrepareFormatedContent(htmlContent, parameters, lineNrReplacementCh, isInline);
 
             bool update = false;
             if (outline == null)
             {
                 outline = CreateOutline(position, children);
             }
-            else
+            else // Update exiting outline
             {
                 update = true;
                 if (selectedTextFormated)
@@ -407,8 +433,16 @@ namespace NoteHighlightAddin
                 }
                 else
                 {
-                    outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
-                    outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
+                    if (isInline)
+                    {
+                        outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").Descendants(ns+"OEChildren").Descendants(ns + "OE").Descendants(ns + "T").FirstOrDefault());
+                        outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
+                    }
+                    else
+                    {
+                        outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
+                        outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
+                    }
                 }
             }
 
@@ -448,7 +482,7 @@ namespace NoteHighlightAddin
             return outline;
         }
 
-        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, string lineNrReplacementCh)
+        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, string lineNrReplacementCh, bool isInline)
         {
             XElement children = new XElement(ns + "OEChildren");
 
@@ -459,12 +493,12 @@ namespace NoteHighlightAddin
             XElement column1 = new XElement(ns + "Column");
             column1.Add(new XAttribute("index", "0"));
             column1.Add(new XAttribute("width", "40"));
-            if (parameters.ShowLineNumber)
+            if (parameters.ShowLineNumber && !isInline)
             {
                 columns.Add(column1);
             }
             XElement column2 = new XElement(ns + "Column");
-            if (parameters.ShowLineNumber)
+            if (parameters.ShowLineNumber && !isInline)
             {
                 column2.Add(new XAttribute("index", "1"));
             }
@@ -557,7 +591,7 @@ namespace NoteHighlightAddin
 
             }
 
-            if (parameters.ShowLineNumber)
+            if (parameters.ShowLineNumber && !isInline)
             {
                 row.Add(cell1);
             }
