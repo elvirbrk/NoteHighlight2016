@@ -25,9 +25,9 @@ namespace GenerateHighlightContent
         public string FileName { get; set; }
 
         /// <summary> highlight.exe 參數 設定於 App.config 的 HighLightSection 區塊 </summary>
-        private static HighLightSection _section;
+        private HighLightSection _section;
 
-        public static HighLightSection Config { get { return _section; } }
+        public HighLightSection Config { get { return _section; } }
         #endregion
 
         #region -- IGenerageHighLight Member --
