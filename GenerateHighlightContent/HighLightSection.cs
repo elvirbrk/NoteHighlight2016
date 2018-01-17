@@ -22,6 +22,9 @@ namespace GenerateHighlightContent
         [ConfigurationProperty("ThemeFolder", DefaultValue = "themes")]
         public string ThemeFolder { get { return base["ThemeFolder"].ToString(); } }
 
+        [ConfigurationProperty("LineNrReplaceCh", DefaultValue = "", IsRequired =false)]
+        public string LineNrReplaceCh { get { return base["LineNrReplaceCh"].ToString(); } }
+
         [ConfigurationProperty("GeneralArguments", IsRequired = true, IsDefaultCollection = true)]
         public GeneralArgumentsCollection GeneralArguments
         {

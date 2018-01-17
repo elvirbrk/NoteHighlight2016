@@ -67,9 +67,7 @@ namespace NoteHighlightAddin
         {
             try
             {
-                Configuration c = ConfigurationManager.OpenExeConfiguration(Assembly.GetCallingAssembly().Location);
-                HighLightSection section = c.GetSection("HighLightSection") as HighLightSection;
-
+                HighLightSection section = (new GenerateHighLight()).Config;
                 var workingDirectory = Path.Combine(ProcessHelper.GetDirectoryFromPath(Assembly.GetCallingAssembly().Location), section.FolderName, section.ThemeFolder);
 
                 string[] files = Directory.GetFiles(workingDirectory, "*.theme");

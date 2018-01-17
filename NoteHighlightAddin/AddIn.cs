@@ -264,7 +264,7 @@ namespace NoteHighlightAddin
                         position = GetMousePointPosition(existingPageId);
                     }
 
-                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated);
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, (new GenerateHighLight()).Config.LineNrReplaceCh);
                     page.Root.SetAttributeValue("ID", existingPageId);
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -387,7 +387,7 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, string lineNrReplacementCh)
         {
             XElement children = new XElement(ns + "OEChildren");
 
@@ -465,7 +465,15 @@ namespace NoteHighlightAddin
 
                     //string nr = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) +
                     //        itemNr.Replace("&apos;", "'") + "</body>";
-                    string nr = defaultStyle + itemNr.Replace("&apos;", "'") + "</pre>";
+                    string nr = "";
+                    if (string.IsNullOrEmpty(lineNrReplacementCh))
+                    {
+                        nr = defaultStyle + itemNr.Replace("&apos;", "'") + "</pre>";
+                    }
+                    else
+                    {
+                        nr = defaultStyle + lineNrReplacementCh.PadLeft(5) + "</pre>";
+                    }
 
                     cell1.Add(new XElement(ns + "OEChildren",
                                 new XElement(ns + "OE",
