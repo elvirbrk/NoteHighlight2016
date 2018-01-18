@@ -264,7 +264,7 @@ namespace NoteHighlightAddin
                         position = GetMousePointPosition(existingPageId);
                     }
 
-                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, (new GenerateHighLight()).Config.LineNrReplaceCh);
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, (new GenerateHighLight()).Config.LineNrReplaceCh, IsSelectedTextInline(existingPageId));
                     page.Root.SetAttributeValue("ID", existingPageId);
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -383,11 +383,106 @@ namespace NoteHighlightAddin
             return sb.ToString().TrimEnd('\r','\n');
         }
 
+        private bool IsSelectedTextInline(string pageID)
+        {
+            string pageXml;
+            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
+
+            var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
+                                               .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
+                                               .FirstOrDefault();
+
+            if (node != null)
+            {
+                var table = node.Descendants(ns + "Table").Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial")).FirstOrDefault();
+
+                System.Collections.Generic.IEnumerable<XElement> attrPos;
+                if (table == null)
+                {
+                    if (node.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Count() > 0
+                        && node.Descendants(ns + "T").Where(n => n.Attribute("selected") == null || n.Attribute("selected").Value == "none").Count() > 0)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
         /// <summary>
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, string lineNrReplacementCh)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, string lineNrReplacementCh, bool isInline)
+        {
+            XElement children = PrepareFormatedContent(htmlContent, parameters, lineNrReplacementCh, isInline);
+
+            bool update = false;
+            if (outline == null)
+            {
+                outline = CreateOutline(position, children);
+            }
+            else // Update exiting outline
+            {
+                update = true;
+                if (selectedTextFormated)
+                {
+                    outline.Descendants(ns + "Table").Where(n => n.Attribute("selected") != null &&
+                                        (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial")).FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
+                    //outline.Descendants().Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
+                }
+                else
+                {
+                    if (isInline)
+                    {
+                        outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").Descendants(ns+"OEChildren").Descendants(ns + "OE").Descendants(ns + "T").FirstOrDefault());
+                        outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
+                    }
+                    else
+                    {
+                        outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
+                        outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
+                    }
+                }
+            }
+
+            if (update)
+            {
+                return outline.Parent.Document;
+            }
+            else
+            {
+                XElement page = new XElement(ns + "Page");
+                page.Add(outline);
+
+                XDocument doc = new XDocument();
+                doc.Add(page);
+                return doc;
+            }
+
+
+        }
+
+        private XElement CreateOutline(string[] position, XElement children)
+        {
+            XElement outline = new XElement(ns + "Outline");
+            if (position != null && position.Length == 2)
+            {
+                XElement pos = new XElement(ns + "Position");
+                pos.Add(new XAttribute("x", position[0]));
+                pos.Add(new XAttribute("y", position[1]));
+                outline.Add(pos);
+
+                XElement size = new XElement(ns + "Size");
+                size.Add(new XAttribute("width", "1600"));
+                size.Add(new XAttribute("height", "200"));
+                outline.Add(size);
+            }
+            outline.Add(children);
+            return outline;
+        }
+
+        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, string lineNrReplacementCh, bool isInline)
         {
             XElement children = new XElement(ns + "OEChildren");
 
@@ -398,12 +493,12 @@ namespace NoteHighlightAddin
             XElement column1 = new XElement(ns + "Column");
             column1.Add(new XAttribute("index", "0"));
             column1.Add(new XAttribute("width", "40"));
-            if (parameters.ShowLineNumber)
+            if (parameters.ShowLineNumber && !isInline)
             {
                 columns.Add(column1);
             }
             XElement column2 = new XElement(ns + "Column");
-            if (parameters.ShowLineNumber)
+            if (parameters.ShowLineNumber && !isInline)
             {
                 column2.Add(new XAttribute("index", "1"));
             }
@@ -411,7 +506,7 @@ namespace NoteHighlightAddin
             {
                 column2.Add(new XAttribute("index", "0"));
             }
-            
+
             column2.Add(new XAttribute("width", "1400"));
             columns.Add(column2);
 
@@ -434,12 +529,12 @@ namespace NoteHighlightAddin
             {
                 string item = it;
 
-                if(item.StartsWith("<pre"))
+                if (item.StartsWith("<pre"))
                 {
-                    defaultStyle = item.Substring(0,item.IndexOf(">") +1);
+                    defaultStyle = item.Substring(0, item.IndexOf(">") + 1);
                     //Sets language to Latin to disable spell check
                     defaultStyle = defaultStyle.Insert(defaultStyle.Length - 1, " lang=la");
-                    item = item.Substring(item.IndexOf(">")+1);
+                    item = item.Substring(item.IndexOf(">") + 1);
                 }
 
                 if (item == "</pre>")
@@ -496,7 +591,7 @@ namespace NoteHighlightAddin
 
             }
 
-            if (parameters.ShowLineNumber)
+            if (parameters.ShowLineNumber && !isInline)
             {
                 row.Add(cell1);
             }
@@ -506,58 +601,7 @@ namespace NoteHighlightAddin
 
             children.Add(new XElement(ns + "OE",
                                 table));
-
-            bool update = false;
-            if (outline == null)
-            {
-                outline = new XElement(ns + "Outline");
-
-                if (position != null && position.Length == 2)
-                {
-                    XElement pos = new XElement(ns + "Position");
-                    pos.Add(new XAttribute("x", position[0]));
-                    pos.Add(new XAttribute("y", position[1]));
-                    outline.Add(pos);
-
-                    XElement size = new XElement(ns + "Size");
-                    size.Add(new XAttribute("width", "1600"));
-                    size.Add(new XAttribute("height", "200"));
-                    outline.Add(size);
-                }
-                outline.Add(children);
-            }
-            else
-            {
-                update = true;
-                if (selectedTextFormated)
-                {
-                    outline.Descendants(ns+"Table").Where(n => n.Attribute("selected") != null && 
-                                        (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial")).FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
-                    //outline.Descendants().Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Remove();
-                }
-                else
-                {
-                    outline.Descendants(ns+"T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
-                    outline.Descendants(ns + "OE").Where(t => t.Elements(ns+"T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
-                }
-            }
-
-            if (update)
-            {
-                return outline.Parent.Document;
-            }
-            else
-            {
-                XElement page = new XElement(ns + "Page");
-                page.Add(outline);
-
-                XDocument doc = new XDocument();
-                doc.Add(page);
-                return doc;
-            }
-
-            
+            return children;
         }
-
     }
 }
