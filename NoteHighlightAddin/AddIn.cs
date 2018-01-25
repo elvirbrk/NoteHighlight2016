@@ -399,10 +399,13 @@ namespace NoteHighlightAddin
                 System.Collections.Generic.IEnumerable<XElement> attrPos;
                 if (table == null)
                 {
-                    if (node.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Count() > 0
-                        && node.Descendants(ns + "T").Where(n => n.Attribute("selected") == null || n.Attribute("selected").Value == "none").Count() > 0)
+                    foreach (var oeNode in node.Descendants(ns + "OE"))
                     {
-                        return true;
+                        if (oeNode.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Count() > 0
+                                        && oeNode.Descendants(ns + "T").Where(n => n.Attribute("selected") == null || n.Attribute("selected").Value == "none").Count() > 0)
+                        {
+                            return true;
+                        } 
                     }
                 }
             }
