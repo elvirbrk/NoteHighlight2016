@@ -58,13 +58,19 @@
         "Entry"
         {
         "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
-        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
+        "OwnerKey" = "8:_0FFDD9474C2B804E2E2B2C7C6360577B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
-        "OwnerKey" = "8:_0FFDD9474C2B804E2E2B2C7C6360577B"
+        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -106,6 +112,18 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_CBF51C0C38434D629FC3271C5390E247"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_BF0DDD11259532587F856D651F450ECC"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -125,18 +143,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_0FFDD9474C2B804E2E2B2C7C6360577B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_CBF51C0C38434D629FC3271C5390E247"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_BF0DDD11259532587F856D651F450ECC"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -640,15 +646,15 @@
         {
         "Name" = "8:NoteHighlightAddin"
         "ProductName" = "8:NoteHighlight2016"
-        "ProductCode" = "8:{06C54F51-8380-4D3D-AE57-EAD216E77D21}"
-        "PackageCode" = "8:{D22D282E-F62C-4580-8BEF-6BE25658DFAD}"
+        "ProductCode" = "8:{133D55D9-8F9D-4BED-AF25-A68497D0F17E}"
+        "PackageCode" = "8:{494C0099-A126-4241-8398-DB234B5182E6}"
         "UpgradeCode" = "8:{0025873C-20C5-48D6-A93A-FBD3891A9233}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:3.3"
+        "ProductVersion" = "8:3.4"
         "Manufacturer" = "8:CodingRoad"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
