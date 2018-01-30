@@ -1,7 +1,7 @@
 # NoteHighlight2016
 ![Alt text](/img/menu.png?raw=true "Menu")
 
-[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.3)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.3)
+[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.4)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.4)
 [![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.2/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.2)
 [![Github All Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases)
 
