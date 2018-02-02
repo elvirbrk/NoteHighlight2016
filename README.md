@@ -30,8 +30,8 @@ In case AddIn doesn't show after install, check if this helps [Not showing after
 4. Edit text or change formatting same as for new code
 
 # Additional languages
-1. Go to installation folder and find file ribbon.xml and open it with text editor
-  Default installation folder: C:\Program Files (x86)\CodingRoad\NoteHighlight2016\
+1. Go to installation folder and find file ribbon.xml and open it with text editor <br />
+Default installation folder: C:\Program Files (x86)\CodingRoad\NoteHighlight2016\ or C:\Program Files\CodingRoad\NoteHighlight2016\
 2. Edit property "visible" from "false" to "true" for languages that you want to use. It is necessary to restart OneNote for changes to take effect
 
 It is also possible to add new languages (supported by highlight tool) by adding new rows to ribbon.xml but if you need new language then you are smart enough to figure it out :)
