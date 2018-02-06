@@ -5,6 +5,9 @@
 [![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.2/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.2)
 [![Github All Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases)
 
+[![Follow @NoteHighlight](https://img.shields.io/twitter/follow/NoteHighlight.svg?style=social&label=Follow%20@NoteHighlight)](https://twitter.com/NoteHighlight?ref_src=twsrc%5Etfw)<br >
+Follow on Twitter for updates and general questions. For bug reports and feature requests please use [Issues](https://github.com/elvirbrk/NoteHighlight2016/issues) page.
+
 Based on NoteHighlight 2013 (https://notehighlight2013.codeplex.com) and VanillaAddin (https://github.com/OneNoteDev/VanillaAddIn) to create working addin for OneNote 2016 (32-bit and 64-bit) 
 
 Syntax highlighting performed using https://github.com/andre-simon/highlight
