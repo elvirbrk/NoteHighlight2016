@@ -438,7 +438,18 @@ namespace NoteHighlightAddin
                 {
                     if (isInline)
                     {
-                        outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").Descendants(ns+"OEChildren").Descendants(ns + "OE").Descendants(ns + "T").FirstOrDefault());
+                        int j = 0;
+                        for(int i = 0; i < outline.Descendants(ns + "OE").Count(); i++)
+                        {
+                            XElement oeNode = outline.Descendants(ns + "OE").ElementAt(i);
+
+                            if (oeNode.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").Count() > 0)
+                            {
+                                oeNode.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").Descendants(ns + "OEChildren").Descendants(ns + "OE").ElementAt(j).Descendants(ns + "T"));
+                                j++;
+                            }
+
+                        }
                         outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
                     }
                     else
