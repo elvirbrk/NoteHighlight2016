@@ -586,10 +586,17 @@ namespace NoteHighlightAddin
                         nr = defaultStyle + config.LineNrReplaceCh.PadLeft(5) + "</pre>";
                     }
 
-                    cell1.Add(new XElement(ns + "OEChildren",
-                                new XElement(ns + "OE",
+                    XElement oeElement = new XElement(ns + "OE",
                                     new XElement(ns + "T",
-                                        new XCData(nr)))));
+                                        new XCData(nr)));
+                    if (ContainsAsianCharacter(itemLine))
+                    {
+                        oeElement.Add(new XAttribute("spaceBefore", config.AsianBeforeSpace));
+                        oeElement.Add(new XAttribute("spaceAfter", config.AsianAfterSpace));
+                    }
+
+                    cell1.Add(new XElement(ns + "OEChildren",
+                               oeElement ));
                 }
                 else
                 {
