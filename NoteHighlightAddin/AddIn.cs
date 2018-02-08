@@ -264,7 +264,7 @@ namespace NoteHighlightAddin
                         position = GetMousePointPosition(existingPageId);
                     }
 
-                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, (new GenerateHighLight()).Config.LineNrReplaceCh, IsSelectedTextInline(existingPageId));
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, IsSelectedTextInline(existingPageId));
                     page.Root.SetAttributeValue("ID", existingPageId);
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -416,9 +416,9 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, string lineNrReplacementCh, bool isInline)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, bool isInline)
         {
-            XElement children = PrepareFormatedContent(htmlContent, parameters, lineNrReplacementCh, isInline);
+            XElement children = PrepareFormatedContent(htmlContent, parameters, isInline);
 
             bool update = false;
             if (outline == null)
@@ -496,8 +496,10 @@ namespace NoteHighlightAddin
             return outline;
         }
 
-        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, string lineNrReplacementCh, bool isInline)
+        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, bool isInline)
         {
+            HighLightSection config = (new GenerateHighLight()).Config;
+
             XElement children = new XElement(ns + "OEChildren");
 
             XElement table = new XElement(ns + "Table");
@@ -575,13 +577,13 @@ namespace NoteHighlightAddin
                     //string nr = string.Format(@"<body style=""font-family:{0}"">", GenerateHighlightContent.GenerateHighLight.Config.OutputArguments["Font"].Value) +
                     //        itemNr.Replace("&apos;", "'") + "</body>";
                     string nr = "";
-                    if (string.IsNullOrEmpty(lineNrReplacementCh))
+                    if (string.IsNullOrEmpty(config.LineNrReplaceCh))
                     {
                         nr = defaultStyle + itemNr.Replace("&apos;", "'") + "</pre>";
                     }
                     else
                     {
-                        nr = defaultStyle + lineNrReplacementCh.PadLeft(5) + "</pre>";
+                        nr = defaultStyle + config.LineNrReplaceCh.PadLeft(5) + "</pre>";
                     }
 
                     cell1.Add(new XElement(ns + "OEChildren",
@@ -616,6 +618,11 @@ namespace NoteHighlightAddin
             children.Add(new XElement(ns + "OE",
                                 table));
             return children;
+        }
+
+        private bool ContainsAsianCharacter(string itemLine)
+        {
+            return itemLine.Any(c => (uint)c >= 0x4E00 && (uint)c <= 0x2FA1F);
         }
     }
 }
