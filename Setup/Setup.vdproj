@@ -64,12 +64,6 @@
         "Entry"
         {
         "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
-        "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_805E0317B9E0B1539EEBB800C533393B"
         "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -646,15 +640,15 @@
         {
         "Name" = "8:NoteHighlightAddin"
         "ProductName" = "8:NoteHighlight2016"
-        "ProductCode" = "8:{133D55D9-8F9D-4BED-AF25-A68497D0F17E}"
-        "PackageCode" = "8:{494C0099-A126-4241-8398-DB234B5182E6}"
+        "ProductCode" = "8:{BED219E2-70FD-4163-9955-22D3F2162068}"
+        "PackageCode" = "8:{0BECF755-E41C-40F1-8E59-A61AB1C86CCE}"
         "UpgradeCode" = "8:{0025873C-20C5-48D6-A93A-FBD3891A9233}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:3.4"
+        "ProductVersion" = "8:3.5"
         "Manufacturer" = "8:CodingRoad"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
