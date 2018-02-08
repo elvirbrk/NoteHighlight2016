@@ -1,8 +1,8 @@
 # NoteHighlight2016
 ![Alt text](/img/menu.png?raw=true "Menu")
 
-[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.4)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.4)
-[![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.2/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.2)
+[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.5)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.5)
+[![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.4/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.4)
 [![Github All Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases)
 
 [![Follow @NoteHighlight](https://img.shields.io/twitter/follow/NoteHighlight.svg?style=social&label=Follow%20@NoteHighlight)](https://twitter.com/NoteHighlight?ref_src=twsrc%5Etfw)<br >
