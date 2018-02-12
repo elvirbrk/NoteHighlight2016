@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateHighlightContent", 
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupX86", "SetupX86\SetupX86.vdproj", "{610B97A7-752E-4501-8415-A40251735F85}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTesting", "UnitTesting\UnitTesting.csproj", "{3E05522E-BD98-4813-8430-83AE4F320EB2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,24 @@ Global
 		{610B97A7-752E-4501-8415-A40251735F85}.Release|x64.Build.0 = Release
 		{610B97A7-752E-4501-8415-A40251735F85}.Release|x86.ActiveCfg = Release
 		{610B97A7-752E-4501-8415-A40251735F85}.Release|x86.Build.0 = Release
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Debug|x64.Build.0 = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Debug|x86.Build.0 = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.LocalDebug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.LocalDebug|Any CPU.Build.0 = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.LocalDebug|x64.ActiveCfg = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.LocalDebug|x64.Build.0 = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.LocalDebug|x86.ActiveCfg = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.LocalDebug|x86.Build.0 = Debug|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Release|x64.ActiveCfg = Release|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Release|x64.Build.0 = Release|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Release|x86.ActiveCfg = Release|Any CPU
+		{3E05522E-BD98-4813-8430-83AE4F320EB2}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
