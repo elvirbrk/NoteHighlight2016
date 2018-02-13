@@ -39,7 +39,7 @@ namespace NoteHighlightAddin
 		protected Application OneNoteApplication
 		{ get; set; }
 
-        private XNamespace ns;
+        public XNamespace ns;
 
         private MainForm mainForm;
 
@@ -264,7 +264,7 @@ namespace NoteHighlightAddin
                         position = GetMousePointPosition(existingPageId);
                     }
 
-                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, selectedTextFormated, IsSelectedTextInline(existingPageId));
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, (new GenerateHighLight()).Config, selectedTextFormated, IsSelectedTextInline(existingPageId));
                     page.Root.SetAttributeValue("ID", existingPageId);
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -416,9 +416,9 @@ namespace NoteHighlightAddin
         /// 產生 XML 插入至 OneNote
         /// Generate XML Insert To OneNote
         /// </summary>
-        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, bool selectedTextFormated, bool isInline)
+        public XDocument InsertHighLightCode(string htmlContent, string[] position, HighLightParameter parameters, XElement outline, HighLightSection config, bool selectedTextFormated, bool isInline)
         {
-            XElement children = PrepareFormatedContent(htmlContent, parameters, isInline);
+            XElement children = PrepareFormatedContent(htmlContent, parameters, config, isInline);
 
             bool update = false;
             if (outline == null)
@@ -496,10 +496,8 @@ namespace NoteHighlightAddin
             return outline;
         }
 
-        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, bool isInline)
+        private XElement PrepareFormatedContent(string htmlContent, HighLightParameter parameters, HighLightSection config, bool isInline)
         {
-            HighLightSection config = (new GenerateHighLight()).Config;
-
             XElement children = new XElement(ns + "OEChildren");
 
             XElement table = new XElement(ns + "Table");
