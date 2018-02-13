@@ -189,3 +189,7 @@ _Pvt_Extensions/
 ModelManifest.xml
 INSTALLER/*
 .vs/config/applicationhost.config
+/GenerateHighlightContent/HighlightContent2.snk
+/Helper/Helper2.snk
+/img/ONOMSPY.zip
+/img/onomspy.exe
