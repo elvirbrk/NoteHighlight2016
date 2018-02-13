@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="HTMLContent1" xml:space="preserve">
+    <value>&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';"&gt;&lt;span style="color:#969696"&gt;    1 &lt;/span&gt;        &lt;span style="color:#3b6ac8"&gt;private&lt;/span&gt; XElement &lt;span style="color:#c73a69"&gt;CreateOutline&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;string&lt;/span&gt;&lt;span style="color:#323232"&gt;[]&lt;/span&gt; position&lt;span style="color:#323232"&gt;,&lt;/span&gt; XElement children&lt;span style="color:#323232"&gt;)&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    2 &lt;/span&gt;        &lt;span style="color:#323232"&gt;{&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    3 &lt;/span&gt;            XElement outline &lt;span style="color:#323232"&gt;=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XElement&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;ns &lt;span style="color:#323232"&gt;+&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;Outline&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;);&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    4 &lt;/span&gt;            &lt;span style="color:#3b6ac8"&gt;if&lt;/span&gt; &lt;span style="color:#323232"&gt;(&lt;/span&gt;position &lt;span style="color:#323232"&gt;!=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;null&lt;/span&gt; &lt;span style="color:#323232"&gt;&amp;amp;&amp;amp;&lt;/span&gt; position&lt;span style="color:#323232"&gt;.&lt;/span&gt;Length &lt;span style="color:#323232"&gt;==&lt;/span&gt; &lt;span style="color:#1094a0"&gt;2&lt;/span&gt;&lt;span style="color:#323232"&gt;)&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    5 &lt;/span&gt;            &lt;span style="color:#323232"&gt;{&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    6 &lt;/span&gt;                XElement pos &lt;span style="color:#323232"&gt;=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XElement&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;ns &lt;span style="color:#323232"&gt;+&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;Position&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;);&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    7 &lt;/span&gt;                pos&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;x&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; position&lt;span style="color:#323232"&gt;[&lt;/span&gt;&lt;span style="color:#1094a0"&gt;0&lt;/span&gt;&lt;span style="color:#323232"&gt;]));&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    8 &lt;/span&gt;                pos&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; position&lt;span style="color:#323232"&gt;[&lt;/span&gt;&lt;span style="color:#1094a0"&gt;1&lt;/span&gt;&lt;span style="color:#323232"&gt;]));&lt;/span&gt;
+&lt;span style="color:#969696"&gt;    9 &lt;/span&gt;                outline&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;pos&lt;span style="color:#323232"&gt;);&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   10 &lt;/span&gt;
+&lt;span style="color:#969696"&gt;   11 &lt;/span&gt;                XElement size &lt;span style="color:#323232"&gt;=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XElement&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;ns &lt;span style="color:#323232"&gt;+&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;Size&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;);&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   12 &lt;/span&gt;                size&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;width&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;1600&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;));&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   13 &lt;/span&gt;                size&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;height&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;));&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   14 &lt;/span&gt;                outline&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;size&lt;span style="color:#323232"&gt;);&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   15 &lt;/span&gt;            &lt;span style="color:#323232"&gt;}&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   16 &lt;/span&gt;            outline&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;children&lt;span style="color:#323232"&gt;);&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   17 &lt;/span&gt;            &lt;span style="color:#3b6ac8"&gt;return&lt;/span&gt; outline&lt;span style="color:#323232"&gt;;&lt;/span&gt;
+&lt;span style="color:#969696"&gt;   18 &lt;/span&gt;        &lt;span style="color:#323232"&gt;}&lt;/span&gt;
+&lt;/pre&gt;</value>
+  </data>
+  <data name="Output1" xml:space="preserve">
+    <value>&lt;Page xmlns="http://schemas.microsoft.com/office/onenote/2013/onenote"&gt;
+  &lt;Outline&gt;
+    &lt;Position x="198.0" y="950.3999633789062" /&gt;
+    &lt;Size width="1600" height="200" /&gt;
+    &lt;OEChildren&gt;
+      &lt;OE&gt;
+        &lt;Table bordersVisible="false"&gt;
+          &lt;Columns&gt;
+            &lt;Column index="0" width="40" /&gt;
+            &lt;Column index="1" width="1400" /&gt;
+          &lt;/Columns&gt;
+          &lt;Row&gt;
+            &lt;Cell shadingColor="#F0F0F0"&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    1 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    2 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    3 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    4 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    5 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    6 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    7 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    8 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;    9 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   10 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   11 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   12 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   13 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   14 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   15 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   16 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   17 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;span style="color:#969696"&gt;   18 &lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+            &lt;/Cell&gt;
+            &lt;Cell shadingColor="#F0F0F0"&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;        &lt;span style="color:#3b6ac8"&gt;private&lt;/span&gt; XElement &lt;span style="color:#c73a69"&gt;CreateOutline&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;string&lt;/span&gt;&lt;span style="color:#323232"&gt;[]&lt;/span&gt; position&lt;span style="color:#323232"&gt;,&lt;/span&gt; XElement children&lt;span style="color:#323232"&gt;)&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;        &lt;span style="color:#323232"&gt;{&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;            XElement outline &lt;span style="color:#323232"&gt;=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XElement&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;ns &lt;span style="color:#323232"&gt;+&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;Outline&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;);&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;            &lt;span style="color:#3b6ac8"&gt;if&lt;/span&gt; &lt;span style="color:#323232"&gt;(&lt;/span&gt;position &lt;span style="color:#323232"&gt;!=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;null&lt;/span&gt; &lt;span style="color:#323232"&gt;&amp;amp;&amp;amp;&lt;/span&gt; position&lt;span style="color:#323232"&gt;.&lt;/span&gt;Length &lt;span style="color:#323232"&gt;==&lt;/span&gt; &lt;span style="color:#1094a0"&gt;2&lt;/span&gt;&lt;span style="color:#323232"&gt;)&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;            &lt;span style="color:#323232"&gt;{&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                XElement pos &lt;span style="color:#323232"&gt;=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XElement&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;ns &lt;span style="color:#323232"&gt;+&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;Position&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;);&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                pos&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;x&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; position&lt;span style="color:#323232"&gt;[&lt;/span&gt;&lt;span style="color:#1094a0"&gt;0&lt;/span&gt;&lt;span style="color:#323232"&gt;]));&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                pos&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;y&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; position&lt;span style="color:#323232"&gt;[&lt;/span&gt;&lt;span style="color:#1094a0"&gt;1&lt;/span&gt;&lt;span style="color:#323232"&gt;]));&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                outline&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;pos&lt;span style="color:#323232"&gt;);&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                XElement size &lt;span style="color:#323232"&gt;=&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XElement&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;ns &lt;span style="color:#323232"&gt;+&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;Size&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;);&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                size&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;width&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;1600&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;));&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                size&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#3b6ac8"&gt;new&lt;/span&gt; &lt;span style="color:#c73a69"&gt;XAttribute&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;&lt;span style="color:#1094a0"&gt;&amp;quot;height&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;,&lt;/span&gt; &lt;span style="color:#1094a0"&gt;&amp;quot;200&amp;quot;&lt;/span&gt;&lt;span style="color:#323232"&gt;));&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;                outline&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;size&lt;span style="color:#323232"&gt;);&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;            &lt;span style="color:#323232"&gt;}&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;            outline&lt;span style="color:#323232"&gt;.&lt;/span&gt;&lt;span style="color:#c73a69"&gt;Add&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;children&lt;span style="color:#323232"&gt;);&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;            &lt;span style="color:#3b6ac8"&gt;return&lt;/span&gt; outline&lt;span style="color:#323232"&gt;;&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+              &lt;OEChildren&gt;
+                &lt;OE&gt;
+                  &lt;T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt;        &lt;span style="color:#323232"&gt;}&lt;/span&gt;&lt;/pre&gt;]]&gt;&lt;/T&gt;
+                &lt;/OE&gt;
+              &lt;/OEChildren&gt;
+            &lt;/Cell&gt;
+          &lt;/Row&gt;
+        &lt;/Table&gt;
+      &lt;/OE&gt;
+    &lt;/OEChildren&gt;
+  &lt;/Outline&gt;
+&lt;/Page&gt;</value>
+  </data>
+</root>
