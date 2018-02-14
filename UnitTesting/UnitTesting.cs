@@ -61,8 +61,11 @@ namespace UnitTesting
 
             HighLightSection config = configuration.GetSection("HighLightSection") as HighLightSection;
 
+            bool selectedTextFormated = false;
+            addIn.GetSelectedText(Resource1.Page2, out selectedTextFormated);
 
-            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, false, false);
+
+                XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, selectedTextFormated, addIn.IsSelectedTextInline(Resource1.Page2));
 
             Assert.AreEqual(Resource1.Output2, output.ToString(), false);
         }
@@ -90,8 +93,11 @@ namespace UnitTesting
 
             HighLightSection config = configuration.GetSection("HighLightSection") as HighLightSection;
 
+            bool selectedTextFormated = false;
+            addIn.GetSelectedText(Resource1.Page5, out selectedTextFormated);
 
-            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, false, true);
+
+            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, selectedTextFormated, addIn.IsSelectedTextInline(Resource1.Page5));
 
             Assert.AreEqual(Resource1.Output5, output.ToString(), false);
         }
@@ -119,8 +125,11 @@ namespace UnitTesting
 
             HighLightSection config = configuration.GetSection("HighLightSection") as HighLightSection;
 
+            bool selectedTextFormated = false;
+            addIn.GetSelectedText(Resource1.Page3, out selectedTextFormated);
 
-            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, false, false);
+
+            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, selectedTextFormated, addIn.IsSelectedTextInline(Resource1.Page3));
 
             Assert.AreEqual(Resource1.Output3, output.ToString(), false);
         }
@@ -148,8 +157,11 @@ namespace UnitTesting
 
             HighLightSection config = configuration.GetSection("HighLightSection") as HighLightSection;
 
+            bool selectedTextFormated = false;
+            addIn.GetSelectedText(Resource1.Page6, out selectedTextFormated);
 
-            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, false, true);
+
+            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, selectedTextFormated, addIn.IsSelectedTextInline(Resource1.Page6));
 
             Assert.AreEqual(Resource1.Output6, output.ToString(), false);
         }
@@ -177,8 +189,11 @@ namespace UnitTesting
 
             HighLightSection config = configuration.GetSection("HighLightSection") as HighLightSection;
 
+            bool selectedTextFormated = false;
+            addIn.GetSelectedText(Resource1.Page4, out selectedTextFormated);
 
-            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, true, false);
+
+            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, selectedTextFormated, addIn.IsSelectedTextInline(Resource1.Page4));
 
             Assert.AreEqual(Resource1.Output4, output.ToString(), false);
         }
