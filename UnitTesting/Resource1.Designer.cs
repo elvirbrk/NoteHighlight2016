@@ -82,6 +82,17 @@ namespace UnitTesting {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;pre style=&quot;color:#323232; background-color:#ffffff; font-size:10pt; font-family:&apos;Courier New&apos;;&quot;&gt;&lt;span style=&quot;color:#969696&quot;&gt;    1 &lt;/span&gt;            &lt;span style=&quot;color:#3b6ac8&quot;&gt;if&lt;/span&gt; &lt;span style=&quot;color:#323232&quot;&gt;(&lt;/span&gt;node &lt;span style=&quot;color:#323232&quot;&gt;!=&lt;/span&gt; &lt;span style=&quot;color:#3b6ac8&quot;&gt;null&lt;/span&gt;&lt;span style=&quot;color:#323232&quot;&gt;)&lt;/span&gt;
+        ///&lt;span style=&quot;color:#969696&quot;&gt;    2 &lt;/span&gt;            &lt;span style=&quot;color:#323232&quot;&gt;{&lt;/span&gt;
+        ///&lt;span style=&quot;color:#969696&quot;&gt;    3 &lt;/span&gt;                &lt;span style=&quot;color:# [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string HTMLContent3 {
+            get {
+                return ResourceManager.GetString("HTMLContent3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;Page xmlns=&quot;http://schemas.microsoft.com/office/onenote/2013/onenote&quot;&gt;
         ///  &lt;Outline&gt;
         ///    &lt;Position x=&quot;198.0&quot; y=&quot;950.3999633789062&quot; /&gt;
@@ -117,6 +128,17 @@ namespace UnitTesting {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;one:Page xmlns:one=&quot;http://schemas.microsoft.com/office/onenote/2013/onenote&quot; ID=&quot;{62B9E873-2769-000C-184C-3F76DBF14255}{1}{E1956852926608929975371947232731342679241291}&quot; name=&quot;1&quot; dateTime=&quot;2017-08-11T11:43:50.000Z&quot; lastModifiedTime=&quot;2018-02-14T13:12:59.000Z&quot; pageLevel=&quot;1&quot; isCurrentlyViewed=&quot;true&quot; selected=&quot;partial&quot; lang=&quot;la&quot;&gt;
+        ///  &lt;one:QuickStyleDef index=&quot;0&quot; name=&quot;PageTitle&quot; fontColor=&quot;automatic&quot; highlightColor=&quot;automatic&quot; font=&quot;Calibri Light&quot; fontSize=&quot;20.0&quot; spaceBefore=&quot;0.0&quot; spaceAfter=&quot;0.0&quot; /&gt;
+        ///  &lt;one:Q [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Output3 {
+            get {
+                return ResourceManager.GetString("Output3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &lt;one:Page xmlns:one=&quot;http://schemas.microsoft.com/office/onenote/2013/onenote&quot; ID=&quot;{62B9E873-2769-000C-184C-3F76DBF14255}{1}{E1956852926608929975371947232731342679241291}&quot; name=&quot;1&quot; dateTime=&quot;2017-08-11T11:43:50.000Z&quot; lastModifiedTime=&quot;2018-02-14T11:46:27.000Z&quot; pageLevel=&quot;1&quot; isCurrentlyViewed=&quot;true&quot; selected=&quot;partial&quot; lang=&quot;la&quot;&gt;
         ///  &lt;one:QuickStyleDef index=&quot;0&quot; name=&quot;PageTitle&quot; fontColor=&quot;automatic&quot; highlightColor=&quot;automatic&quot; font=&quot;Calibri Light&quot; fontSize=&quot;20.0&quot; spaceBefore=&quot;0.0&quot; spaceAfter=&quot;0.0&quot; /&gt;
         ///  &lt;one:Q [rest of string was truncated]&quot;;.
@@ -124,6 +146,17 @@ namespace UnitTesting {
         internal static string Page2 {
             get {
                 return ResourceManager.GetString("Page2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;one:Page xmlns:one=&quot;http://schemas.microsoft.com/office/onenote/2013/onenote&quot; ID=&quot;{62B9E873-2769-000C-184C-3F76DBF14255}{1}{E1956852926608929975371947232731342679241291}&quot; name=&quot;1&quot; dateTime=&quot;2017-08-11T11:43:50.000Z&quot; lastModifiedTime=&quot;2018-02-14T13:12:59.000Z&quot; pageLevel=&quot;1&quot; isCurrentlyViewed=&quot;true&quot; selected=&quot;partial&quot; lang=&quot;la&quot;&gt;
+        ///  &lt;one:QuickStyleDef index=&quot;0&quot; name=&quot;PageTitle&quot; fontColor=&quot;automatic&quot; highlightColor=&quot;automatic&quot; font=&quot;Calibri Light&quot; fontSize=&quot;20.0&quot; spaceBefore=&quot;0.0&quot; spaceAfter=&quot;0.0&quot; /&gt;
+        ///  &lt;one:Q [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Page3 {
+            get {
+                return ResourceManager.GetString("Page3", resourceCulture);
             }
         }
     }
