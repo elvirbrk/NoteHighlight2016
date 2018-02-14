@@ -173,18 +173,18 @@ namespace NoteHighlightAddin
 
                 //TestForm t = new TestForm();
                 var pageNode = GetPageNode();
+                string pageXml = GetPageXml(pageNode.Attribute("ID").Value);
                 string selectedText = "";
                 XElement outline = null;
                 bool selectedTextFormated = false;
 
                 if (pageNode != null)
                 {
-                    var existingPageId = pageNode.Attribute("ID").Value;
-                    selectedText = GetSelectedText(existingPageId, out selectedTextFormated);
+                    selectedText = GetSelectedText(pageXml, out selectedTextFormated);
 
                     if (selectedText.Trim() != "")
                     {
-                        outline = GetOutline(existingPageId);
+                        outline = GetOutline(pageXml);
                     }
                 }
 
@@ -202,7 +202,7 @@ namespace NoteHighlightAddin
 
                 if (File.Exists(fileName))
                 {
-                    InsertHighLightCodeToCurrentSide(fileName, form.Parameters, outline, selectedTextFormated);
+                    InsertHighLightCodeToCurrentSide(fileName, pageXml, form.Parameters, outline, selectedTextFormated);
                 }
             }
             catch (Exception e)
@@ -243,7 +243,7 @@ namespace NoteHighlightAddin
         /// 插入 HighLight Code 至滑鼠游標的位置
         /// Insert HighLight Code To Mouse Position  
         /// </summary>
-        private void InsertHighLightCodeToCurrentSide(string fileName, HighLightParameter parameters, XElement outline, bool selectedTextFormated)
+        private void InsertHighLightCodeToCurrentSide(string fileName, string pageXml, HighLightParameter parameters, XElement outline, bool selectedTextFormated)
         {
             try
             {
@@ -261,10 +261,10 @@ namespace NoteHighlightAddin
                     string[] position = null;
                     if (outline == null)
                     {
-                        position = GetMousePointPosition(existingPageId);
+                        position = GetMousePointPosition(pageXml);
                     }
 
-                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, (new GenerateHighLight()).Config, selectedTextFormated, IsSelectedTextInline(existingPageId));
+                    var page = InsertHighLightCode(htmlContent, position, parameters, outline, (new GenerateHighLight()).Config, selectedTextFormated, IsSelectedTextInline(pageXml));
                     page.Root.SetAttributeValue("ID", existingPageId);
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
@@ -302,11 +302,8 @@ namespace NoteHighlightAddin
         /// 取得滑鼠所在的點
         /// Get Mouse Point
         /// </summary>
-        private string[] GetMousePointPosition(string pageID)
+        private string[] GetMousePointPosition(string pageXml)
         {
-            string pageXml;
-            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
-
             var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
                                                .Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "partial")
                                                .FirstOrDefault();
@@ -323,11 +320,8 @@ namespace NoteHighlightAddin
             return null;
         }
 
-        private XElement GetOutline(string pageID)
+        private XElement GetOutline(string pageXml)
         {
-            string pageXml;
-            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
-
             var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
                                                .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
                                                .FirstOrDefault();
@@ -346,11 +340,16 @@ namespace NoteHighlightAddin
             return node;
         }
 
-        private string GetSelectedText(string pageID, out bool selectedTextFormated)
+        private string GetPageXml(string pageID)
         {
             string pageXml;
             OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
 
+            return pageXml;
+        }
+
+        public string GetSelectedText(string pageXml, out bool selectedTextFormated)
+        {
             var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
                                                .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
                                                .FirstOrDefault();
@@ -383,11 +382,8 @@ namespace NoteHighlightAddin
             return sb.ToString().TrimEnd('\r','\n');
         }
 
-        private bool IsSelectedTextInline(string pageID)
+        public bool IsSelectedTextInline(string pageXml)
         {
-            string pageXml;
-            OneNoteApplication.GetPageContent(pageID, out pageXml, PageInfo.piSelection);
-
             var node = XDocument.Parse(pageXml).Descendants(ns + "Outline")
                                                .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
                                                .FirstOrDefault();
