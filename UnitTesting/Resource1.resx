@@ -219,6 +219,10 @@
 &lt;span style="color:#969696"&gt;   27 &lt;/span&gt;        &lt;span style="color:#323232"&gt;}&lt;/span&gt;
 &lt;/pre&gt;</value>
   </data>
+  <data name="HTMLContent5" xml:space="preserve">
+    <value>&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';"&gt;&lt;span style="color:#969696"&gt;    1 &lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;if&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;x&lt;span style="color:#323232"&gt;==&lt;/span&gt;&lt;span style="color:#1094a0"&gt;0&lt;/span&gt;&lt;span style="color:#323232"&gt;)&lt;/span&gt;{return null;}
+&lt;/pre&gt;</value>
+  </data>
   <data name="Output1" xml:space="preserve">
     <value>&lt;Page xmlns="http://schemas.microsoft.com/office/onenote/2013/onenote"&gt;
   &lt;Outline&gt;
@@ -1749,6 +1753,122 @@ background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:wh
   &lt;/one:Outline&gt;
 &lt;/one:Page&gt;</value>
   </data>
+  <data name="Output5" xml:space="preserve">
+    <value>&lt;one:Page xmlns:one="http://schemas.microsoft.com/office/onenote/2013/onenote" ID="{62B9E873-2769-000C-184C-3F76DBF14255}{1}{E1956852926608929975371947232731342679241291}" name="1" dateTime="2017-08-11T11:43:50.000Z" lastModifiedTime="2018-02-14T13:55:20.000Z" pageLevel="1" isCurrentlyViewed="true" selected="partial" lang="la"&gt;
+  &lt;one:QuickStyleDef index="0" name="PageTitle" fontColor="automatic" highlightColor="automatic" font="Calibri Light" fontSize="20.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
+  &lt;one:QuickStyleDef index="1" name="p" fontColor="automatic" highlightColor="automatic" font="Calibri" fontSize="11.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
+  &lt;one:QuickStyleDef index="2" name="p" fontColor="automatic" highlightColor="automatic" font="Calibri" fontSize="11.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
+  &lt;one:PageSettings RTL="false" color="automatic"&gt;
+    &lt;one:PageSize&gt;
+      &lt;one:Automatic /&gt;
+    &lt;/one:PageSize&gt;
+    &lt;one:RuleLines visible="false" /&gt;
+  &lt;/one:PageSettings&gt;
+  &lt;one:Title lang="bs-Latn-BA"&gt;
+    &lt;one:OE author="Elvir Brkic" authorInitials="EB" authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{C500E5EE-9DB8-4798-B178-99560A7B9028}{17}{B0}" alignment="left" quickStyleIndex="0"&gt;
+      &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
+    &lt;/one:OE&gt;
+  &lt;/one:Title&gt;
+  &lt;one:Outline author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{C500E5EE-9DB8-4798-B178-99560A7B9028}{41}{B0}"&gt;
+    &lt;one:Position x="108.0" y="140.4000091552734" z="0" /&gt;
+    &lt;one:Size width="450.5687561035156" height="56.09811401367187" isSetByUser="true" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{5F3781E9-B75E-4F4D-B56C-25762121C18C}{180}{B0}" alignment="left"&gt;
+        &lt;one:Table bordersVisible="false" hasHeaderRow="false" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{214}{B0}"&gt;
+          &lt;one:Columns&gt;
+            &lt;one:Column index="0" width="59.61064910888672" /&gt;
+            &lt;one:Column index="1" width="382.828125" /&gt;
+          &lt;/one:Columns&gt;
+          &lt;one:Row objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{215}{B0}" lastModifiedTime="2018-02-14T13:43:45.000Z"&gt;
+            &lt;one:Cell shadingColor="#F0F0F0" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{216}{B0}" lastModifiedByInitials="EB"&gt;
+              &lt;one:OEChildren&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{219}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt;color:#969696"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span style='background:white'&gt;    1 &lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{224}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt;color:#969696"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span style='background:white'&gt;    2 &lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{229}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt;color:#969696"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span style='background:white'&gt;    3 &lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+              &lt;/one:OEChildren&gt;
+            &lt;/one:Cell&gt;
+            &lt;one:Cell shadingColor="#F0F0F0" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{234}{B0}" lastModifiedByInitials="EB"&gt;
+              &lt;one:OEChildren&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{237}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span
+style='color:#323232;background:white'&gt;column2.&lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(&lt;/span&gt;&lt;span
+style='color:#3B6AC8;background:white'&gt;new &lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;XAttribute&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(&lt;/span&gt;&lt;span
+style='color:#1094A0;background:white'&gt;&amp;quot;width&amp;quot;&lt;/span&gt;&lt;span
+style='color:#323232;background:white'&gt;, &lt;/span&gt;&lt;span style='color:#1094A0;
+background:white'&gt;&amp;quot;1400&amp;quot;&lt;/span&gt;&lt;span style='color:#323232;background:
+white'&gt;));&lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{242}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span
+style='color:#323232;background:white'&gt;columns.&lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(column2);&lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{247}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span
+style='color:#323232;background:white'&gt;table.&lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(columans);&lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+              &lt;/one:OEChildren&gt;
+            &lt;/one:Cell&gt;
+          &lt;/one:Row&gt;
+        &lt;/one:Table&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline selected="partial" lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:54:26.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{82}{B0}"&gt;
+    &lt;one:Position x="144.0" y="266.3999938964844" z="3" /&gt;
+    &lt;one:Size width="241.8536071777344" height="13.42771339416504" /&gt;
+    &lt;one:OEChildren selected="partial"&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:54:26.000Z" lastModifiedTime="2018-02-14T13:54:26.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{83}{B0}" alignment="left" quickStyleIndex="2" selected="partial"&gt;
+        &lt;one:T&gt;&lt;![CDATA[Statement]]&gt;&lt;/one:T&gt;
+        &lt;one:T&gt;&lt;![CDATA[&lt;pre style="color:#323232; background-color:#ffffff; font-size:10pt; font-family:'Courier New';" lang=la&gt;&lt;/span&gt; &lt;span style="color:#3b6ac8"&gt;if&lt;/span&gt;&lt;span style="color:#323232"&gt;(&lt;/span&gt;x&lt;span style="color:#323232"&gt;==&lt;/span&gt;&lt;span style="color:#1094a0"&gt;0&lt;/span&gt;&lt;span style="color:#323232"&gt;)&lt;/span&gt;{return null;}&lt;/pre&gt;]]&gt;&lt;/one:T&gt;
+        &lt;one:T&gt;&lt;![CDATA[ is used rarely]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:55:15.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{91}{B0}"&gt;
+    &lt;one:Position x="144.0" y="338.3999938964844" z="4" /&gt;
+    &lt;one:Size width="98.1552734375" height="40.28315734863281" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:55:04.000Z" lastModifiedTime="2018-02-14T13:55:04.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{92}{B0}" alignment="left" quickStyleIndex="2"&gt;
+        &lt;one:T&gt;&lt;![CDATA[SQL&amp;gt; select x]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:55:07.000Z" lastModifiedTime="2018-02-14T13:55:07.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{94}{B0}" alignment="left" quickStyleIndex="2"&gt;
+        &lt;one:T&gt;&lt;![CDATA[From dual]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:55:15.000Z" lastModifiedTime="2018-02-14T13:55:15.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{96}{B0}" alignment="left" quickStyleIndex="2"&gt;
+        &lt;one:T&gt;&lt;![CDATA[Where x = 1;]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{A4BE747E-F9E4-4AD6-AC94-87BB42478D3A}{25}{B0}"&gt;
+    &lt;one:Position x="126.0" y="5020.88134765625" z="2" /&gt;
+    &lt;one:Size width="72.0" height="13.427490234375" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{A4BE747E-F9E4-4AD6-AC94-87BB42478D3A}{26}{B0}" alignment="left" quickStyleIndex="1"&gt;
+        &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{4A60A1FF-D946-4334-95B8-EC47EB91A43A}{36}{B0}"&gt;
+    &lt;one:Position x="144.0" y="5998.45751953125" z="1" /&gt;
+    &lt;one:Size width="72.0" height="13.427490234375" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{4A60A1FF-D946-4334-95B8-EC47EB91A43A}{37}{B0}" alignment="left" quickStyleIndex="1"&gt;
+        &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+&lt;/one:Page&gt;</value>
+  </data>
   <data name="Page2" xml:space="preserve">
     <value>&lt;one:Page xmlns:one="http://schemas.microsoft.com/office/onenote/2013/onenote" ID="{62B9E873-2769-000C-184C-3F76DBF14255}{1}{E1956852926608929975371947232731342679241291}" name="1" dateTime="2017-08-11T11:43:50.000Z" lastModifiedTime="2018-02-14T11:46:27.000Z" pageLevel="1" isCurrentlyViewed="true" selected="partial" lang="la"&gt;
   &lt;one:QuickStyleDef index="0" name="PageTitle" fontColor="automatic" highlightColor="automatic" font="Calibri Light" fontSize="20.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
@@ -2750,6 +2870,122 @@ style='color:#323232;background:white'&gt;;&lt;/span&gt;]]&gt;&lt;/one:T&gt;
     &lt;one:Size width="72.0" height="13.427490234375" /&gt;
     &lt;one:OEChildren&gt;
       &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:28:43.000Z" lastModifiedTime="2018-02-14T13:28:43.000Z" objectID="{4A60A1FF-D946-4334-95B8-EC47EB91A43A}{37}{B0}" alignment="left" quickStyleIndex="1"&gt;
+        &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+&lt;/one:Page&gt;</value>
+  </data>
+  <data name="Page5" xml:space="preserve">
+    <value>&lt;one:Page xmlns:one="http://schemas.microsoft.com/office/onenote/2013/onenote" ID="{62B9E873-2769-000C-184C-3F76DBF14255}{1}{E1956852926608929975371947232731342679241291}" name="1" dateTime="2017-08-11T11:43:50.000Z" lastModifiedTime="2018-02-14T13:55:20.000Z" pageLevel="1" isCurrentlyViewed="true" selected="partial" lang="la"&gt;
+  &lt;one:QuickStyleDef index="0" name="PageTitle" fontColor="automatic" highlightColor="automatic" font="Calibri Light" fontSize="20.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
+  &lt;one:QuickStyleDef index="1" name="p" fontColor="automatic" highlightColor="automatic" font="Calibri" fontSize="11.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
+  &lt;one:QuickStyleDef index="2" name="p" fontColor="automatic" highlightColor="automatic" font="Calibri" fontSize="11.0" spaceBefore="0.0" spaceAfter="0.0" /&gt;
+  &lt;one:PageSettings RTL="false" color="automatic"&gt;
+    &lt;one:PageSize&gt;
+      &lt;one:Automatic /&gt;
+    &lt;/one:PageSize&gt;
+    &lt;one:RuleLines visible="false" /&gt;
+  &lt;/one:PageSettings&gt;
+  &lt;one:Title lang="bs-Latn-BA"&gt;
+    &lt;one:OE author="Elvir Brkic" authorInitials="EB" authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{C500E5EE-9DB8-4798-B178-99560A7B9028}{17}{B0}" alignment="left" quickStyleIndex="0"&gt;
+      &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
+    &lt;/one:OE&gt;
+  &lt;/one:Title&gt;
+  &lt;one:Outline author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{C500E5EE-9DB8-4798-B178-99560A7B9028}{41}{B0}"&gt;
+    &lt;one:Position x="108.0" y="140.4000091552734" z="0" /&gt;
+    &lt;one:Size width="450.5687561035156" height="56.09811401367187" isSetByUser="true" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{5F3781E9-B75E-4F4D-B56C-25762121C18C}{180}{B0}" alignment="left"&gt;
+        &lt;one:Table bordersVisible="false" hasHeaderRow="false" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{214}{B0}"&gt;
+          &lt;one:Columns&gt;
+            &lt;one:Column index="0" width="59.61064910888672" /&gt;
+            &lt;one:Column index="1" width="382.828125" /&gt;
+          &lt;/one:Columns&gt;
+          &lt;one:Row objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{215}{B0}" lastModifiedTime="2018-02-14T13:43:45.000Z"&gt;
+            &lt;one:Cell shadingColor="#F0F0F0" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{216}{B0}" lastModifiedByInitials="EB"&gt;
+              &lt;one:OEChildren&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{219}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt;color:#969696"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span style='background:white'&gt;    1 &lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{224}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt;color:#969696"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span style='background:white'&gt;    2 &lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{229}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt;color:#969696"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span style='background:white'&gt;    3 &lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+              &lt;/one:OEChildren&gt;
+            &lt;/one:Cell&gt;
+            &lt;one:Cell shadingColor="#F0F0F0" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{234}{B0}" lastModifiedByInitials="EB"&gt;
+              &lt;one:OEChildren&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{237}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span
+style='color:#323232;background:white'&gt;column2.&lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(&lt;/span&gt;&lt;span
+style='color:#3B6AC8;background:white'&gt;new &lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;XAttribute&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(&lt;/span&gt;&lt;span
+style='color:#1094A0;background:white'&gt;&amp;quot;width&amp;quot;&lt;/span&gt;&lt;span
+style='color:#323232;background:white'&gt;, &lt;/span&gt;&lt;span style='color:#1094A0;
+background:white'&gt;&amp;quot;1400&amp;quot;&lt;/span&gt;&lt;span style='color:#323232;background:
+white'&gt;));&lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{242}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span
+style='color:#323232;background:white'&gt;columns.&lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(column2);&lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+                &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{9E64393A-4E6C-4CCC-B6CF-9C7B06E00EA7}{247}{B0}" alignment="left" quickStyleIndex="1" style="font-family:'Courier New';font-size:14.0pt"&gt;
+                  &lt;one:T&gt;&lt;![CDATA[&lt;span
+style='color:#323232;background:white'&gt;table.&lt;/span&gt;&lt;span style='color:#C73A69;
+background:white'&gt;Add&lt;/span&gt;&lt;span style='color:#323232;background:white'&gt;(columans);&lt;/span&gt;]]&gt;&lt;/one:T&gt;
+                &lt;/one:OE&gt;
+              &lt;/one:OEChildren&gt;
+            &lt;/one:Cell&gt;
+          &lt;/one:Row&gt;
+        &lt;/one:Table&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline selected="partial" lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:54:26.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{82}{B0}"&gt;
+    &lt;one:Position x="144.0" y="266.3999938964844" z="3" /&gt;
+    &lt;one:Size width="241.8536071777344" height="13.42771339416504" /&gt;
+    &lt;one:OEChildren selected="partial"&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:54:26.000Z" lastModifiedTime="2018-02-14T13:54:26.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{83}{B0}" alignment="left" quickStyleIndex="2" selected="partial"&gt;
+        &lt;one:T&gt;&lt;![CDATA[Statement]]&gt;&lt;/one:T&gt;
+        &lt;one:T selected="all"&gt;&lt;![CDATA[ if(x==0){return null;}]]&gt;&lt;/one:T&gt;
+        &lt;one:T&gt;&lt;![CDATA[ is used rarely]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:55:15.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{91}{B0}"&gt;
+    &lt;one:Position x="144.0" y="338.3999938964844" z="4" /&gt;
+    &lt;one:Size width="98.1552734375" height="40.28315734863281" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:55:04.000Z" lastModifiedTime="2018-02-14T13:55:04.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{92}{B0}" alignment="left" quickStyleIndex="2"&gt;
+        &lt;one:T&gt;&lt;![CDATA[SQL&amp;gt; select x]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:55:07.000Z" lastModifiedTime="2018-02-14T13:55:07.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{94}{B0}" alignment="left" quickStyleIndex="2"&gt;
+        &lt;one:T&gt;&lt;![CDATA[From dual]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:55:15.000Z" lastModifiedTime="2018-02-14T13:55:15.000Z" objectID="{190487E3-146C-490F-AE31-A101EF1A7E01}{96}{B0}" alignment="left" quickStyleIndex="2"&gt;
+        &lt;one:T&gt;&lt;![CDATA[Where x = 1;]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{A4BE747E-F9E4-4AD6-AC94-87BB42478D3A}{25}{B0}"&gt;
+    &lt;one:Position x="126.0" y="5020.88134765625" z="2" /&gt;
+    &lt;one:Size width="72.0" height="13.427490234375" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{A4BE747E-F9E4-4AD6-AC94-87BB42478D3A}{26}{B0}" alignment="left" quickStyleIndex="1"&gt;
+        &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
+      &lt;/one:OE&gt;
+    &lt;/one:OEChildren&gt;
+  &lt;/one:Outline&gt;
+  &lt;one:Outline lang="bs-Latn-BA" author="Elvir Brkic" authorInitials="EB" lastModifiedBy="Elvir Brkic" lastModifiedByInitials="EB" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{4A60A1FF-D946-4334-95B8-EC47EB91A43A}{36}{B0}"&gt;
+    &lt;one:Position x="144.0" y="5998.45751953125" z="1" /&gt;
+    &lt;one:Size width="72.0" height="13.427490234375" /&gt;
+    &lt;one:OEChildren&gt;
+      &lt;one:OE authorResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" lastModifiedByResolutionID="&amp;lt;resolutionId provider=&amp;quot;Windows Live&amp;quot; hash=&amp;quot;JAD/MaA7stEIYMdOQXVRVg==&amp;quot;&amp;gt;&amp;lt;localId cid=&amp;quot;480dd99e5331938a&amp;quot;/&amp;gt;&amp;lt;/resolutionId&amp;gt;" creationTime="2018-02-14T13:43:45.000Z" lastModifiedTime="2018-02-14T13:43:45.000Z" objectID="{4A60A1FF-D946-4334-95B8-EC47EB91A43A}{37}{B0}" alignment="left" quickStyleIndex="1"&gt;
         &lt;one:T&gt;&lt;![CDATA[]]&gt;&lt;/one:T&gt;
       &lt;/one:OE&gt;
     &lt;/one:OEChildren&gt;

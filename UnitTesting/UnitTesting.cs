@@ -70,6 +70,30 @@ namespace UnitTesting
         [TestMethod]
         public void FormatSelectedCode_WordSelected()
         {
+            string htmlCode = Resource1.HTMLContent5;
+            string[] pos = null;
+            HighLightParameter param = new HighLightParameter();
+            param.ShowLineNumber = true;
+            param.HighlightColor = System.Drawing.Color.FromArgb(240, 240, 240);
+
+
+            AddIn addIn = new AddIn();
+            addIn.ns = @"http://schemas.microsoft.com/office/onenote/2013/onenote";
+
+            var outline = XDocument.Parse(Resource1.Page5).Descendants(addIn.ns + "Outline")
+                                   .Where(n => n.Attribute("selected") != null && (n.Attribute("selected").Value == "all" || n.Attribute("selected").Value == "partial"))
+                                   .FirstOrDefault();
+
+            //Arrange
+            ExeConfigurationFileMap fileMap = new ExeConfigurationFileMap { ExeConfigFilename = "Test.config" };
+            Configuration configuration = ConfigurationManager.OpenMappedExeConfiguration(fileMap, ConfigurationUserLevel.None);
+
+            HighLightSection config = configuration.GetSection("HighLightSection") as HighLightSection;
+
+
+            XDocument output = addIn.InsertHighLightCode(htmlCode, pos, param, outline, config, false, true);
+
+            Assert.AreEqual(Resource1.Output5, output.ToString(), false);
         }
 
         [TestMethod]
