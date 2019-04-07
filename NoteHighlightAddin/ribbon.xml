@@ -2,7 +2,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="GetImage">
     <ribbon>
         <tabs>
-            <tab id="tabNoteHighlight" label="NoteHighlight">
+            <tab id="tabNoteHighlight" label="NoteHighlight" keytip="H">
                 <group id="groupLanguage" label="Language">
                   <button id="buttonCSharp" label="C#" size="large" screentip="Enter C# Code" onAction="AddInButtonClicked" tag="cs" keytip="C" image="CSharp.png" visible="true"/>
                   <button id="buttonSQL" label="SQL" size="large" screentip="Enter SQL Code" onAction="AddInButtonClicked" tag="sql" keytip="S"  image="SQL.png" visible="true"/>
