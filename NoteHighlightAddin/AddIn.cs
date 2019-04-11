@@ -370,13 +370,21 @@ namespace NoteHighlightAddin
                     attrPos = table.Descendants(ns + "Cell").LastOrDefault().Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all");
                     selectedTextFormated = true;
                 }
-
+                int tabCount = 0;
+                int initTabCount = -1;
                 foreach (var line in attrPos)
                 {
                     var htmlDocument = new HtmlAgilityPack.HtmlDocument();
                     htmlDocument.LoadHtml(line.Value);
-                    
-                    sb.AppendLine(HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
+
+                    if (initTabCount == -1)
+                    {
+                        initTabCount = line.Ancestors().Elements(ns + "T").Count();
+                    }
+                    tabCount = line.Ancestors().Elements(ns + "T").Count() - initTabCount;
+
+
+                    sb.AppendLine(new String('\t', tabCount) + HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
                 }
             }
             return sb.ToString().TrimEnd('\r','\n');
