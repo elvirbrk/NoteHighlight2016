@@ -26,6 +26,7 @@ using System.Threading;
 using System.Web;
 using GenerateHighlightContent;
 using System.Configuration;
+using System.Globalization;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -266,6 +267,12 @@ namespace NoteHighlightAddin
 
                     var page = InsertHighLightCode(htmlContent, position, parameters, outline, (new GenerateHighLight()).Config, selectedTextFormated, IsSelectedTextInline(pageXml));
                     page.Root.SetAttributeValue("ID", existingPageId);
+
+                    //Bug fix - remove overflow value for Indents
+                    foreach (var el in page.Descendants(ns + "Indent").Where(n => double.Parse(n.Attribute("indent").Value, new CultureInfo(page.Root.Attribute("lang").Value)) > 1000000))
+                    {
+                        el.Attribute("indent").Value = "0";
+                    }
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
                 }
