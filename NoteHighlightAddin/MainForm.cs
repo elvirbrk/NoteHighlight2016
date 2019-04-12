@@ -46,6 +46,8 @@ namespace NoteHighlightAddin
 
         public HighLightParameter Parameters { get { return _parameters; } }
 
+        private bool _quickStyle;
+
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
 
@@ -53,13 +55,20 @@ namespace NoteHighlightAddin
 
         #region -- Constructor --
 
-        public MainForm(string codeType, string fileName, string selectedText)
+        public MainForm(string codeType, string fileName, string selectedText, bool quickStyle)
         {
             _codeType = codeType;
             _fileName = fileName;
             InitializeComponent();
             LoadThemes();
             txtCode.Text = selectedText;
+            _quickStyle = quickStyle;
+
+            if (_quickStyle)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                this.ShowInTaskbar = false;
+            }
 
         }
 
@@ -283,11 +292,18 @@ namespace NoteHighlightAddin
         private void MainForm_Shown(object sender, EventArgs e)
         {
 
-            // This is necessary in order for SetForegroundWindow to work consistently
-            this.WindowState = FormWindowState.Minimized;
-            this.WindowState = FormWindowState.Normal;
+            if (_quickStyle)
+            {
+                btnCodeHighLight.PerformClick()
+;            }
+            else
+            {
+                // This is necessary in order for SetForegroundWindow to work consistently
+                this.WindowState = FormWindowState.Minimized;
+                this.WindowState = FormWindowState.Normal;
 
-            SetForegroundWindow(this.Handle);
+                SetForegroundWindow(this.Handle);
+            }
 
         }
     }

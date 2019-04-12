@@ -204,7 +204,7 @@ namespace NoteHighlightAddin
                     }
                 }
 
-                MainForm form = new MainForm(tag, outFileName, selectedText);
+                MainForm form = new MainForm(tag, outFileName, selectedText, this.QuickStyle);
 
                 System.Windows.Forms.Application.Run(form);
                 //}
