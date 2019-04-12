@@ -46,7 +46,9 @@ namespace NoteHighlightAddin
 
         string tag;
 
-		public AddIn()
+        private bool QuickStyle { get; set; }
+
+        public AddIn()
 		{
 		}
 
@@ -136,7 +138,20 @@ namespace NoteHighlightAddin
 		{
 		}
 
-		//public async Task AddInButtonClicked(IRibbonControl control)
+        public bool cbQuickStyle_GetPressed(IRibbonControl control)
+        {
+            this.QuickStyle = NoteHighlightForm.Properties.Settings.Default.QuickStyle;
+            return this.QuickStyle;
+        }
+
+        public void cbQuickStyle_OnAction(IRibbonControl control, bool isPressed)
+        {
+            this.QuickStyle = isPressed;
+            NoteHighlightForm.Properties.Settings.Default.QuickStyle = this.QuickStyle;
+            NoteHighlightForm.Properties.Settings.Default.Save();
+        }
+
+        //public async Task AddInButtonClicked(IRibbonControl control)
         public void AddInButtonClicked(IRibbonControl control)
         {
             try

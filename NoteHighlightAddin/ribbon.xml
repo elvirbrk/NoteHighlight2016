@@ -39,6 +39,9 @@
                   <button id="buttonSwift" label="Swift" size="large" screentip="Enter Swift Code" onAction="AddInButtonClicked" tag="swift"  image="Other.png" visible="false"/>
                   <button id="buttonVisualBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
 				</group>
+        <group label="Quick Style" id="QuickStyle">
+                <checkBox id="cbQuickStyle"  label="Quick Style" onAction="cbQuickStyle_OnAction" getPressed="cbQuickStyle_GetPressed"/>
+        </group>
             </tab>
         </tabs>
     </ribbon>

@@ -73,5 +73,20 @@ namespace NoteHighlightForm.Properties {
                 this["BackgroundColor"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool QuickStyle
+        {
+            get
+            {
+                return (bool)(this["QuickStyle"]);
+            }
+            set
+            {
+                this["QuickStyle"] = value;
+            }
+        }
     }
 }
