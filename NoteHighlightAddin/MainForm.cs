@@ -283,10 +283,8 @@ namespace NoteHighlightAddin
 
         private void btnBackground_Click(object sender, EventArgs e)
         {
-            if (colorDialog1.ShowDialog() == DialogResult.OK)
-            {
-                btnBackground.BackColor = colorDialog1.Color;
-            }
+            contextMenuStrip1.Show(btnBackground, new Point(0, btnBackground.Height));
+            
         }
 
         private void MainForm_Shown(object sender, EventArgs e)
@@ -305,6 +303,19 @@ namespace NoteHighlightAddin
                 SetForegroundWindow(this.Handle);
             }
 
+        }
+
+        private void PickColorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                btnBackground.BackColor = colorDialog1.Color;
+            }
+        }
+
+        private void TransparentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            btnBackground.BackColor = Color.Transparent;
         }
     }
 }

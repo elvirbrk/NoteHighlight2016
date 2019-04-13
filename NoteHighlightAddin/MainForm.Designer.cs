@@ -41,9 +41,13 @@
             this.btnBackground = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip();
+            this.pickColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.transparentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnCodeHighLight
@@ -83,6 +87,7 @@
             settings1.SaveOnClipboard = false;
             settings1.SettingsKey = "";
             settings1.ShowLineNumber = true;
+            settings1.QuickStyle = false;
             this.cbx_Clipboard.Checked = settings1.SaveOnClipboard;
             this.cbx_Clipboard.DataBindings.Add(new System.Windows.Forms.Binding("Checked", settings1, "SaveOnClipboard", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.cbx_Clipboard.Location = new System.Drawing.Point(271, 20);
@@ -157,6 +162,28 @@
             this.panel3.Size = new System.Drawing.Size(517, 380);
             this.panel3.TabIndex = 0;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pickColorToolStripMenuItem,
+            this.transparentToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // pickColorToolStripMenuItem
+            // 
+            this.pickColorToolStripMenuItem.Name = "pickColorToolStripMenuItem";
+            this.pickColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pickColorToolStripMenuItem.Text = "Pick color";
+            this.pickColorToolStripMenuItem.Click += new System.EventHandler(this.PickColorToolStripMenuItem_Click);
+            // 
+            // transparentToolStripMenuItem
+            // 
+            this.transparentToolStripMenuItem.Name = "transparentToolStripMenuItem";
+            this.transparentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.transparentToolStripMenuItem.Text = "Transparent";
+            this.transparentToolStripMenuItem.Click += new System.EventHandler(this.TransparentToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnCodeHighLight;
@@ -177,6 +204,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -195,5 +223,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnBackground;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pickColorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem transparentToolStripMenuItem;
     }
 }

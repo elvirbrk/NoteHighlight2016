@@ -554,7 +554,7 @@ namespace NoteHighlightAddin
             table.Add(columns);
 
             Color color = parameters.HighlightColor;
-            string colorString = string.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
+            string colorString = color.A == 0 ? "none" : string.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
 
             XElement row = new XElement(ns + "Row");
             XElement cell1 = new XElement(ns + "Cell");
