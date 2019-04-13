@@ -227,7 +227,36 @@ namespace NoteHighlightAddin
             }
         }
 
+        public void SettingsButtonClicked(IRibbonControl control)
+        {
+            try
+            {
+               
+                Thread t = new Thread(new ThreadStart(ShowSettingsForm));
+                t.SetApartmentState(ApartmentState.STA);
+                t.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from SettingsButtonClicked: " + e.ToString());
+            }
+        }
 
+        private void ShowSettingsForm()
+        {
+            try
+            {
+             
+                SettingsForm form = new SettingsForm();
+
+                System.Windows.Forms.Application.Run(form);
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from ShowForm: " + e.ToString());
+            }
+        }
 
         /// <summary>
         /// Specified in Ribbon.xml, this method returns the image to display on the ribbon button
