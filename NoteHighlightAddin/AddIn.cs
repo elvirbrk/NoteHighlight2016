@@ -454,6 +454,10 @@ namespace NoteHighlightAddin
             else // Update exiting outline
             {
                 update = true;
+
+                //Change outline width
+                outline.Element(ns + "Size").Attribute("width").Value = "1600";
+
                 if (selectedTextFormated)
                 {
                     outline.Descendants(ns + "Table").Where(n => n.Attribute("selected") != null &&
