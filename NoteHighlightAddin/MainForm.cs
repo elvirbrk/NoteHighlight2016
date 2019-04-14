@@ -139,7 +139,10 @@ namespace NoteHighlightAddin
                 CodeType = _codeType,
                 HighLightStyle = CodeStyle,
                 ShowLineNumber = IsShowLineNumber,
-                HighlightColor = BackgroundColor
+                HighlightColor = BackgroundColor,
+                Font = NoteHighlightForm.Properties.Settings.Default.Font,
+                FontSize = NoteHighlightForm.Properties.Settings.Default.FontSize
+
             };
 
             try

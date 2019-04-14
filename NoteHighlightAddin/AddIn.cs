@@ -561,7 +561,7 @@ namespace NoteHighlightAddin
             XElement children = new XElement(ns + "OEChildren");
 
             XElement table = new XElement(ns + "Table");
-            table.Add(new XAttribute("bordersVisible", "false"));
+            table.Add(new XAttribute("bordersVisible", NoteHighlightForm.Properties.Settings.Default.ShowTableBorder));
 
             XElement columns = new XElement(ns + "Columns");
             XElement column1 = new XElement(ns + "Column");

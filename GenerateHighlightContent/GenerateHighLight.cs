@@ -24,6 +24,10 @@ namespace GenerateHighlightContent
 
         public string FileName { get; set; }
 
+        public string Font { get; set; }
+
+        public int FontSize { get; set; }
+
         /// <summary> highlight.exe 參數 設定於 App.config 的 HighLightSection 區塊 </summary>
         private HighLightSection _section;
 
@@ -76,6 +80,8 @@ namespace GenerateHighlightContent
             HighLightStyle = parameter.HighLightStyle;
             ShowLineNumber = parameter.ShowLineNumber;
             FileName = parameter.FileName;
+            Font = parameter.Font;
+            FontSize = parameter.FontSize;
         }
 
         /// <summary> 產生HighLight.exe 所需的參數 </summary>
@@ -91,10 +97,12 @@ namespace GenerateHighlightContent
 
             string arguments = sb.ToString().TemplateSubstitute(new
             {
-                inputFileName = String.Format("\"{0}\"",inputFileName), 
-                outputFileName = String.Format("\"{0}\"",outputFileName),
+                inputFileName = String.Format("\"{0}\"", inputFileName),
+                outputFileName = String.Format("\"{0}\"", outputFileName),
                 codeType = CodeType,
-                highLightStyle = HighLightStyle
+                highLightStyle = HighLightStyle,
+                font = String.Format("\"{0}\"", Font),
+                fontSize = FontSize
             });
 
             return arguments;
