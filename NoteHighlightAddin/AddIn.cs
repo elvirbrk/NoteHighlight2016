@@ -26,6 +26,7 @@ using System.Threading;
 using System.Web;
 using GenerateHighlightContent;
 using System.Configuration;
+using System.Globalization;
 
 #pragma warning disable CS3003 // Type is not CLS-compliant
 
@@ -45,7 +46,9 @@ namespace NoteHighlightAddin
 
         string tag;
 
-		public AddIn()
+        private bool QuickStyle { get; set; }
+
+        public AddIn()
 		{
 		}
 
@@ -135,7 +138,20 @@ namespace NoteHighlightAddin
 		{
 		}
 
-		//public async Task AddInButtonClicked(IRibbonControl control)
+        public bool cbQuickStyle_GetPressed(IRibbonControl control)
+        {
+            this.QuickStyle = NoteHighlightForm.Properties.Settings.Default.QuickStyle;
+            return this.QuickStyle;
+        }
+
+        public void cbQuickStyle_OnAction(IRibbonControl control, bool isPressed)
+        {
+            this.QuickStyle = isPressed;
+            NoteHighlightForm.Properties.Settings.Default.QuickStyle = this.QuickStyle;
+            NoteHighlightForm.Properties.Settings.Default.Save();
+        }
+
+        //public async Task AddInButtonClicked(IRibbonControl control)
         public void AddInButtonClicked(IRibbonControl control)
         {
             try
@@ -188,7 +204,7 @@ namespace NoteHighlightAddin
                     }
                 }
 
-                MainForm form = new MainForm(tag, outFileName, selectedText);
+                MainForm form = new MainForm(tag, outFileName, selectedText, this.QuickStyle);
 
                 System.Windows.Forms.Application.Run(form);
                 //}
@@ -211,7 +227,36 @@ namespace NoteHighlightAddin
             }
         }
 
+        public void SettingsButtonClicked(IRibbonControl control)
+        {
+            try
+            {
+               
+                Thread t = new Thread(new ThreadStart(ShowSettingsForm));
+                t.SetApartmentState(ApartmentState.STA);
+                t.Start();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from SettingsButtonClicked: " + e.ToString());
+            }
+        }
 
+        private void ShowSettingsForm()
+        {
+            try
+            {
+             
+                SettingsForm form = new SettingsForm();
+
+                System.Windows.Forms.Application.Run(form);
+                
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("Exception from ShowForm: " + e.ToString());
+            }
+        }
 
         /// <summary>
         /// Specified in Ribbon.xml, this method returns the image to display on the ribbon button
@@ -266,6 +311,12 @@ namespace NoteHighlightAddin
 
                     var page = InsertHighLightCode(htmlContent, position, parameters, outline, (new GenerateHighLight()).Config, selectedTextFormated, IsSelectedTextInline(pageXml));
                     page.Root.SetAttributeValue("ID", existingPageId);
+
+                    //Bug fix - remove overflow value for Indents
+                    foreach (var el in page.Descendants(ns + "Indent").Where(n => double.Parse(n.Attribute("indent").Value, new CultureInfo(page.Root.Attribute("lang").Value)) > 1000000))
+                    {
+                        el.Attribute("indent").Value = "0";
+                    }
 
                     OneNoteApplication.UpdatePageContent(page.ToString(), DateTime.MinValue);
                 }
@@ -370,13 +421,21 @@ namespace NoteHighlightAddin
                     attrPos = table.Descendants(ns + "Cell").LastOrDefault().Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all");
                     selectedTextFormated = true;
                 }
-
+                int tabCount = 0;
+                int initTabCount = -1;
                 foreach (var line in attrPos)
                 {
                     var htmlDocument = new HtmlAgilityPack.HtmlDocument();
                     htmlDocument.LoadHtml(line.Value);
-                    
-                    sb.AppendLine(HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
+
+                    if (initTabCount == -1)
+                    {
+                        initTabCount = line.Ancestors().Elements(ns + "T").Count();
+                    }
+                    tabCount = line.Ancestors().Elements(ns + "T").Count() - initTabCount;
+
+
+                    sb.AppendLine(new String('\t', tabCount) + HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
                 }
             }
             return sb.ToString().TrimEnd('\r','\n');
@@ -424,6 +483,10 @@ namespace NoteHighlightAddin
             else // Update exiting outline
             {
                 update = true;
+
+                //Change outline width
+                outline.Element(ns + "Size").Attribute("width").Value = "1600";
+
                 if (selectedTextFormated)
                 {
                     outline.Descendants(ns + "Table").Where(n => n.Attribute("selected") != null &&
@@ -452,6 +515,7 @@ namespace NoteHighlightAddin
                     {
                         outline.Descendants(ns + "T").Where(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all").FirstOrDefault().ReplaceWith(children.Descendants(ns + "Table").FirstOrDefault());
                         outline.Descendants(ns + "OE").Where(t => t.Elements(ns + "T").Any(n => n.Attribute("selected") != null && n.Attribute("selected").Value == "all")).Remove();
+                        outline.Descendants(ns + "OEChildren").Where(n => n.HasElements == false && n.Attribute("selected") != null && (n.Attribute("selected").Value == "partial")).Remove();
                     }
                 }
             }
@@ -497,7 +561,7 @@ namespace NoteHighlightAddin
             XElement children = new XElement(ns + "OEChildren");
 
             XElement table = new XElement(ns + "Table");
-            table.Add(new XAttribute("bordersVisible", "false"));
+            table.Add(new XAttribute("bordersVisible", NoteHighlightForm.Properties.Settings.Default.ShowTableBorder));
 
             XElement columns = new XElement(ns + "Columns");
             XElement column1 = new XElement(ns + "Column");
@@ -523,7 +587,7 @@ namespace NoteHighlightAddin
             table.Add(columns);
 
             Color color = parameters.HighlightColor;
-            string colorString = string.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
+            string colorString = color.A == 0 ? "none" : string.Format("#{0:X2}{1:X2}{2:X2}", color.R, color.G, color.B);
 
             XElement row = new XElement(ns + "Row");
             XElement cell1 = new XElement(ns + "Cell");

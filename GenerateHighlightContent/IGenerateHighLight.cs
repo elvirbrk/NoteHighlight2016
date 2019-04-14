@@ -31,5 +31,9 @@ namespace GenerateHighlightContent
         public string FileName { get; set; }
 
         public Color HighlightColor { get; set; }
+
+        public string Font { get; set; }
+
+        public int FontSize { get; set; }
     }
 }

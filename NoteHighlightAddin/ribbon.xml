@@ -2,7 +2,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage="GetImage">
     <ribbon>
         <tabs>
-            <tab id="tabNoteHighlight" label="NoteHighlight">
+            <tab id="tabNoteHighlight" label="NoteHighlight" keytip="H">
                 <group id="groupLanguage" label="Language">
                   <button id="buttonCSharp" label="C#" size="large" screentip="Enter C# Code" onAction="AddInButtonClicked" tag="cs" keytip="C" image="CSharp.png" visible="true"/>
                   <button id="buttonSQL" label="SQL" size="large" screentip="Enter SQL Code" onAction="AddInButtonClicked" tag="sql" keytip="S"  image="SQL.png" visible="true"/>
@@ -39,6 +39,10 @@
                   <button id="buttonSwift" label="Swift" size="large" screentip="Enter Swift Code" onAction="AddInButtonClicked" tag="swift"  image="Other.png" visible="false"/>
                   <button id="buttonVisualBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
 				</group>
+        <group label="Advanced" id="Advanced">
+                <checkBox id="cbQuickStyle"  label="Quick Style" onAction="cbQuickStyle_OnAction" getPressed="cbQuickStyle_GetPressed"/>
+                <button id="buttonSettings" label="Settings" size="normal" screentip="Advanced settings" onAction="SettingsButtonClicked" image="Other.png" visible="true"/>
+        </group>
             </tab>
         </tabs>
     </ribbon>
