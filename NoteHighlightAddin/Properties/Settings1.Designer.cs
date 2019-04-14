@@ -82,5 +82,52 @@ namespace NoteHighlightAddin.Properties {
                 this["QuickStyle"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Courier New")]
+        public string Font
+        {
+            get
+            {
+                return (string)(this["Font"]);
+            }
+            set
+            {
+                this["Font"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int FontSize
+        {
+            get
+            {
+                return (int)(this["FontSize"]);
+            }
+            set
+            {
+                this["FontSize"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ShowTableBorder
+        {
+            get
+            {
+                return (bool)(this["ShowTableBorder"]);
+            }
+            set
+            {
+                this["ShowTableBorder"] = value;
+            }
+        }
     }
+
+
 }
