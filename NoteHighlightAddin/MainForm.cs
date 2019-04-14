@@ -128,6 +128,11 @@ namespace NoteHighlightAddin
         /// </summary>
         private void btnCodeHighLight_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(CodeStyle))
+            {
+                MessageBox.Show("Please select code Style!");
+                return;
+            }
             IGenerateHighLight generate = new GenerateHighLight();
 
             string outputFileName = String.Empty;
