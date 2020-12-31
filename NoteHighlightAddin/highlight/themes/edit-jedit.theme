@@ -2,6 +2,8 @@
 
 Description="jEdit Editor"
 
+Categories = {"light"}
+
 Default        = { Colour="#000000" }
 Canvas         = { Colour="#ffffff" }
 Number         = { Colour="#ff0000" }

@@ -1,6 +1,9 @@
 
 Description="Lilypond"
 
+Categories = {"source"}
+
+
 Identifiers=[[ ([a-z]+)\d* ]]
 
 Keywords={

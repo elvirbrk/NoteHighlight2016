@@ -1,5 +1,8 @@
 Description="LESS"
 
+Categories = {"markup"}
+
+
 Identifiers=[[ [a-zA-Z_\-][\w\-]* ]]
 
 Digits=[=[ \#[[:xdigit:]]{3,6}|\d*\.?\d+?\w* ]=]
@@ -27,14 +30,14 @@ Strings={
 IgnoreCase=false
 
 Comments = {
-   { Block=true,
-     Nested=false,
-     Delimiter = { [[\/\*]], [[\*\/]] }
-   },
-   {
-     Block=false,
-     Delimiter = { [[//]] }
-   }
+  { Block=true,
+    Nested=false,
+    Delimiter = { [[\/\*]], [[\*\/]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
 }
 
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\~|\#]]

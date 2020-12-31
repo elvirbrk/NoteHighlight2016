@@ -1,6 +1,8 @@
 
 Description="BBcode"
 
+Categories = {"markup"}
+
 Keywords={
   { Id=1,
     Regex=[[ \[\/?\w+|\] ]],

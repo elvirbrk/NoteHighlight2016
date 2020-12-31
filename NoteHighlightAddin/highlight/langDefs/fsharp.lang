@@ -1,6 +1,8 @@
 
 Description="F#"
 
+Categories = {"source", "functional"}
+
 Digits=[[ (?:0x|0X|0b|0B|0o)[0-9a-fA-F]+?\w*|\d*[\.\_]?\d+(?:[eE][\-\+]\d+)?\w* ]]
 
 Keywords={
@@ -18,7 +20,7 @@ Keywords={
     Regex=[[ [use|let]\s+(mutable\s+)?(\w+)]], Group=2
   },
   { Id=4,
-    Regex=[[\b[A-Z][a-zA-Z0-9_']*]],
+    Regex=[[\b[A-Z][a-zA-Z0-9_]*]],
   },
 }
 

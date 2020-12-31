@@ -1,6 +1,8 @@
 
 Description="ABAP/4"
 
+Categories = {"source"}
+
 Identifiers=[[ [a-zA-Z_][\w\-]* ]]
 
 Keywords={

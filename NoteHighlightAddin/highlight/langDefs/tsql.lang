@@ -1,6 +1,8 @@
 
 Description="Transact-SQL"
 
+Categories = {"database"}
+
 Keywords={
   { Id=1,
     List={  "add", "exists", "precision", "all", "exit", "primary", "alter",

@@ -1,6 +1,8 @@
 
 Description="SAS"
 
+Categories = {"source"}
+
 Keywords={
   { Id=1,
     List={"put"},

@@ -1,21 +1,19 @@
 
 Description="Rust"
 
-Digits=[[ (?:0x|0o|0b)[0-9a-fA-F\_uif]+|\d*[\.]?[\d\_uif]+(?:[eE][\-\+][\d\_uif]+)? ]]
+Categories = {"source"}
+
+Digits=[[ (?:0x|0o|0b)[0-9a-fA-F\_uif]+|\d+[\.]?[\d\_uif]+(?:[eE][\-\+][\d\_uif]+)?|\d+ ]]
 
 Keywords={
-  {  Id=1,
-   List={"abstract","alignof","as","become","box",
-        "break","const","continue","crate","do",
-        "else","enum","extern","false","final",
-        "fn","for","if","impl","in",
-        "let","loop","macro","match","mod",
-        "move","mut","offsetof","override","priv",
-        "proc","pub","pure","ref","return",
-        "Self","self","sizeof","static","struct",
-        "super","trait","true","type","typeof",
-        "unsafe","unsized","use","virtual","where",
-        "while","yield"
+  { Id=1,
+    List={"as", "box", "break", "const", "continue", "crate", "else",
+          "extern", "false", "fn", "for", "if", "impl", "in", "let", "loop",
+          "match", "mod", "move", "mut", "pub", "ref", "return", "self",
+          "Self", "static", "super", "trait", "true", "type",
+          "unsafe", "use", "where", "while", "abstract", "alignof", "become",
+          "do", "final", "macro", "offsetof", "override", "priv", "pure",
+          "sizeof", "typeof", "unsized", "virtual", "yield", "auto", "catch"
         }
   },
   { Id=2,
@@ -23,8 +21,10 @@ Keywords={
             "f32", "f64", "usize", "isize", "char", "str", "struct","enum"
           }
   },
+
+  -- weak keywords
   { Id=3,
-    List= { 
+    List= { "default", "dyn", "union"
           }
   },
   { Id=4,
@@ -35,18 +35,18 @@ Keywords={
 Strings = {
   Delimiter=[["]],
   RawPrefix="r",
-  Escape = [[ \\u\{\d{4}\}|\\x??|\\\w|\\[\'\\\"] ]]
+  Escape = [[ \\[\'\\\"aftnrv]|\\U\{[0-9a-fA-F]{8}\}|\\u\{[0-9a-fA-F]{4}\}|\\x?? ]]
 }
 
 Comments = {
-   { Block=true,
-     Nested=true,
-     Delimiter = { [[\/\*]], [[\*\/]] }
-   },
-   {
-     Block=false,
-     Delimiter = { [[//]] }
-   }
+  { Block=true,
+    Nested=true,
+    Delimiter = { [[\/\*]], [[\*\/]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
 }
 
 IgnoreCase=false

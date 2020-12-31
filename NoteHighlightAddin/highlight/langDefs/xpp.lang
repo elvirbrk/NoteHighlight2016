@@ -1,6 +1,8 @@
 
 Description="SuperX++"
 
+Categories = {"source"}
+
 Keywords={
   { Id=1,
     Regex=[[<!?\/?\w+>?|>]],

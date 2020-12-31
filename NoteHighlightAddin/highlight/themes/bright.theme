@@ -1,6 +1,8 @@
 
 Description="Bright"
 
+Categories = {"light"}
+
 Default        = { Colour="#330066" }
 Canvas         = { Colour="#ffffff" }
 Number         = { Colour="#32ba06" }

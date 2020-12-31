@@ -1,6 +1,8 @@
 
 Description="Icon"
 
+Categories = {"source"}
+
 Keywords={
   { Id=1,
     List={"by", "case", "", "create", "default", "do", "else", "every", "if", "initial", "next", "of", "repeat", "then", "to", "until", "while", "break",
@@ -10,10 +12,7 @@ Keywords={
     List={"co-expression", "cset", "tfile", "integer", "list", "null", "real", "set", "string", "table", "window"},
   },
   { Id=3,
-    Regex=[[\&\w+]]
-  },
-  { Id=3,
-    Regex=[[\$\w+]]
+    Regex=[[[\&\$\@]\w+]]
   },
   { Id=4,
     Regex=[[(\w+)\s*\(]]
@@ -32,5 +31,5 @@ Comments={
   },
 }
 
-Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|<|>|\!|\-|\+|\=|\/|\*|\+|\-|\~]]
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|<|>|\!|\-|\+|\=|\/|\*|\+|\-|\~|\|]]
 

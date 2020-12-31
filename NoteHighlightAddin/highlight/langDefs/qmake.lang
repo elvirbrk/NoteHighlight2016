@@ -1,11 +1,13 @@
 
 Description="QMake Project"
 
+Categories = {"config", "script"}
+
 Keywords={
   { Id=1,
-    List={"basename", "contains", "count", "", "dirname", "error", "eval", 
-        "exists", "find", "for", "include", "infile", "", "isEmpty", "join", "member", 
-        "message", "prompt", "quote", "sprintf", "system", "unique", "warning", "", 
+    List={"basename", "contains", "count", "", "dirname", "error", "eval",
+        "exists", "find", "for", "include", "infile", "", "isEmpty", "join", "member",
+        "message", "prompt", "quote", "sprintf", "system", "unique", "warning", "",
         "else"},
   },
   { Id=2,
@@ -21,6 +23,7 @@ Keywords={
 
 Strings={
   Delimiter=[["]],
+    Escape=[[\A(?!x)x]]
 }
 
 IgnoreCase=false
@@ -31,4 +34,4 @@ Comments={
   },
 }
 
-Operators=[[\(|\)|\[|\]|\{|\}|\:|\&|\!|\=|\*|\%|\+|\~|\\]]
+Operators=[[\(|\)|\[|\]|\{|\}|\:|\&|\!|\=|\*|\-|\%|\+|\~|\\|/|\.]]

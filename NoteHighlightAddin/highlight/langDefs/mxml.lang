@@ -1,6 +1,8 @@
 
 Description="Magic eXtensible Markup"
 
+Categories = {"markup"}
+
 Keywords={
   { Id=1,
     Regex=[[<[!?]?(?!\-\-)\/?[\w\:\-]+>?|[/?]?>]],

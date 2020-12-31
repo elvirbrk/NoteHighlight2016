@@ -1,5 +1,8 @@
+-- Theme created by Andrei Rosca
 
 Description="FlashDevelop"
+
+Categories = {"light"}
 
 Default        = { Colour="#000000" }
 Canvas         = { Colour="#ffffff" }

@@ -1,6 +1,8 @@
 
 Description="Linden Script"
 
+Categories = {"source", "script"}
+
 Keywords={
   { Id=1,
     List={"for", "do", "while", "if", "else", "jump"},

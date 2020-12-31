@@ -1,6 +1,8 @@
 -- a highlight lang definition for coffeescript, by Jess Austin
 Description = "Coffeescript"
 
+Categories = {"source", "script"}
+
 Keywords = {
   {
     Id = 1,
@@ -20,7 +22,7 @@ Keywords = {
     Id = 3,
     Regex = [[\w+(?=:)]]
   },
-  { 
+  {
     Id = 1,
     Regex = [[///|/(?!//)]]
   },
@@ -53,12 +55,12 @@ NestedSections = { -- regex as nested language seems to work?
     Lang = "js_regex", -- js.lang might want to use this too
     Delimiter = { [[/(?!//)]], [[(?!\\)/[gimuy]*]] }
   },
-  
+
 }
 
 Digits = [=[0[Bb][01]+|0[Oo][0-7]+|0[Xx][[:xdigit:]]+|\d+]=]
 Identifiers = [=[[A-Za-z$_][A-Za-z$_0-9]*]=]
 Operators = [[=|\+|-|\*|\/|%|<|>|&|\||^|!|\?|:|\.|,|@|\(|\)|\[|]|\{|}]]
 
-EnableIndentation = true
+EnableIndentation = false
 IgnoreCase = false

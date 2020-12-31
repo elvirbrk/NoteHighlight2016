@@ -1,6 +1,8 @@
 
 Description="Sybase SQL"
 
+Categories = {"database"}
+
 Keywords={
   { Id=1,
     Regex=[[sp_\w+]]

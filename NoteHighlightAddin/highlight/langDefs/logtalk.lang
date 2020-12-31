@@ -1,6 +1,10 @@
 
 Description="Logtalk"
 
+-- Syntax file created by Paulo Moura
+
+Categories = {"source"}
+
 Keywords={
   { Id=1, --conditional compilation directives
     Regex=[[^\s*:-\s((el)?if)(?=[(])]],
@@ -17,8 +21,9 @@ Keywords={
     Regex=[[(after|before)(?=[(])]],
     Group=1,
   },
-  { Id=4, --Logtalk message sending operators
-    Regex=[[(::|\^\^|<<|:)]],
+  { Id=3, -- forward message handler
+    Regex=[[(forward)(?=[(])]],
+    Group=1,
   },
 
   { Id=1, --encapsulation directives
@@ -27,18 +32,18 @@ Keywords={
   },
   { Id=1,
     Regex=[[ ^\s+((extend|i(mp(or|lemen)t|nstantiate)|specialize)s)(?=[(]) ]],
-   Group=1,
+    Group=1,
   },
   { Id=1,
     Regex=[[ ^\s*:-\s(end_(protocol|category|object))(?=\.) ]],
     Group=1,
   },
   { Id=1, -- entity and predicate directives
-    Regex=[[ ^\s*:-\s(calls|public|protected|private|encoding|ensure_loaded|export|info|initialization|alias|dynamic|discontiguous|meta_predicate|mode|module|multifile|reexport|set_logtalk_flag|set_prolog_flag|synchronized|op|uses|use_module)(?=[(]) ]],
-     Group=1,
+    Regex=[[ ^\s*:-\s(calls|coinductive|public|protected|private|encoding|ensure_loaded|export|in(clude|fo|itialization)|alias|dynamic|discontiguous|meta_(non_terminal|predicate)|mode|module|multifile|reexport|set_(logtalk|prolog)_flag|synchronized|op|uses|use_module)(?=[(]) ]],
+    Group=1,
   },
   { Id=1,
-    Regex=[[ ^\s*:-\s(dynamic|synchronized|threaded)(?=\.) ]],
+    Regex=[[ ^\s*:-\s(built_in|dynamic|synchronized|threaded)(?=\.) ]],
     Group=1,
   },
   { Id=3, --event handlers
@@ -46,10 +51,10 @@ Keywords={
     Group=1
   },
   { Id=3,
-    Regex=[[ (parameter|this|se(lf|nder))(?=[(]) ]],
+    Regex=[[ (context|parameter|this|se(lf|nder))(?=[(]) ]],
     Group=1
   },
-  { Id=3, --refelection
+  { Id=3, --reflection
     Regex=[[ (current_predicate|predicate_property)(?=[(]) ]],
     Group=1
   },
@@ -57,7 +62,7 @@ Keywords={
     Regex=[[ (expand_(goal|term))(?=[(]) ]],
     Group=1
   },
-  { Id=3, 
+  { Id=3,
     Regex=[[ ((?:goal|term)_expansion|phrase)(?=[(]) ]],
     Group=1
   },
@@ -70,7 +75,7 @@ Keywords={
     Group=1
   },
   { Id=3, --entity relations
-    Regex=[[ (complements_object)(?=[(]) ]],
+    Regex=[[ (co(mplements_object|nforms_to_protocol))(?=[(]) ]],
     Group=1
   },
   { Id=3,
@@ -90,11 +95,15 @@ Keywords={
     Group=1
   },
   { Id=3, --flags
-    Regex=[[ ((current|set)_logtalk_flag)(?=[\(]) ]],
+    Regex=[[ ((create|current|set)_logtalk_flag)(?=[\(]) ]],
     Group=1
   },
   { Id=3, --compiling, loading, and library paths
-    Regex=[[ (logtalk_(compile|l(ibrary_path|oad)))(?=[(]) ]],
+    Regex=[[ (logtalk_(compile|l(ibrary_path|oad|oad_context)|make(_target_action)?))(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, --compiling, loading, and library paths
+    Regex=[[ (logtalk_make) ]],
     Group=1
   },
   { Id=3, --database
@@ -106,31 +115,39 @@ Keywords={
     Group=1
   },
   { Id=3, --control
-    Regex=[[ (call|catch|throw)(?=[(]) ]],
+    Regex=[[ (call|catch|throw|(type|domain|existence|permission|representation|evaluation|resource|syntax)_error)(?=[(]) ]],
     Group=1
   },
-  { Id=3,
-    Regex=[[ (fail|true) ]],
+  { Id=3, --control
+    Regex=[[ (fa(il|lse|)|true|(instantiation|system)_error) ]],
     Group=1
   },
   { Id=3, --all solutions
     Regex=[[ (bagof|setof|findall|forall)(?=[(]) ]],
     Group=1
   },
-  { Id=3, --multi-threading meta-predicates
+  { Id=3, --multi-threading predicates
     Regex=[[ (threaded(_(call|once|ignore|exit|peek|wait|notify))?)(?=[(]) ]],
     Group=1
   },
+  { Id=3, --engine predicates
+    Regex=[[ (threaded_engine(_(create|destroy|self|next|next_reified|yield|post|fetch))?)(?=[(]) ]],
+    Group=1
+  },
   { Id=3, --term unification
-    Regex=[[ (unify_with_occurs_check)(?=[(]) ]],
+    Regex=[[ (subsumes_term|unify_with_occurs_check)(?=[(]) ]],
     Group=1
   },
   { Id=3, -- term creation and decomposition
-    Regex=[[ (functor|arg|copy_term)(?=[(]) ]],
+    Regex=[[ (functor|arg|copy_term|numbervars|term_variables)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3, -- term comparision
+    Regex=[[ (compare)(?=[(]) ]],
     Group=1
   },
   { Id=3, --evaluable functors
-    Regex=[[ (rem|mod|abs|sign)(?=[(]) ]],
+    Regex=[[ (div|rem|mod|abs|sign)(?=[(]) ]],
     Group=1
   },
   { Id=3,
@@ -142,11 +159,15 @@ Keywords={
     Group=1
   },
   { Id=3,
-    Regex=[[ (cos|atan|exp|log|s(in|qrt))(?=[(]) ]],
+    Regex=[[ (cos|a(cos|sin|tan|tan2)|exp|log|s(in|qrt)|tan|xor)(?=[(]) ]],
+    Group=1
+  },
+  { Id=3,
+    Regex=[[ (max|min)(?=[(]) ]],
     Group=1
   },
   { Id=3, --term testing
-    Regex=[[ (var|atomic|atom|integer|float|compound|nonvar|number)(?=[(]) ]],
+    Regex=[[ (var|atomic|atom|integer|float|callable|compound|nonvar|number|ground|acyclic_term)(?=[(]) ]],
     Group=1
   },
   { Id=3, -- stream selection and control
@@ -162,7 +183,7 @@ Keywords={
     Group=1
   },
   { Id=3,
-    Regex=[[ (flush_output) ]],
+    Regex=[[ \b(flush_output)\b ]],
     Group=1
   },
   { Id=3,
@@ -222,24 +243,35 @@ Keywords={
     Group=1
   },
   { Id=3, --logic and control
-    Regex=[[ (once)(?=[(]) ]],
+    Regex=[[ (once|ignore)(?=[(]) ]],
     Group=1
   },
   { Id=3,
     Regex=[[ (repeat) ]],
     Group=1
   },
+  { Id=3, --sorting
+    Regex=[[ (keysort|sort)(?=[(]) ]],
+    Group=1
+  },
+
   { Id=4, --Logtalk message sending operators
-    Regex=[[ (::|\^\^|<<|:) ]],
+    Regex=[[ (::|\^\^|<<|:(?!\-)) ]],
   },
   { Id=4, --Logtalk external-call control construct
     Regex=[[ ([{}]) ]],
   },
-  { Id=4, --operators
-    Regex=[[ (\\\+|->|=\.\.|;|!|:-|\^) ]],
+  { Id=4, --Logtalk predicate aliases operator
+    Regex=[[ \b(as)\b ]],
   },
-  { Id=4,
-    Regex=[[ (is|mod|rem|//|[+\-]|/(?!\*)|(?<=\*)/|[*][*]) ]],
+  { Id=4, --arithmetic evaluation operator
+    Regex=[[ \b(is)\b ]],
+  },
+  { Id=4, --arithmetic functions
+    Regex=[[ \b(div|mod|rem|e|pi)\b ]],
+  },
+  { Id=4, --operators
+    Regex=[[ (\\\+|-->|->|=\.\.|;|!|:-|\^) ]],
   },
   { Id=4,
     Regex=[[ (=<|<|=:=|=\\=|>=|>) ]],
@@ -256,11 +288,31 @@ Keywords={
   { Id=4,
     Regex=[[ (/\\|\\/|>>|\\) ]],
   },
+  { Id=5,
+    Regex=[[ (0['][\\].) ]],
+  },
+  { Id=5,
+    Regex=[[ (0['].) ]],
+  },
+  { Id=5,
+    Regex=[[ (0b[0-1]+|0o[0-7]+) ]],
+  },
+  { Id=5,
+    Regex=[=[0x[[:xdigit:]]+]=],
+  },
+  { Id=5,
+    Regex=[[ ([:digit:]+(\.[:digit:]+)?([eE][+-]?[:digit:]+)?) ]],
+  },
 }
+
+
+-- disable highlighting of numbers
+Digits = Identifiers
 
 
 Strings={
   Delimiter=[["|']],
+  Escape=[=[ \\[0-7]+\\|\\x[[:xdigit:]]+\\|\\[abfnrtv\\\'"] ]=]
 }
 
 IgnoreCase=false
@@ -274,5 +326,3 @@ Comments={
     Delimiter= { [[\/\*]],[[\*\/]],}
   }
 }
-
-Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\+|\-]]
