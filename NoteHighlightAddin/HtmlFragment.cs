@@ -26,7 +26,7 @@ namespace NoteHighLightForm
 
             string header =
                             @"Format:HTML Format
-                            Version:1.0
+                            Version:0.9
                             StartHTML:<<<<<<<1
                             EndHTML:<<<<<<<2
                             StartFragment:<<<<<<<3
@@ -54,10 +54,10 @@ namespace NoteHighLightForm
             int fragmentStart = sb.Length;
 
             sb.Append(htmlFragment);
-            int fragmentEnd = sb.Length;
+            int fragmentEnd = Encoding.UTF8.GetBytes(sb.ToString()).Length;
 
             sb.Append(post);
-            int endHTML = sb.Length;
+            int endHTML = Encoding.UTF8.GetBytes(sb.ToString()).Length;
 
             // Backpatch offsets
             sb.Replace("<<<<<<<1", To8DigitString(startHTML));
