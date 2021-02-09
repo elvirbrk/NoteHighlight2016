@@ -48,6 +48,8 @@ namespace NoteHighlightAddin
 
         private bool QuickStyle { get; set; }
 
+        private bool DarkMode { get; set; }
+
         public AddIn()
 		{
 		}
@@ -148,6 +150,20 @@ namespace NoteHighlightAddin
         {
             this.QuickStyle = isPressed;
             NoteHighlightForm.Properties.Settings.Default.QuickStyle = this.QuickStyle;
+            NoteHighlightForm.Properties.Settings.Default.Save();
+        }
+
+
+        public bool cbDarkMode_GetPressed(IRibbonControl control)
+        {
+            this.DarkMode = NoteHighlightForm.Properties.Settings.Default.DarkMode;
+            return this.DarkMode;
+        }
+
+        public void cbDarkMOde_OnAction(IRibbonControl control, bool isPressed)
+        {
+            this.DarkMode = isPressed;
+            NoteHighlightForm.Properties.Settings.Default.DarkMode = this.DarkMode;
             NoteHighlightForm.Properties.Settings.Default.Save();
         }
 
