@@ -1,12 +1,14 @@
 Description="SASS/SCSS"
 
+Categories = {"markup"}
+
 Identifiers=[[ [a-zA-Z_\-][\w\-]* ]]
 
 Digits=[=[ \#[[:xdigit:]]{3,6}|\d*\.?\d+?\w* ]=]
 
 Keywords={
   { Id=1,
-    List={    
+    List={
     'in', 'to', 'from', 'through', 'false', 'true', 'global', 'optional','default'
     },
   },
@@ -23,21 +25,21 @@ Keywords={
 
 Strings={
   Delimiter=[["|']],
-  Escape= [=[ \\[[:xdigit:]]{4} ]=], 
-  Interpolation=[[ %\d?\$?s ]],  
+  Escape= [=[ \\[[:xdigit:]]{4} ]=],
+  Interpolation=[[ %\d?\$?s ]],
 }
 
 IgnoreCase=false
 
 Comments = {
-   { Block=true,
-     Nested=false,
-     Delimiter = { [[\/\*]], [[\*\/]] }
-   },
-   {
-     Block=false,
-     Delimiter = { [[//]] }
-   }
+  { Block=true,
+    Nested=false,
+    Delimiter = { [[\/\*]], [[\*\/]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
 }
 
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\~|\#]]

@@ -1,6 +1,8 @@
 
 Description="Plain text"
 
+Categories = {"text"}
+
 Keywords={
 }
 

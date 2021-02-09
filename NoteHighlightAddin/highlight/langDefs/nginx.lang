@@ -1,7 +1,9 @@
 
 Description="Nginx configuration"
 
-Keywords={  
+Categories = {"config"}
+
+Keywords={
   { Id=1,
     Regex=[[(\w+).*\{]]
   },
@@ -18,14 +20,14 @@ Digits=[[\d*[\.\_]?\d+[dysmkg]? ]]
 
 Strings = {
   Delimiter=[[']],
-   Interpolation=[[\$\w+]],
+  Interpolation=[[\$\w+]],
 }
 
 Comments = {
-   {
-     Block=false,
-     Delimiter = { [[#]] }
-   }
+  {
+    Block=false,
+    Delimiter = { [[#]] }
+  }
 }
 
 IgnoreCase=false

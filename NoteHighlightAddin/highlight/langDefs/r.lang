@@ -1,6 +1,8 @@
 Description="R"
 
-Identifiers=[[ [a-zA-Z_][\w]* ]]
+Categories = {"source", "scientific"}
+
+Identifiers=[[ [a-zA-Z_\.][\w]* ]]
 
 Keywords={
   { Id=1,
@@ -10,8 +12,8 @@ Keywords={
     List={"NULL", "NA", "Inf", "NaN", "TRUE", "T", "FALSE", "F"},
   },
   { Id=4,
-    Regex=[[(\w+)\s*\(]],
-  }  
+    Regex=[[([\w+_\.]+)\s*\(]],
+  }
 }
 
 Strings={
@@ -24,6 +26,6 @@ Comments={
   },
 }
 
-Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\~|\.|\|]]
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\~|\|]]
 
 EnableIndentation=true

@@ -1,5 +1,8 @@
 Description="Java"
 
+Categories = {"source"}
+
+-- def is a Groovy reserved word. Added here for convenience
 Keywords={
   { Id=1,
     List={"abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class", "const",
@@ -7,7 +10,7 @@ Keywords={
           "float", "for", "goto", "if", "implements", "import", "instanceof", "int", "interface",
           "long", "native", "new", "package", "private", "protected", "public", "return", "short",
           "static", "strictfp", "super", "switch", "synchronized", "this", "throw", "throws",
-          "transient", "try", "void", "volatile", "while"},
+          "transient", "try", "void", "volatile", "while", "var", "def"},
   },
   { Id=2,
     List={"false", "true", "null"},
@@ -21,7 +24,7 @@ Keywords={
 }
 
 Strings={
-  Delimiter=[["|']],
+  Delimiter=[["""|"|']],
   Escape = [[ \\u\d{4}|\\x?\d{3}|\\\w|\\[\'\\\"] ]]
 }
 
@@ -38,5 +41,7 @@ Comments={
 }
 
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\|]]
+
+Digits=[[ (?:0x|0X|0b)[0-9a-fA-F_]+|\d*[\.\_]?\d+(?:[eE][\-\+]?\d+)?[fFlLuU]? ]]
 
 EnableIndentation=true

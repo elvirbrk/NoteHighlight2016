@@ -1,6 +1,9 @@
 
 Description="SVG"
 
+Categories = {"graphics", "document"}
+
+
 Keywords={
   { Id=1,
     Regex=[[<[!?]?(?!\-\-)\/?[\w\:\-]+>?|[/?]?>]],

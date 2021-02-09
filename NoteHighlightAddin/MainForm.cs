@@ -29,6 +29,7 @@ namespace NoteHighlightAddin
         private string _fileName;
 
         private HighLightParameter _parameters;
+        private bool _darkMode;
 
         //要HighLight的Code
         private string CodeContent { get { return this.txtCode.Text; } }
@@ -48,6 +49,8 @@ namespace NoteHighlightAddin
 
         private bool _quickStyle;
 
+        public bool DarkMode { get { return _darkMode; } }
+
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         private static extern bool SetForegroundWindow(IntPtr hWnd);
 
@@ -55,7 +58,7 @@ namespace NoteHighlightAddin
 
         #region -- Constructor --
 
-        public MainForm(string codeType, string fileName, string selectedText, bool quickStyle)
+        public MainForm(string codeType, string fileName, string selectedText, bool quickStyle, bool darkMode)
         {
             _codeType = codeType;
             _fileName = fileName;
@@ -63,6 +66,7 @@ namespace NoteHighlightAddin
             LoadThemes();
             txtCode.Text = selectedText;
             _quickStyle = quickStyle;
+            _darkMode = darkMode;
 
             if (_quickStyle)
             {
@@ -191,6 +195,15 @@ namespace NoteHighlightAddin
 
                         string byteOrderMarkUtf8 = Encoding.UTF8.GetString(Encoding.UTF8.GetPreamble());
                         line = line.Replace(byteOrderMarkUtf8, "");
+
+                        if (line.StartsWith("<pre") && this.DarkMode)
+                        {
+
+                            //Remove background-color element so that text would render with correct contrast in dark mode
+                            int bcIndex = line.IndexOf("background-color");
+                            line = line.Remove(bcIndex, line.IndexOf(';', bcIndex) - bcIndex + 1);
+                        }
+
 
                         if (!line.StartsWith("</pre>"))
                         {

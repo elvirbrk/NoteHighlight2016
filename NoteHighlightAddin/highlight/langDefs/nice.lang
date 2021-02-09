@@ -3,6 +3,9 @@ dofile(HL_LANG_DIR.."java.lang")
 
 Description="Nice"
 
+Categories = {"source"}
+
+
 -- append keywords to Java keywords
 table.insert(Keywords,
   { Id=1,

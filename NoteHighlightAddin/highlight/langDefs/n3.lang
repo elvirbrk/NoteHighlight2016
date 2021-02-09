@@ -1,6 +1,8 @@
 
 Description="Notation3 (N3), N-Triples, Turtle, SPARQL"
 
+Categories = {"source"}
+
 Keywords={
   { Id=4,
     Regex=[[@\w+|\^\^<[^>]+?>]],

@@ -48,6 +48,8 @@ namespace NoteHighlightAddin
 
         private bool QuickStyle { get; set; }
 
+        private bool DarkMode { get; set; }
+
         public AddIn()
 		{
 		}
@@ -151,6 +153,20 @@ namespace NoteHighlightAddin
             NoteHighlightForm.Properties.Settings.Default.Save();
         }
 
+
+        public bool cbDarkMode_GetPressed(IRibbonControl control)
+        {
+            this.DarkMode = NoteHighlightForm.Properties.Settings.Default.DarkMode;
+            return this.DarkMode;
+        }
+
+        public void cbDarkMOde_OnAction(IRibbonControl control, bool isPressed)
+        {
+            this.DarkMode = isPressed;
+            NoteHighlightForm.Properties.Settings.Default.DarkMode = this.DarkMode;
+            NoteHighlightForm.Properties.Settings.Default.Save();
+        }
+
         //public async Task AddInButtonClicked(IRibbonControl control)
         public void AddInButtonClicked(IRibbonControl control)
         {
@@ -204,7 +220,7 @@ namespace NoteHighlightAddin
                     }
                 }
 
-                MainForm form = new MainForm(tag, outFileName, selectedText, this.QuickStyle);
+                MainForm form = new MainForm(tag, outFileName, selectedText, this.QuickStyle, this.DarkMode);
 
                 System.Windows.Forms.Application.Run(form);
                 //}
@@ -608,6 +624,14 @@ namespace NoteHighlightAddin
                     defaultStyle = item.Substring(0, item.IndexOf(">") + 1);
                     //Sets language to Latin to disable spell check
                     defaultStyle = defaultStyle.Insert(defaultStyle.Length - 1, " lang=la");
+
+                    if (this.DarkMode)
+                    {
+                        //Remove background-color element so that text would render with correct contrast in dark mode
+                        int bcIndex = defaultStyle.IndexOf("background-color");
+                        defaultStyle = defaultStyle.Remove(bcIndex, defaultStyle.IndexOf(';', bcIndex) - bcIndex +1);
+                    }
+
                     item = item.Substring(item.IndexOf(">") + 1);
                 }
 

@@ -1,5 +1,7 @@
 Description="CSS"
 
+Categories = {"markup"}
+
 Identifiers=[[ [a-zA-Z_][\w\-]* ]]
 
 Digits=[=[ \#[[:xdigit:]]{3,6}|\d*\.?\d+?\w* ]=]

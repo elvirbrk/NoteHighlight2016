@@ -1,5 +1,7 @@
 Description="Advanced Backus-Naur Form"
 
+Categories = {"protocol"}
+
 Keywords={
   { Id=1,
     Regex=[[^\s*([^=]+)\s*=]],

@@ -1,7 +1,11 @@
 
 Description="Smalltalk"
 
-Digits=[[ (?:0x|0X)[0-9a-fA-F]+|\d*[\.]?\d+(?:[eE][\-\+]\\d+)?[lLuU]?|\$[\w\$\#\'\-] ]]
+-- Syntax file created by Joerg Walter
+
+Categories = {"source", "functional"}
+
+Digits=[[ (?:0x|0X)[0-9a-fA-F]+|\d*[\.]?\d+(?:[eE][\-\+]\\d+)?[lLuU]?|\$[\w\$\#\'\-\:\>\<] ]]
 
 Keywords={
   { Id=1,

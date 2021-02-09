@@ -16,7 +16,8 @@
                   <button id="buttonPython" label="Python" size="large" screentip="Enter Python Code" onAction="AddInButtonClicked" tag="py" keytip="A"  image="Python.png" visible="true"/>
                   <button id="buttonRuby" label="Ruby" size="large" screentip="Enter Ruby Code" onAction="AddInButtonClicked" tag="ruby" keytip="R"  image="Ruby.png" visible="true"/>
                   <button id="buttonCpp" label="CPP" size="large" screentip="Enter C++ Code" onAction="AddInButtonClicked" tag="c" keytip="D"  image="CPP.png" visible="true"/>
-                  
+				  <button id="buttonPowerShell" label="PowerShell" size="large" screentip="Enter PowerShell Code" onAction="AddInButtonClicked" tag="ps1"  image="Other.png" visible="true"/>
+				
                   <button id="buttonDOSBatch" label="DOS Batch" size="large" screentip="Enter DOS Batch Code" onAction="AddInButtonClicked" tag="bat"  image="Other.png" visible="false"/>
                   <button id="buttonClojure" label="Clojure" size="large" screentip="Enter Clojure Code" onAction="AddInButtonClicked" tag="clojure"  image="Other.png" visible="false"/>
                   <button id="buttonConfig" label="Generic config" size="large" screentip="Enter Generic config Code" onAction="AddInButtonClicked" tag="conf"  image="Other.png" visible="false"/>
@@ -33,14 +34,15 @@
                   <button id="buttonMSSQL" label="MSSQL" size="large" screentip="Enter MSSQL Code" onAction="AddInButtonClicked" tag="mssql"  image="SQL.png" visible="false"/>
                   <button id="buttonObjectiveC" label="Objective C" size="large" screentip="Enter Objective C Code" onAction="AddInButtonClicked" tag="objc"  image="CPP.png" visible="false"/>
                   <button id="buttonPascal" label="Pascal" size="large" screentip="Enter Pascal Code" onAction="AddInButtonClicked" tag="pas"  image="Other.png" visible="false"/>
-                  <button id="buttonPowerShell" label="PowerShell" size="large" screentip="Enter PowerShell Code" onAction="AddInButtonClicked" tag="ps1"  image="Other.png" visible="false"/>
                   <button id="buttonR" label="R" size="large" screentip="Enter R Code" onAction="AddInButtonClicked" tag="r"  image="Other.png" visible="false"/>
                   <button id="buttonBash" label="Bash" size="large" screentip="Enter Bash Code" onAction="AddInButtonClicked" tag="sh"  image="Other.png" visible="false"/>
                   <button id="buttonSwift" label="Swift" size="large" screentip="Enter Swift Code" onAction="AddInButtonClicked" tag="swift"  image="Other.png" visible="false"/>
                   <button id="buttonVisualBasic" label="Visual Basic" size="large" screentip="Enter Visual Basic Code" onAction="AddInButtonClicked" tag="vb"  image="Other.png" visible="false"/>
+				  <button id="buttonTypeScript" label="TypeScript" size="large" screentip="Enter Type Script Code" onAction="AddInButtonClicked" tag="ts"  image="Other.png" visible="false"/>
 				</group>
         <group label="Advanced" id="Advanced">
                 <checkBox id="cbQuickStyle"  label="Quick Style" onAction="cbQuickStyle_OnAction" getPressed="cbQuickStyle_GetPressed"/>
+		    	<checkBox id="cbDarkMode"  label="Dark Mode" onAction="cbDarkMode_OnAction" getPressed="cbDarkMode_GetPressed" screentip="Sets text background to Transparent for Dark Mode compatibility"/>
                 <button id="buttonSettings" label="Settings" size="normal" screentip="Advanced settings" onAction="SettingsButtonClicked" image="Other.png" visible="true"/>
         </group>
             </tab>

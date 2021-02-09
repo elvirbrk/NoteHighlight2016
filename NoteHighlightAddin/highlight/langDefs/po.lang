@@ -1,6 +1,8 @@
 
 Description="PO translation"
 
+Categories = {"config"}
+
 Keywords={
 
   { Id=1,

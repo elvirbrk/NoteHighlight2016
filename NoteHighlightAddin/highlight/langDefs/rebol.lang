@@ -1,6 +1,8 @@
 
 Description="Rebol"
 
+Categories = {"source"}
+
 Keywords={
   { Id=1,
     List={"REBOL", "rebol", "return", "for", "while", "print", "repeat", "doq"},
@@ -21,7 +23,7 @@ IgnoreCase=true
 
 Comments={
   { Block=false,
-    Delimiter= { [[;|\/\/]] },
+    Delimiter= { [[;]] },
   },
   { Block=true,
     Nested=false,

@@ -1,0 +1,47 @@
+Description="GitHub Flavored Markdown"
+
+Categories = {"markup"}
+
+Keywords={
+  { Id=1,
+    Regex=[[^##?#?#?#?#?.+]],
+  },
+  { Id=2,
+    Regex=[[(\[.+?\])\(http]],
+  },
+  { Id=3,
+    Regex=[[\(http.+?\) ]],
+  },
+  --needs to be placed before kwd 4
+  { Id=1,
+    Regex=[[ ^\-{3,} ]],
+  },
+  { Id=1,
+    Regex=[[ ^\={3,} ]],
+  },
+  { Id=4,
+    Regex=[[ ^\s*(\-|\*|>) ]],
+  },
+}
+
+Strings={
+  Delimiter=[[```|`]]
+}
+
+IgnoreCase=false
+
+--KeywordFormatHints={
+--    {
+    --Id=1,
+    --Bold=true,
+    --Italic=true,
+    --Underline=true
+--    }
+--}
+
+
+function OnStateChange(oldState, newState, token, kwgroup, lineNumber, column)
+  if newState==HL_KEYWORD and kwgroup==1 and token[0]~='#' and lineNumber>1 then
+    AddPersistentState(lineNumber-1, kwgroup, column, #token)
+  end
+end
