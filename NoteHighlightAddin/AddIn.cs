@@ -624,6 +624,14 @@ namespace NoteHighlightAddin
                     defaultStyle = item.Substring(0, item.IndexOf(">") + 1);
                     //Sets language to Latin to disable spell check
                     defaultStyle = defaultStyle.Insert(defaultStyle.Length - 1, " lang=la");
+
+                    if (this.DarkMode)
+                    {
+                        //Remove background-color element so that text would render with correct contrast in dark mode
+                        int bcIndex = defaultStyle.IndexOf("background-color");
+                        defaultStyle = defaultStyle.Remove(bcIndex, defaultStyle.IndexOf(';', bcIndex) - bcIndex +1);
+                    }
+
                     item = item.Substring(item.IndexOf(">") + 1);
                 }
 
