@@ -220,7 +220,7 @@ namespace NoteHighlightAddin
                     }
                 }
 
-                MainForm form = new MainForm(tag, outFileName, selectedText, this.QuickStyle);
+                MainForm form = new MainForm(tag, outFileName, selectedText, this.QuickStyle, this.DarkMode);
 
                 System.Windows.Forms.Application.Run(form);
                 //}
