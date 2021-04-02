@@ -231,7 +231,7 @@ namespace NoteHighlightAddin
                         {
                             if (charList[i] == ' ')
                             {
-                                sbLine.Append("&nbsp;&nbsp;");
+                                sbLine.Append("&nbsp;");
                             }
                             else
                             {
