@@ -12,7 +12,7 @@ String	= { Colour="#3fffa7" }
 BlockComment	= { Colour="#e7e77f" }
 StringPreProc = String
 LineComment   = BlockComment
-Operator      = Default
+Operator      = {Colour = "#9a9a9a"}
 LineNum      = BlockComment
 PreProcessor      = { Colour="#a3743b" }
 Interpolation  = Escape
@@ -22,4 +22,22 @@ Keywords = {
   { Colour="#d174a8" , Bold=true},
   { Colour="#98d65a" , Bold=true},
   { Colour="#ffffff" , Bold=true},
+  { Colour= "#5ad5d5" },
+  { Colour= "#7ea0eb" },
+}
+
+-- new LSP based elements:
+
+SemanticTokenTypes  = {
+  { Type = 'keyword', Style = Keywords[1] },
+  { Type = 'type', Style = Keywords[2] },
+  { Type = 'function', Style = Keywords[4] },
+  { Type = 'method', Style = Keywords[4] },
+  { Type = 'class', Style =  Keywords[1] },
+  { Type = 'struct', Style = Keywords[2] },
+  { Type = 'parameter', Style = Keywords[6] },
+  { Type = 'variable', Style = Keywords[5] },
+  { Type = 'number', Style = Number },
+  { Type = 'regexp', Style = String },
+  { Type = 'operator', Style = Operator },
 }

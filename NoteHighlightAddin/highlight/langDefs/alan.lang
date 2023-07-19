@@ -1,4 +1,5 @@
---[[ "alan.lang" v2.0.1 (2018/09/18) | Alan 3.0beta6 | Highlight v3.44 | Lua 5.3
+--[[
+"alan.lang"        v2.1.0 | 2021/08/21 | Alan 3.0beta8 | Highlight 4.1 | Lua 5.4
 ********************************************************************************
 *                                                                              *
 *                          ALAN IF Syntax Definition                           *
@@ -13,7 +14,7 @@ Created by Tristano Ajmone:
     https://github.com/tajmone
     https://gitlab.com/tajmone
 Released into the public domain according to the Unlicense terms:
-    http://unlicense.org
+    https://unlicense.org
 --------------------------------------------------------------------------------
 File extensions: "*.alan", "*.i"
 ------------------------------------------------------------------------------]]
@@ -28,9 +29,9 @@ EnableIndentation = false
 --[[============================================================================
                                   IDENTIFIERS
 ================================================================================
-RegEx that defines keywords identifier's pattern — ie, which tokens are valid
+RegEx that defines keywords identifier's pattern — i.e. which tokens are valid
 keyword candidates. Alan keywords are letters-only, but:
-  (1) Kewyords must not be preceded by a single quote, otherwise it would be a
+  (1) Keywords must not be preceded by a single quote, otherwise it would be a
       quoted identifier (which can be named like a keyword, but isn't one).
   (2) Also capture '=>', '.', ',' and ':' as keywords (they are not operators).
 
@@ -56,6 +57,14 @@ Identifiers = [=[ (?x)(
 --==============================================================================
 -- Define SINGLE-LINE-COMMENTS delimiter:
 Comments = {
+  -- Block comment doesn't work: never ends the block!
+  { Block     = true,
+    Nested    = false,
+    Delimiter = {
+      [=[ ^\/{4}.*$ ]=], -- //// followed by anything
+      [=[ ^\/{4,}$  ]=]  -- //// followed optionally followed by more slashes
+    }
+  },
   { Block     = false,
     Nested    = false,
     Delimiter = { [=[ -- ]=] }
@@ -104,7 +113,7 @@ These refer to parameters while executing a verb:
 --[[============================================================================
                                   OPERATORS
 ================================================================================
-Arythmetic: '+', '-', '*', '/'
+Arithmetic: '+', '-', '*', '/'
 Comparison: '=', '<', '>', '<=', '>=', '<>', '=='
 Other:
   (1) parameter indicators: '!', '*'
@@ -198,6 +207,9 @@ matching an escape sequence are rejected if the previously parsed token was not
 a string, an interpolation or another escape sequence.
 Based on André Simon's reply to Issue #23:
     https://github.com/andre-simon/highlight/issues/23#issuecomment-332002639
+
+The `elseif` block is a hack to ensure that closing comment block delimiters are
+properly captured.
 ------------------------------------------------------------------------------]]
 function OnStateChange(oldState, newState, token, kwgroup)
   if  newState == HL_ESC_SEQ and
@@ -205,6 +217,10 @@ function OnStateChange(oldState, newState, token, kwgroup)
       oldState ~= HL_ESC_SEQ and
       oldState ~= HL_INTERPOLATION then
         return HL_REJECT
+  elseif  newState == HL_BLOCK_COMMENT and
+          oldState == HL_BLOCK_COMMENT then
+        return HL_BLOCK_COMMENT_END
+
   end
   return newState
 end
@@ -215,6 +231,8 @@ end
 This syntax definition abides to Semantic Versioning 2.0.0:
     http://semver.org
 --------------------------------------------------------------------------------
+v2.1.0 (2021/08/21) | Alan 3.0beta8 | Highlight v4.1
+      - Implement block comments (new with Alan3.0beta8).
 v2.0.1 (2018/09/18)
       - Add missing "integer" to the Predefined Alan classes.
 v2.0.0 (2018/09/11) | Alan 3.0beta6 | Highlight v3.44

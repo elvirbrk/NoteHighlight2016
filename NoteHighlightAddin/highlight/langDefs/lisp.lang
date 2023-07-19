@@ -10,16 +10,25 @@ Keywords={
     Regex=[[\(([\w\-\_]+)]],
   },
   { Id=2,
-    Regex=[[ def(un|method)\s+([\w\-]+)]], Group=2
+    Regex=[[ def(un|macro|method)\s+([\w\-]+)]], Group=2
   },
   { Id=3,
-    Regex=[[ \[.+?\]|\[/\w+\] ]],
+    Regex=[[ \:\w+ ]],
+  },
+  { Id=4,
+    Regex=[[ \*\w+?\* ]],
+  },
+  { Id=5,
+    Regex=[[ \+\w+?\+ ]],
+  },
+  { Id=6,
+    Regex=[[ \%\w+?\% ]],
   },
 }
 
 Strings={
   Delimiter=[[ " ]],
-  Escape=[=[\\[\w]]=],
+  Escape=[=[\\["\w]]=],
 }
 
 Comments={

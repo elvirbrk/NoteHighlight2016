@@ -1,0 +1,52 @@
+-- vim: filetype=lua
+Description="PureScript"
+
+Categories = {"source"}
+
+Keywords={
+  -- Type-level keywords + booleans
+  { Id=1,
+    List={"class", "data", "instance", "kind", "newtype", "type", "forall", "\xE2\x88\x80", "true", "false"}
+  },
+  -- Module-level keywords
+  { Id=2,
+    List={"module", "import", "where", "foreign", "as", "infixl", "infixr", "infix", "derive"}
+  },
+  -- Expression-level keywords
+  { Id=4,
+    List={"if", "then", "else", "case", "of", "do", "ado", "let", "in"}
+  }
+}
+
+Strings={
+  Delimiter=[["|']],
+}
+
+-- Borrowed from the Haskell language definition
+-- Escape sequences only occur inside strings
+-- strings ending with ' should not be confused with identifiers
+-- TODO: check ' and "
+function OnStateChange(oldState, newState, token, kwgroup)
+  if newState==HL_ESC_SEQ and oldState~=HL_STRING or string.match(token, "%a+'" ) and oldState==HL_STRING then
+    return HL_REJECT
+  end
+
+  return newState
+end
+
+-- FIXME: :lower: doesn’t work as expected for PureScript
+Identifiers=[[ [a-zа-яαβγδεζηθικλμνξοπρςστυφχψω][\wА-Яа-яΑ-Ωα-ω0-9_']* ]]
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[--]] },
+  },
+  { Block=true,
+    Nested=false,
+    Delimiter= { [[\{\-]],[[\-\}]],}
+  }
+}
+
+Operators=[[ [^\s\w]+ ]]

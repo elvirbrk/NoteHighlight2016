@@ -5,7 +5,7 @@ Categories = {"database"}
 
 Keywords={
   { Id=1,
-    list={"assert", "init", "priority", "proctype", "provided", "active",
+    List={"assert", "init", "priority", "proctype", "provided", "active",
         "break", "do", "else", "empty", "enabled", "eval", "fi", "full", "goto", "if",
         "inline", "len", "nempty", "nfull", "od", "of", "printf", "run", "skip",
         "timeout", "xr", "xs", "unless", "_last", "_pid", "cond_expr", "false", "np_",

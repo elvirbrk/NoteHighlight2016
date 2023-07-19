@@ -1,4 +1,4 @@
---[[                                      2019/05/26 | Highlight v3.51 | Lua 5.3
+--[[                                      2021/02/12 | Highlight v4.0  | Lua 5.3
 ================================================================================
 Scheme:   "DuoTone Dark Forest"
 Author:   simurai
@@ -40,6 +40,25 @@ Keywords = {
   { Colour = "#869886" }, --> kwd 5
   { Colour = "#747a52" }, --> kwd 6
 }
+
+-- new LSP based elements:
+
+SemanticTokenTypes = {
+  { Type = 'type', Style = Keywords[2] },
+  { Type = 'class', Style =  Keywords[3] },
+  { Type = 'struct', Style =  Keywords[4] },
+  { Type = 'interface', Style = Keywords[2] },
+  { Type = 'parameter', Style = Keywords[6] },
+  { Type = 'variable', Style = Keywords[5] },
+  { Type = 'enumMember', Style = Keywords[5] },
+  { Type = 'function', Style = Keywords[4] },
+  { Type = 'method', Style = Keywords[4] },
+  { Type = 'keyword', Style =  Keywords[1]},
+  { Type = 'number', Style = Number },
+  { Type = 'regexp', Style = String },
+  { Type = 'operator', Style = Operator },
+}
+
 --[[----------------------------------------------------------------------------
 The MIT License
 

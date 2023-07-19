@@ -45,3 +45,10 @@ function OnStateChange(oldState, newState, token, kwgroup, lineNumber, column)
     AddPersistentState(lineNumber-1, kwgroup, column, #token)
   end
 end
+
+
+
+--NestedSections = {
+--  { Lang="javascript", Delimiter= { [[```js]], [[<```]] } },
+--  { Lang="javascript", Delimiter= { [[```javascript]], [[<```]] } },
+-- }

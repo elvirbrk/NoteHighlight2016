@@ -1,0 +1,36 @@
+
+Description="Jam"
+
+Categories = {"config", "script"}
+
+Identifiers=[[ [a-zA-Z_]\w*(?!\w*\/) ]]
+
+Keywords={
+  { Id=1,
+    List={"include", "break", "continue", "for", "if", "else", "on", "in", "return", "rule", "switch", "while", "local", "case"},
+  },
+  { Id=2,
+    List={"depends", "includes", "always", "leaves", "nocare", "notfile", "noupdate", "temporary", "echo",
+          "exit", "glob", "match", "search"},
+  },
+  { Id=3,
+    Regex=[[(\$\([0-9a-zA-Z\$\(\)\_\+]*\))]],
+  },
+  { Id=4,
+    Regex=[[\$\w+]],
+  }
+}
+
+Strings={
+  Delimiter=[["|'|`]],
+}
+
+IgnoreCase=true
+
+Comments={
+  { Block=false,
+    Delimiter= { [[#]] },
+  },
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\*|\%|\+\=|\$|\?]]

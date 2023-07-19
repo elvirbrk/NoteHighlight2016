@@ -1,0 +1,37 @@
+Description="Nix Expression Language"
+
+Categories = {"source", "script"}
+
+Digits=[[ (?:0x|0X|0o|0O|0b|0B)[0-9a-fA-F\_]+|\d*[\.\_]?[\d\_]+(?:[eE][\-\+]\d+)?[lLuU]* ]]
+
+Keywords={
+  { Id=1,
+    List={ "assert", "let", "in", "with", "if", "then", "else", "inherit", "rec", "import", "for", "do", "done" }
+  },
+  { Id=2,
+    List={ "true", "false", "null" }
+  },
+
+}
+
+Strings={
+  Delimiter=[[''|"]],
+  RawPrefix="r",
+  Escape=[=[\\[ntvbrfa\\\?'"]|\\\d{3}|\\x[[:xdigit:]]{2}]=],
+  Interpolation=[[ \$\{.+?\} ]]
+}
+
+IgnoreCase=false
+
+Comments = {
+  { Block=true,
+    Nested=false,
+    Delimiter = { [[\/\*]], [[\*\/]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[#]] }
+  }
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\@|\?]]

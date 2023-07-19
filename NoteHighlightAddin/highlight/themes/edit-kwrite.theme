@@ -19,6 +19,56 @@ LineComment = BlockComment
 Keywords = {
   { Colour= "#000000", Bold=true },
   { Colour= "#0057AE" },
-  { Colour= "#000000", Bold=true },
+  { Colour= "#000000" },
   { Colour= "#010181" },
+  { Colour= "#0d5bc3" },
+  { Colour= "#750dc3" },
+}
+
+-- new LSP based elements:
+
+SemanticTokenTypes  = {
+  { Type = 'keyword', Style = Keywords[1] },
+  { Type = 'type', Style = Keywords[2] },
+  { Type = 'function', Style = Keywords[4] },
+  { Type = 'method', Style = Keywords[4] },
+  { Type = 'class', Style =  Keywords[1] },
+  { Type = 'interface', Style = { Colour= "#750dc3" } },
+  { Type = 'struct', Style = { Colour= "#3d40ff" } },
+  { Type = 'namespace', Style = { Colour= "#750dc3" } },
+  { Type = 'typeParameter', Style = { Colour= "#ff3db3" } },
+  { Type = 'parameter', Style = { Colour= "#2591f0" } },
+  { Type = 'variable', Style = { Colour= "#ff3d3d" } },
+  { Type = 'property', Style = { Colour= "#ff3db3" } },
+  { Type = 'enumMember', Style = { Colour= "#ff0000" } },
+  { Type = 'event', Style = { Colour= "#0d5bc3" } },
+  { Type = 'modifier', Style = { Colour= "#0d5bc3" } },
+  { Type = 'number', Style = Number },
+  { Type = 'regexp', Style = String },
+  { Type = 'operator', Style = Operator },
+}
+
+--Error = { Custom = { { Format = "html", Style = "color: blue", Override = true } } }
+
+--[[
+ErrorMessage = { Custom = {
+  { Format = "html", Style = "color: blue", Override = true } ,
+  { Format = "latex", Style = "\\marginpar{\\small\\itshape\\color{blue}#1}", Override = false } }
+}
+]]
+
+--Hover = { Custom = { { Format = "html", Style = "cursor:help", Override = true } } }
+
+-- not used yet:
+SemanticTokenModifiers  = {
+  { Type = 'declaration', Style = { Colour= "#ff9421" } },
+  { Type = 'definition', Style = { Colour= "#ff9421" } },
+  { Type = 'readonly', Style = { Colour= "#ff9421" } },
+  { Type = 'static', Style = { Colour= "#ff9421" } },
+  { Type = 'deprecated', Style = { Colour= "#ff9421" } },
+  { Type = 'abstract', Style = { Colour= "#ff9421" } },
+  { Type = 'async', Style = { Colour= "#ff9421" } },
+  { Type = 'modification', Style = { Colour= "#ff9421" } },
+  { Type = 'documentation', Style = { Colour= "#ff9421" } },
+  { Type = 'defaultLibrary', Style = { Colour= "#ff9421" } }
 }

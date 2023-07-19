@@ -12,10 +12,10 @@ Keywords={
   { Id=2,
     Regex=[[\d[\d.]*]]
   },
-  { Id=3,
-    Regex=[[/\S+|/]]
-  }
-
+  -- causes issue with strings:
+  --{ Id=3,
+  --  Regex=[[/\S+|/]]
+  --}
 }
 
 Strings={

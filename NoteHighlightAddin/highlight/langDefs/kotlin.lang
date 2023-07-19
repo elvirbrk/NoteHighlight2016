@@ -28,7 +28,7 @@ Keywords={
 
 Strings = {
   Delimiter=[['|`|"]],
-    Interpolation=[[ [%$]\w+|\$\{.+?\} ]],
+    Interpolation=[[ [%$]\w+|\$\{[^}]+\} ]],
 }
 
 Comments = {

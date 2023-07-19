@@ -1,18 +1,16 @@
 
 -- Load JS definition
-dofile(HL_LANG_DIR.."js.lang")
+dofile(HL_LANG_DIR.."javascript.lang")
 
 Description="JSX"
 
 Categories = {"script", "javascript"}
-
 
 table.insert(Keywords,
   { Id=1,
     List={ "into", "final", "mixin", "as", "debugger", "log", "assert"},
   }
 )
-
 
 table.insert(Keywords,
   { Id=3,

@@ -3,10 +3,12 @@ Description="Perl"
 
 Categories = {"source", "script"}
 
-
 --[[============================================================================
                                       CHANGELOG
 ================================================================================
+  (2021/03/30 | Highlight v4.0)
+    - fixed Highlighting of interpolations
+
   (2019/01/11 | Highlight v3.49)
     - fixed Highlighting of variables
 
@@ -28,7 +30,7 @@ Keywords={
     "lazy", "gather", "take", "role", "is", "does", "rw" },
   },
   { Id=2,
-    Regex=[[ [$@%]\#?[^(\s|\.|\=|\:|\-\>|\"|\'|\(|\[|\)|\]|\{|\}|>|<|\;)]+ ]],
+    Regex=[[ [$@%]\#?[^(\s|\.|\=|\:|\-\>|\"|\'|\(|\[|\)|\]|\{|\}|>|<|\;|\,|\\)]+ ]],
   },
   { Id=3,
     List={"defined", "undef", "eq", "ne", "lt", "gt", "ge", "le", "cmp", "not",
@@ -62,12 +64,12 @@ Keywords={
     "reset", "scalar", "prototype", "lock", "tied", "untie", "eval", "try", "constant" },
   },
   { Id=4,
-  Regex=[[->([a-zA-Z0-9_]+)]],
-  Group=1,
+    Regex=[[->([a-zA-Z0-9_]+)]],
+    Group=1,
   },
 
-  --# Still only covers more common usage but by far not all
-    -- see OnStateChange below
+  -- Still only covers more common usage but by far not all
+  -- see OnStateChange below
   { Id=4,
     Regex=[[\/.*?\/[msixpodualgc]*|m\/.*?\/[msixpodualgc]*|qr\/.*?\/[msixpodual]*|s\/.*?\/.*?\/[msixpodualgcer]*|(?:tr|y)\/.*?\/.*?\/[cdsr]*|m!.*?![msixpodualgc]*|qr!.*?![msixpodual]*|s!.*?!.*?![msixpodualgcer]*|(?:tr|y)!.*?!.*?![cdsr]*|m\?.*?\?[msixpodualgc]*|m\{.*?\}[msixpodualgc]*|qr\{.*?\}[msixpodual]*|s\{.*?\}\s*\{.*?\}[msixpodualgcer]*|(?:tr|y)\{.*?\}\s*\{.*?\}[cdsr]*]],
     Group=0
@@ -82,7 +84,7 @@ Keywords={
 -- do not allow digits as heredoc delimiters
 Strings={
   Delimiter=[=["|'|`|<<["']?[\w_]+["']?]=],
-  Interpolation=[[ [@\$%]\w+ ]],
+  Interpolation=[[ [@\$%][a-zA-Z0-9]+? ]]
 }
 
 IgnoreCase=false
@@ -91,14 +93,15 @@ IgnoreCase=false
 Comments={
   { Block=true,
     Nested=false,
-    Delimiter = { [[(?:^=pod|^=head[1234]|^=over|^=item|^=back|^=begin|^=end|^=for|^=encoding)]], [[^=cut\s*\Z]] }  },
+    Delimiter = { [[(?:^=pod|^=head[1234]|^=over|^=item|^=back|^=begin|^=end|^=for|^=encoding)]], [[^=cut\s*\Z]] }
+  },
   { Block=false,
     Delimiter= { [[(?<!\\)#]] },
   },
 }
 
 --todo for 1..5
-Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\@|~|\=|\/|\*|\+|\-|\$|\.|\^|\~|\%|\|]]
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\@|~|\=|\/|\*|\+|\-|\$|\.|\^|\~|\%|\||\?]]
 
 Digits=[[ (?:0x|0X|0b)[0-9a-fA-F_]+|\d*[\.\_]?\d+(?:[eE][\-\+]?\d+)?[fFlLuU]? ]]
 

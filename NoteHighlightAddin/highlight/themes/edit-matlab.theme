@@ -8,8 +8,8 @@ Categories = {"light"}
 Default        = { Colour="#000000" }
 Canvas         = { Colour="#ffffff" }
 Number         = { Colour="#000000" }
-Escape         = { Colour="#000000" }
-String         = { Colour="#800000" }
+Escape         = { Colour="#a31593" }
+String         = { Colour="#a31593" }
 StringPreProc  = { Colour="#800000" }
 Operator       = { Colour="#000000" }
 BlockComment   = { Colour="#228B22" }
@@ -23,4 +23,24 @@ Keywords = {
   { Colour= "#000000" },
   { Colour= "#0000ff" },
   { Colour= "#000000" },
+  { Colour= "#0000ff" },
+  { Colour= "#6f2452" },
+}
+
+-- new LSP based elements:
+
+SemanticTokenTypes = {
+  { Type = 'type', Style = Keywords[2] },
+  { Type = 'class', Style =  Keywords[1] },
+  { Type = 'struct', Style =  Keywords[4] },
+  { Type = 'interface', Style = Keywords[1] },
+  { Type = 'parameter', Style = Keywords[6] },
+  { Type = 'variable', Style = Keywords[5] },
+  { Type = 'enumMember', Style = Keywords[5] },
+  { Type = 'function', Style = Keywords[4] },
+  { Type = 'method', Style = Keywords[4] },
+  { Type = 'keyword', Style =  Keywords[1]},
+  { Type = 'number', Style = Number },
+  { Type = 'regexp', Style = String },
+  { Type = 'operator', Style = Operator },
 }

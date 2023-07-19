@@ -9,7 +9,7 @@ Keywords={
     List={  "break", "continue", "del", "except", "exec", "finally", "pass",
             "print", "raise", "return", "try", "global", "assert", "lambda", "yield", "def",
             "class", "for", "while", "if", "elif", "else", "and", "in", "is", "not", "or",
-            "import", "from", "as", "async", "await", "None", "True", "False"}
+            "import", "from", "as", "async", "await", "None", "True", "False", "with"}
   },
   { Id=2,
     List={  "bool", "bytes", "enumerate", "set", "frozenset", "help", "reversed", "sorted",
@@ -48,7 +48,7 @@ Strings={
   Delimiter=[["""|'''|"|']],
   RawPrefix="r",
   Escape=[=[\\[ntvbrfa\\\?'"]|\\\d{3}|\\x[[:xdigit:]]{2}]=],
-  Interpolation=[[ %[%#0\-\+diouxXeEfFgGcrs]+|%\(\w+\)[sd]?|\{\w+\} ]]
+  Interpolation=[[ %[%#0\-\+diouxXeEfFgGcrs]+|%\(\w+\)[sd]?|\{.+?\} ]]
 }
 
 IgnoreCase=false
@@ -69,4 +69,5 @@ function OnStateChange(oldState, newState, token, groupID)
 
   return newState
 end
+
 

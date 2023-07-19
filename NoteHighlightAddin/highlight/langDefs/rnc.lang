@@ -18,7 +18,7 @@ Keywords={
   },
   -- includes xsd datatypes
   { Id=2,
-    list={"empty", "string", "text", "token", "xsd", "rng", "anyuri",
+    List={"empty", "string", "text", "token", "xsd", "rng", "anyuri",
         "base64binary", "boolean", "byte", "date", "datetime", "decimal", "double",
         "duration", "entities", "entity", "float", "gday", "gmonth", "gmonthday",
         "gyear", "gyearmonth", "hexbinary", "id", "idref", "idrefs", "int", "integer",

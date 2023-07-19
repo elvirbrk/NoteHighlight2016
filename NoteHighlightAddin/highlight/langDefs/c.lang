@@ -27,19 +27,19 @@ Keywords={
       "uint_fast64_t", "intptr_t", "uintptr_t", "intmax_t", "uintmax_t", "char8_t","char16_t","char32_t"
     }
   },
-  { Id=3,
+  { Id=4,
     List= {
       "typedef", "inline", "auto", "class", "explicit", "extern", "friend", "inline", "mutable", "operator",
       "register", "template", "private", "protected", "public", "typeid", "virtual", "volatile", "constexpr", "nullptr", "decltype"
     }
   },
-  { Id=3,
+  { Id=5,
     Regex=[[(\w+)\s*\:\:]]
   },
   { Id=4,
     Regex=[[(\w+)\s*\(]]
   },
-  { Id=5,
+  { Id=6,
     Regex=[=[ \[\[[\w\:\,\s]+?\]\] ]=]
   }
 }

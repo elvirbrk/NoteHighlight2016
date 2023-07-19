@@ -1,10 +1,9 @@
 
-dofile(HL_LANG_DIR.."ts.lang")
+dofile(HL_LANG_DIR.."typescript.lang")
 
 Description="TSX (TypeScript with React)"
 
 Categories = {"script", "javascript"}
-
 
 table.insert(Keywords,
   { Id=1,

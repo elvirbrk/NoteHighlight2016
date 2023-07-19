@@ -1,0 +1,53 @@
+
+Description="Carbon"
+
+Categories = {"source"}
+
+Digits = [[ (?:0x|0X|0b)[0-9a-fA-F']+|\d*[\.]?\d+(?:[eE][\-\+]\d+)?[lLuU]* ]]
+
+Keywords={
+  { Id=1,
+    List={
+      "abstract", "addr", "alias", "and", "api", "as", "auto", "base", "break", "case", "class", "constraint", "continue", "default", "else",
+      "extends", "external", "final", "fn", "for", "friend", "if", "impl", "import", "interface", "is", "let", "library", "match", "namespace",
+      "not", "observe", "or", "override", "package", "partial", "private", "protected", "return", "returned", "then", "var", "virtual", "where",
+      "while"
+    }
+  },
+  { Id=2,
+    List={
+      "i8", "i16","i32", "i64", "i128", "i256", "u8", "u16","u32", "u64", "u128", "u256", "f16","f32", "f64", "f128"
+    }
+  },
+  { Id=3,
+    Regex=[[(\w+)\s*\:\:]]
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  },
+  { Id=5,
+    Regex=[=[ \[\[[\w\:\,\s]+?\]\] ]=]
+  }
+}
+
+Strings = {
+  Delimiter=[["""|"]],
+  --Interpolation=[[ \{.+?\} ]]
+}
+
+Comments = {
+  { Block=true,
+    Nested=false,
+    Delimiter = { [[\/\*]], [[\*\/]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^|\?]]
+
+EnableIndentation=true

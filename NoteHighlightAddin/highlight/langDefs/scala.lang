@@ -1,4 +1,5 @@
 -- Load Java definition
+
 dofile(HL_LANG_DIR.."java.lang")
 
 Description="Scala"
@@ -9,9 +10,16 @@ Categories = {"source", "functional"}
 table.insert(Keywords,
   { Id=1,
     List={"abstract", "def", "object", "override", "sealed", "trait", "type", "val", "var", "yield",
-          "forSome", "implicit", "lazy", "match", "null", "with"},
+          "forSome", "implicit", "lazy", "match", "null", "with", "given", "export", "then"},
   }
 )
+
+table.insert(Keywords,
+  { Id=5,
+    List={"as", "derives", "end", "extension", "infix", "inline", "opaque", "open", "transparent", "using"},
+  }
+)
+
 
 Strings={
   Delimiter=[["""|"|']],

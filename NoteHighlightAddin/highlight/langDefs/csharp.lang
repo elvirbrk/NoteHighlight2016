@@ -59,3 +59,10 @@ Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|@|\?|\$|\|
 Digits=[[ (?:0x|0X|0b)[0-9a-fA-F_]+|\d*[\.\_]?\d+(?:[eE][\-\+]?\d+)?[fFlLuU]? ]]
 
 EnableIndentation=true
+
+-- resolve issue with one liner blocks and strings
+function OnStateChange(oldState, newState, token, groupID)
+  if oldState~=HL_STRING and newState==HL_INTERPOLATION then
+    return HL_REJECT
+  end
+end

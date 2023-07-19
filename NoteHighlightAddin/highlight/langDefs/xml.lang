@@ -33,3 +33,16 @@ Comments={
 
 IgnoreCase=true
 
+-- resolve issue with quotes in text elements
+function OnStateChange(oldState, newState, token, kwgroup)
+
+  if kwgroup==1 then
+    allowQuoteAfterDefault = token:sub(-1)~= ">"
+  end
+
+  if not allowQuoteAfterDefault and oldState==HL_STANDARD and newState==HL_STRING then
+    return HL_STANDARD
+  end
+
+  return newState
+end

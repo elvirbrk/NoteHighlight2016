@@ -1,0 +1,47 @@
+
+Description="Hare"
+
+Categories = {"source"}
+
+Digits = [[ (?:0x|0X|0b)[0-9a-fA-F']+|\d*[\.]?\d+(?:[eE][\-\+]\d+)?[iflLuUz]* ]]
+
+Keywords={
+  { Id=1,
+    List={
+      "abort","alloc","append","as","assert","break","case","const","continue","def","defer",
+      "delete","else","enum","export","fn","for","free","if","insert","is","len",
+      "let","match","null","nullable","offset","return","size","static","switch",
+      "type","union","yield", "_"
+    }
+  },
+  { Id=2,
+    List= {
+      "bool","char","f32","f64","false","i16","i32","i64","i8","int","rune","true","u16","u32","u64","u8",
+      "uint","uintptr","void","iconst", "fconst", "rconst", "valist","str","struct"
+    }
+  },
+  { Id=3,
+    List= {
+      "use"
+    }
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  },
+}
+
+Strings = {
+  Delimiter=[["]],
+  Interpolation=[[ \{\} ]]
+}
+
+Comments = {
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^|\?]]

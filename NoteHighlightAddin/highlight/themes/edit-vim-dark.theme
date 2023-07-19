@@ -9,8 +9,8 @@ Number         = { Colour="#e64ce6" }
 Escape         = { Colour="#f8d1d1" }
 String         = { Colour="#c641c6" }
 StringPreProc  = { Colour="#c641c6" }
-BlockComment   = { Colour="#53fcfc" }
-PreProcessor   = { Colour="#53fcfc" }
+BlockComment   = { Colour="#53bdfc" }
+PreProcessor   = { Colour="#53bdfc" }
 LineNum        = { Colour="#ffff54" }
 Operator       = { Colour="#ffffff" }
 LineComment = BlockComment
@@ -21,4 +21,24 @@ Keywords = {
   { Colour= "#69c789" },
   { Colour= "#d0d045" },
   { Colour= "#ffffff" },
+  { Colour="#ffffff" },
+  { Colour="#7d6dcf" },
+}
+
+-- new LSP based elements:
+
+SemanticTokenTypes = {
+  { Type = 'type', Style = Keywords[2] },
+  { Type = 'class', Style =  Keywords[1] },
+  { Type = 'struct', Style =  Keywords[4] },
+  { Type = 'interface', Style = Keywords[1] },
+  { Type = 'parameter', Style = Keywords[6] },
+  { Type = 'variable', Style = Keywords[5] },
+  { Type = 'enumMember', Style = Keywords[5] },
+  { Type = 'function', Style = Keywords[4] },
+  { Type = 'method', Style = Keywords[4] },
+  { Type = 'keyword', Style =  Keywords[1]},
+  { Type = 'number', Style = Number },
+  { Type = 'regexp', Style = String },
+  { Type = 'operator', Style = Operator },
 }

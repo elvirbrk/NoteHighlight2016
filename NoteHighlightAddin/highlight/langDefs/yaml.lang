@@ -4,9 +4,7 @@ Description="Ansible YAML"
 
 Categories = {"markup"}
 
---Identifiers=[[ ([\w][\S]+?\:) ]]
-
-Identifiers=[[ ("?[\w][\S]+?\"?:) ]]
+Identifiers=[[ ([\w][\S]+?\:) ]]
 
 Digits = [[ [\W](\d*[\.]?\d+(?:[eE][\-\+]\d+)?)(?![\w]) ]]
 

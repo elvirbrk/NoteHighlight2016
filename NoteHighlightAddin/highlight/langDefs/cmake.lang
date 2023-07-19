@@ -13,7 +13,7 @@ Keywords={
     Regex=[[ [0-9A-Z_]{2,}  ]],
   },
   { Id=3,
-    Regex=[[\$\{.+\$\{.+?\}.+?\}|\$\{.+?\} ]],
+    Regex=[[\$\{.+\$\{[^}]+\}.+?\}|\$\{[^}]+\} ]],
   },
   { Id=3,
     Regex=[[ [A-Z_\>]+\:([\w/]+) ]],
@@ -29,7 +29,7 @@ Strings={
     { Open=[[ \[=*\[ ]], Close=[[ \]=*\] ]], Raw=true }
   },
   AssertEqualLength=true,
-  Interpolation=[[ \$\{.+?\} ]]
+  Interpolation=[[ \$\{[^}]+\} ]]
 }
 
 IgnoreCase=false

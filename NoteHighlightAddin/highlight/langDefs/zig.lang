@@ -1,0 +1,54 @@
+
+Description="Zig"
+
+Categories = {"source"}
+
+Digits = [[ (?:0x|0X|0b)[0-9a-fA-F']+|\d*[\.]?\d+(?:[eE][\-\+]\d+)?[lLuU]* ]]
+
+Keywords={
+  { Id=1,
+    List={
+      "align", "allowzero", "and", "anyframe", "anytype", "asm", "async", "await", "break", "callconv", "catch",
+      "comptime", "const", "continue", "defer", "else", "enum", "errdefer", "error", "export", "extern", "fn",
+      "for", "if", "inline", "noalias", "nosuspend", "noinline", "opaque", "or", "orelse", "packed", "pub",
+      "resume", "return", "linksection", "struct", "suspend", "switch", "test", "threadlocal", "try", "union",
+      "unreachable", "usingnamespace", "var", "volatile", "while"
+    }
+  },
+  { Id=2,
+    List= {
+      "i8", "u8", "i16", "u16", "i32", "u32", "i64", "u64", "i128", "u128", "isize", "usize", "c_short", "c_ushort",
+      "c_int", "c_uint", "c_long", "c_ulong", "c_longlong", "c_ulonglong", "c_longdouble", "f16", "f32", "f64",
+      "f80", "f128", "bool", "void", "noreturn", "type", "anyerror", "comptime_int", "comptime_float"
+    }
+  },
+  { Id=5,
+    Regex=[[ @\w+ ]]
+  },
+  -- multiline strings
+  { Id=3,
+    Regex=[[ \\\\.+ ]]
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  }
+}
+
+Strings = {
+  Delimiter=[["|']],
+  Interpolation = [[ \{[\w_\?]*?\} ]],
+}
+
+Comments = {
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^|\?]]
+
+EnableIndentation=true
+
