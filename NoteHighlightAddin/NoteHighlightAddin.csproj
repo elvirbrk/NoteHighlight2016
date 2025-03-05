@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NoteHighlightAddin</RootNamespace>
     <AssemblyName>NoteHighlightAddin</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -1172,16 +1172,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenerateHighlightContent\GenerateHighlightContent.csproj">
-      <Project>{04f98cff-6895-4b84-ac32-23ab8684ea43}</Project>
-      <Name>GenerateHighlightContent</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Helper\Helper.csproj">
-      <Project>{391303f3-b2f5-45dc-9d0d-f4d6d3a76a5d}</Project>
-      <Name>Helper</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="highlight\COPYING">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -1255,6 +1245,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings1.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenerateHighlightContent\GenerateHighlightContent.csproj">
+      <Project>{04f98cff-6895-4b84-ac32-23ab8684ea43}</Project>
+      <Name>GenerateHighlightContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helper\Helper.csproj">
+      <Project>{391303f3-b2f5-45dc-9d0d-f4d6d3a76a5d}</Project>
+      <Name>Helper</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

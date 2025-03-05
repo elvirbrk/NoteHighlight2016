@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>UnitTesting</RootNamespace>
     <AssemblyName>UnitTesting</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -64,16 +65,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GenerateHighlightContent\GenerateHighlightContent.csproj">
-      <Project>{04f98cff-6895-4b84-ac32-23ab8684ea43}</Project>
-      <Name>GenerateHighlightContent</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\NoteHighlightAddin\NoteHighlightAddin.csproj">
-      <Project>{d874e185-08fe-48c5-bade-0fe84060c978}</Project>
-      <Name>NoteHighlightAddin</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
@@ -84,6 +75,16 @@
       <SubType>Designer</SubType>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GenerateHighlightContent\GenerateHighlightContent.csproj">
+      <Project>{04f98cff-6895-4b84-ac32-23ab8684ea43}</Project>
+      <Name>GenerateHighlightContent</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NoteHighlightAddin\NoteHighlightAddin.csproj">
+      <Project>{d874e185-08fe-48c5-bade-0fe84060c978}</Project>
+      <Name>NoteHighlightAddin</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
