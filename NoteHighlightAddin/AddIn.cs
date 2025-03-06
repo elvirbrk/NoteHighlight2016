@@ -450,6 +450,11 @@ namespace NoteHighlightAddin
                     }
                     tabCount = line.Ancestors().Elements(ns + "T").Count() - initTabCount;
 
+                    if (tabCount < 0)
+                    {
+                        tabCount = 0;
+                    }
+
 
                     sb.AppendLine(new String('\t', tabCount) + HttpUtility.HtmlDecode(htmlDocument.DocumentNode.InnerText));
                 }
