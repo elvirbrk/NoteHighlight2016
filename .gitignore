@@ -194,3 +194,7 @@ INSTALLER/*
 /img/ONOMSPY.zip
 /img/onomspy.exe
 /.vs/
+/GenerateHighlightContent/.vs
+/Helper/.vs
+/NoteHighlightAddin/.vs
+/UnitTesting/.vs
