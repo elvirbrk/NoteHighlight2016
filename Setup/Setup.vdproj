@@ -99,6 +99,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_EC5545A47C005AF1764A83CF0ADF40C5"
+        "OwnerKey" = "8:_692D7E391D074D36AD2530720FB8D6C4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_7CBDA023CD2F435BB8D4D5586B86D83B"
         "MsmSig" = "8:_UNDEFINED"
@@ -487,6 +493,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_EC5545A47C005AF1764A83CF0ADF40C5"
+            {
+            "SourcePath" = "8:NoteHighlightAddin.tlb"
+            "TargetName" = "8:NoteHighlightAddin.tlb"
+            "Tag" = "8:"
+            "Folder" = "8:_76DE0C3E4C3C41398EBF2960C9F81C36"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:2"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -620,15 +646,15 @@
         {
         "Name" = "8:NoteHighlightAddin"
         "ProductName" = "8:NoteHighlight2016"
-        "ProductCode" = "8:{A9AFCF4D-FAD1-4F86-AE1D-DFB7BD178E08}"
-        "PackageCode" = "8:{2756080D-4B0F-4FD0-A490-A56C7DBE8FC8}"
+        "ProductCode" = "8:{332AD3B1-50E6-4E5A-81EF-9DB60EB91ACF}"
+        "PackageCode" = "8:{F76F0568-E42B-43AA-B75E-E71FE11F6654}"
         "UpgradeCode" = "8:{0025873C-20C5-48D6-A93A-FBD3891A9233}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:3.7"
+        "ProductVersion" = "8:3.8"
         "Manufacturer" = "8:CodingRoad"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
