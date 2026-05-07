@@ -19,7 +19,7 @@ namespace NoteHighlightAddin.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -184,10 +184,10 @@ namespace NoteHighlightAddin.Properties {
         ///&lt;customUI xmlns=&quot;http://schemas.microsoft.com/office/2006/01/customui&quot; loadImage=&quot;GetImage&quot;&gt;
         ///    &lt;ribbon&gt;
         ///        &lt;tabs&gt;
-        ///            &lt;tab id=&quot;tabNoteHighlight&quot; label=&quot;NoteHighlight&quot;&gt;
+        ///            &lt;tab id=&quot;tabNoteHighlight&quot; label=&quot;NoteHighlight&quot; keytip=&quot;H&quot;&gt;
         ///                &lt;group id=&quot;groupLanguage&quot; label=&quot;Language&quot;&gt;
         ///                  &lt;button id=&quot;buttonCSharp&quot; label=&quot;C#&quot; size=&quot;large&quot; screentip=&quot;Enter C# Code&quot; onAction=&quot;AddInButtonClicked&quot; tag=&quot;cs&quot; keytip=&quot;C&quot; image=&quot;CSharp.png&quot; visible=&quot;true&quot;/&gt;
-        ///                  &lt;button id=&quot;buttonSQL&quot; l [rest of string was truncated]&quot;;.
+        ///                  &lt;button id=&quot;b [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string ribbon {
             get {
