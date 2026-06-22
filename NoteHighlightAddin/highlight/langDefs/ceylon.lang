@@ -47,6 +47,6 @@ IgnoreCase=false
 
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\~|\||\?]]
 
-Digits=[[ [\d\.\_]*\d+(?:[eE][\-\+]?\d+)?[kMGTPmunpf]*|#[[:alnum:]\_]+|\$[01_]+ ]]
+Digits=[=[ [\d\.\_]*\d+(?:[eE][\-\+]?\d+)?[kMGTPmunpf]*|#[[:alnum:]\_]+|\$[01_]+ ]=]
 
 EnableIndentation=true

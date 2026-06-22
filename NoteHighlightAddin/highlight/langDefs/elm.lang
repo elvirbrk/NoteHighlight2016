@@ -1,0 +1,45 @@
+Description="Elm"
+
+Categories = {"source", "script"}
+
+Digits=[[ (?:0x|0X|0o|0O|0b|0B)[0-9a-fA-F\_]+|\d*[\.\_]?[\d\_]+(?:[eE][\-\+]\d+)?[lLuU]* ]]
+
+Keywords={
+  { Id=1,
+    List={  "type", "alias", "port" , "if", "then", "else", "case", "of", "let", "in",
+    "infix", "left", "right", "non", "module", "import", "exposing", "as", "where",
+    "effect", "command", "subscription", "jsonTrue", "jsonFalse", "jsonNull" }
+  },
+  { Id=2,
+    List={  "True", "False" }
+  },
+  { Id=3,
+    List={ "String", "Int", "Float" }
+  },
+  { Id=4,
+    Regex=[[([a-zA-Z]\w+)\s*\(]],
+  },
+  -- attributes:
+  { Id=2,
+    Regex=[[\.([\w]+)]],
+  }
+}
+
+Strings={
+  Delimiter=[["""|"|']]
+}
+
+IgnoreCase=false
+
+Comments = {
+  { Block=true,
+    Nested=true,
+    Delimiter = { [[\{\-]], [[\-\}]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[--]] }
+  }
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\@|\||\^]]

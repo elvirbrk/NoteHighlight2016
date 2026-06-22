@@ -2,21 +2,36 @@ Description="Java"
 
 Categories = {"source"}
 
--- def is a Groovy reserved word. Added here for convenience
+-- identifier including the minus sign (needed for Java's "non-sealed")
+Identifiers=[[ [a-zA-Z_][\w\-]* ]]
+
 Keywords={
   { Id=1,
-    List={"abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class", "const",
-          "continue", "default", "do", "double", "else", "enum", "extends", "final", "finally",
-          "float", "for", "goto", "if", "implements", "import", "instanceof", "int", "interface",
-          "long", "native", "new", "package", "private", "protected", "public", "return", "short",
-          "static", "strictfp", "super", "switch", "synchronized", "this", "throw", "throws",
-          "transient", "try", "void", "volatile", "while", "var", "def"},
+    List={
+      -- reserved Java keywords (Java Lang Spec 21)
+      "abstract", "assert", "boolean", "break", "byte", "case", "catch", "char", "class", "const",
+      "continue", "default", "do", "double", "else", "enum", "extends", "final", "finally",
+      "float", "for", "goto", "if", "implements", "import", "instanceof", "int", "interface",
+      "long", "native", "new", "package", "private", "protected", "public", "return", "short",
+      "static", "strictfp", "super", "switch", "synchronized", "this", "throw", "throws",
+      "transient", "try", "void", "volatile", "while", "_", "@interface",
+
+      -- contextual Java keywords
+      "exports", "module", "non-sealed", "open", "opens", "permits", "provides", "record",
+      "requires", "sealed", "to", "transitive", "uses",  "var", "when", "with", "yield",
+
+      -- reserved Groovy words. Added here for convenience
+      "def", "default", "threadsafe",
+
+      -- contextual Groovy keywords
+      "as", "in", "trait"
+    }
   },
   { Id=2,
     List={"false", "true", "null"},
   },
   { Id=3,
-    Regex=[[@\w+]],
+    Regex=[[@\s*\w+]],
   },
   { Id=4,
     Regex=[[(\w+)\s*\(]],

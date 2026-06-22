@@ -9,7 +9,8 @@ Keywords={
     List={  "break", "continue", "del", "except", "exec", "finally", "pass",
             "print", "raise", "return", "try", "global", "assert", "lambda", "yield", "def",
             "class", "for", "while", "if", "elif", "else", "and", "in", "is", "not", "or",
-            "import", "from", "as", "async", "await", "None", "True", "False", "with"}
+            "import", "from", "as", "async", "await", "None", "True", "False", "with",
+            "match", "case", "nonlocal"}
   },
   { Id=2,
     List={  "bool", "bytes", "enumerate", "set", "frozenset", "help", "reversed", "sorted",
@@ -21,7 +22,7 @@ Keywords={
             "map", "max", "min", "object", "oct", "open", "ord", "pow", "property", "range",
             "raw_input", "reduce", "reload", "repr", "round", "setattr", "slice",
             "staticmethod", "str", "super", "tuple", "type", "unichr", "unicode", "vars",
-            "xrange", "zip"}
+            "xrange", "zip", "any", "all", "breakpoint", "bytearray", "memoryview"}
   },
   -- decorators:
   { Id=2,
@@ -69,5 +70,3 @@ function OnStateChange(oldState, newState, token, groupID)
 
   return newState
 end
-
-

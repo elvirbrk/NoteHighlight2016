@@ -1,0 +1,41 @@
+Description="MiniScript"
+
+Categories = {"source", "script"}
+
+Keywords={
+  { Id=1,
+    List={"break", "continue", "else", "end", "for", "function", "if", "in",
+    "isa", "new", "null", "then", "repeat", "return", "while", "and", "or",
+    "not", "true", "false", "self", "super"},
+  },
+  { Id=2,
+    List={"code", "intrinsics", "remove", "ceil", "indexes", "pi", "sort", "sign",
+    "pop", "replace", "cos", "round", "version", "refEquals", "input", "yield",
+    "list", "push", "bitXor", "time", "upper", "bitOr", "hasIndex", "split",
+    "abs", "import", "log", "env", "char", "hash", "sin", "range","pull", "acos",
+    "shuffle", "indexOf", "number", "sum", "map", "stackTrace", "join", "values",
+    "print", "atan", "funcRef", "exit", "bitAnd", "slice", "shellArgs", "val",
+    "str", "lower", "len", "string", "tan", "rnd", "sqrt", "wait", "file",
+    "insert", "floor", "asin"},
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]],
+  },
+}
+
+Strings={
+  Delimiter=[["']],
+  Escape=[[""]],
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[\/\/]] },
+  },
+}
+
+Operators=[[\(|\)|\{|\}|\[|\]|\,|\.|\:|\+|\-|\*|\/|\%|\^|==|!=|<=|>=|<|>|=]]
+
+EncodingHint="UTF-8"

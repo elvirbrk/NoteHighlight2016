@@ -1,0 +1,55 @@
+
+Description="CUE"
+
+Categories = {"source", "config"}
+
+Identifiers=[[ [a-zA-Z_\-#][\w\-]* ]]
+
+Digits = [[ (?:0x|0X|0b)[0-9a-fA-F']+|\d*[\.]?\d+(?:[eE][\-\+]\d+)?[lLuUM]* ]]
+
+Keywords={
+  { Id=1,
+    List= {
+      "for", "in", "if", "let", "package", "import"
+    }
+  },
+  { Id=2,
+    List= {
+      "bool", "int", "int8", "int16", "int32", "int64", "int128",
+      "uint", "uint8", "uint16", "uint32", "uint64", "uint128",
+      "float", "float32", "float64", "string", "bytes", "number ", "rune"
+    }
+  },
+  { Id=3,
+    List={
+      "null", "true", "false"
+    }
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  },
+  { Id=5,
+    Regex=[[(\w+\!\?)\:]]
+  },
+}
+
+
+Strings={
+  Delimiter=[["""|'''|"|']],
+  RawPrefix="#",
+  Escape=[=[\\[ntvbrfa\\\?'"]|\\\d{3}|\\U[[:xdigit:]]+]=],
+}
+
+Comments = {
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
+}
+
+IgnoreCase=false
+
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^|\?]]
+
+

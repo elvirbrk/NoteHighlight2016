@@ -1,0 +1,179 @@
+
+Description="OpenType Feature File"
+
+Categories = {"source"}
+
+Digits = [[ (?:0x|0X|0b)?-?[0-9a-fA-F']+[\.]?\d* ]]
+
+Identifiers=[[ [a-zA-Z_][\w\-\/]* ]]
+
+Keywords={
+  { Id=1,
+    -- main keywords
+    List={
+      "anonymous", "anon", "feature", "table", "lookup",
+    }
+  },
+  { Id=2,
+    -- keywords
+    List={
+      "anchor", "anchorDef", "by", "contourpoint", "cursive", "device", "enum", "enumerate", "exclude_dflt",
+      "from", "ignore", "IgnoreBaseGlyphs", "IgnoreLigatures", "IgnoreMarks", "include_dflt", "language",
+      "languagesystem", "lookupflag", "mark", "MarkAttachmentType", "markClass", "nameid", "NULL", "parameters", "pos", "position",
+      "required", "reversesub", "RightToLeft", "rsub", "script", "sub", "substitute", "subtable", "useExtension",
+      "UseMarkFilteringSet", "valueRecordDef",
+    }
+  },
+  { Id=3,
+    -- attributes
+    List= {
+      "Attach", "GlyphClassDef", "LigatureCaretByDev", "LigatureCaretByIndex", "LigatureCaretByPos", "FontRevision", "Ascender",
+      "CaretOffset", "Descender", "LineGap", "CapHeight", "CodePageRange", "Panose", "TypoAscender", "TypoDescender", "TypoLineGap",
+      "UnicodeRange", "Vendor", "winAscent", "winDescent", "XHeight", "sizemenuname", "VertTypoAscender", "VertTypoDescender",
+      "VertTypoLineGap", "VertAdvanceY", "VertOriginY", "ElidedFallbackName", "ElidedFallbackNameID", "DesignAxis", "AxisValue",
+      "flag", "location", "ElidableAxisValueName", "OlderSiblingFontAttribute",
+      "FamilyClass", "WeightClass", "WidthClass", "FSType", "locationDef"
+      -- "name",
+      -- clash with name table
+      }
+  },
+  { Id=4,
+    -- include statement keyword
+    Regex=[[ (include)\s*\( ]], Group=1
+  },
+  { Id=3,
+    -- contextual single-quote marker
+    Regex=[[ (\') ]]
+  },
+  { Id=3,
+    -- pointy brackets around value records or anchor definitions
+    -- parentheses around vf-first kerning values and include statements
+    -- Regex=[[ (<|>|\(|\)) ]]
+    Regex=[[ (<|>|\(|\)) ]]
+  },
+  { Id=3,
+    -- brackets around ad-hoc groups
+    Regex=[[ (\[|\]) ]]
+  },
+  { Id=4,
+    -- named groups
+    Regex=[[ @[A-Za-z0-9_\-\.]+ ]]
+  },
+  { Id=5,
+    -- feature tags
+    -- not a list to make something like include(kern.fea); look different
+    Regex=[[ (feature|\}) ?(\b(aalt|abvf|abvm|abvs|afrc|akhn|blwf|blwm|blws|calt|case|ccmp|cfar|cjct|clig|cpct|cpsp|cswh|curs|c2pc|c2sc|dist|dlig|dnom|dtls|expt|falt|fin2|fin3|fina|flac|frac|fwid|half|haln|halt|hist|hkna|hlig|hngl|hojo|hwid|init|isol|ital|jalt|jp78|jp83|jp90|jp04|kern|lfbd|liga|ljmo|lnum|locl|ltra|ltrm|mark|med2|medi|mgrk|mkmk|mset|nalt|nlck|nukt|numr|onum|opbd|ordn|ornm|palt|pcap|pkna|pnum|pref|pres|pstf|psts|pwid|qwid|rand|rclt|rkrf|rlig|rphf|rtbd|rtla|rtlm|ruby|rvrn|salt|sinf|size|smcp|smpl|ssty|stch|subs|sups|swsh|titl|tjmo|tnam|tnum|trad|twid|unic|valt|vatu|vert|vhal|vjmo|vkna|vkrn|vpal|vrt2|vrtr|zero)\b) ]],
+  },
+  { Id=5,
+    -- numerical feature tags
+    -- ss can go from 1 to 20, but not sure we should enforce that here
+    -- cv can go up to 99
+    Regex=[[ (\s|{)(ss\d\d|cv\d\d) ]]
+  },
+  { Id=5,
+    -- table names, from https://learn.microsoft.com/en-us/typography/opentype/spec/otff#font-tables
+    -- this can never be complete, but probably does not matter
+    Regex=[[ (table|\}) ?(\b(avar|BASE|CBDT|CBLC|CFF|CFF2|cmap|COLR|CPAL|cvar|cvt|DSIG|EBDT|EBLC|EBSC|fpgm|fvar|gasp|GDEF|glyf|GPOS|GSUB|gvar|hdmx|head|hhea|hmtx|HVAR|JSTF|kern|loca|LTSH|MATH|maxp|MERG|meta|MVAR|name|OS\/2|PCLT|post|prep|sbix|STAT|SVG|VDMX|vhea|vmtx|VORG|VVAR)\b) ]],
+  },
+  { Id=5,
+    -- lookup names
+    Regex=[[ (lookup|\}) ?(\b(.+?)\b) ]], Group=2
+  },
+  { Id=6,
+    -- language tags, from https://learn.microsoft.com/en-us/typography/opentype/spec/languagetags
+    List= {
+      "dflt",
+      "AAQ", "ABA", "ABK", "ACH", "ACR", "ACY", "ADY", "AFK", "AFR", "AGW", "AIO", "AKA", "AKB", "ALS", "ALT",
+      "AMH", "ANG", "ARA", "ARG", "ARI", "ARK", "ASM", "AST", "ATH", "ATS", "AVN", "AVR", "AWA", "AYM", "AZB",
+      "AZE", "BAD", "BAG", "BAL", "BAN", "BAR", "BAU", "BBC", "BBR", "BCH", "BCR", "BDC", "BDY", "BEL", "BEM",
+      "BEN", "BGC", "BGQ", "BGR", "BHI", "BHO", "BIK", "BIL", "BIS", "BJJ", "BKF", "BLI", "BLK", "BLN", "BLT",
+      "BMB", "BML", "BOS", "BPY", "BRE", "BRH", "BRI", "BRM", "BRX", "BSH", "BSK", "BTD", "BTI", "BTK", "BTM",
+      "BTS", "BTX", "BTZ", "BUG", "BYV", "CAK", "CAT", "CAY", "CBG", "CBK", "CEB", "CGG", "CHA", "CHE", "CHG",
+      "CHH", "CHI", "CHK", "CHO", "CHP", "CHR", "CHU", "CHY", "CJA", "CJM", "CMI", "CMR", "COO", "COP", "COR",
+      "COS", "CPP", "CRE", "CRR", "CRT", "CSB", "CSL", "CSY", "CTG", "CTO", "CTT", "CUK", "DAG", "DAN", "DAR",
+      "DAX", "DCR", "DEU", "DGO", "DGR", "DHG", "DHV", "DIQ", "DIV", "DJR", "DNG", "DNJ", "DNK", "DRI", "DUJ",
+      "DUN", "DZN", "EBI", "ECR", "EDO", "EFI", "ELL", "EMK", "EMP", "ENG", "ERZ", "ESP", "ESU", "ETI", "EUQ",
+      "EVK", "EVN", "EWE", "FAN", "FAR", "FAT", "FIN", "FJI", "FLE", "FMP", "FNE", "FON", "FOS", "FRA", "FRC",
+      "FRI", "FRL", "FRP", "FTA", "FUL", "FUV", "GAD", "GAE", "GAG", "GAL", "GAR", "GAW", "GEZ", "GIH", "GIL",
+      "GKP", "GLK", "GMZ", "GNN", "GOG", "GON", "GRN", "GRO", "GUA", "GUC", "GUF", "GUJ", "GUZ", "HAI", "HAI0",
+      "HAL", "HAR", "HAU", "HAW", "HAY", "HAZ", "HBN", "HEI", "HER", "HIL", "HIN", "HMA", "HMD", "HMN", "HMO",
+      "HMZ", "HND", "HO ", "HRI", "HRV", "HUN", "HUR", "HYE", "IBA", "IBB", "IBO", "IDO", "IJO", "ILE", "ILO",
+      "INA", "IND", "ING", "INU", "INUK", "IPK", "IRI", "IRT", "IRU", "ISL", "ISM", "ITA", "IWR", "JAM",
+      "JAN", "JAV", "JBO", "JCT", "JDT", "JII", "JUD", "JUL", "KAB", "KAC", "KAL", "KAN", "KAR", "KAT", "KAW",
+      "KAZ", "KBC", "KDE", "KEA", "KEB", "KEK", "KGE", "KGF", "KHA", "KHK", "KHM", "KHS", "KHT", "KHV", "KHW",
+      "KIK", "KIR", "KIS", "KIU", "KJD", "KJJ", "KJP", "KJZ", "KKN", "KLM", "KMB", "KMG", "KMN", "KMO", "KMS",
+      "KMZ", "KNR", "KOD", "KOH", "KOK", "KOM", "KON", "KOP", "KOR", "KOS", "KOZ", "KPL", "KRI", "KRK", "KRL",
+      "KRM", "KRN", "KRT", "KSH", "KSI", "KSM", "KSU", "KSW", "KUA", "KUI", "KUL", "KUM", "KUR", "KUU", "KUY",
+      "KVQ", "KWK", "KYK", "KYU", "LAD", "LAH", "LAK", "LAM", "LAO", "LAT", "LAZ", "LCR", "LDK", "LEF", "LEZ",
+      "LIJ", "LIM", "LIN", "LIS", "LIV", "LJP", "LKI", "LMA", "LMB", "LMO", "LMW", "LOM", "LPO", "LRC", "LSB",
+      "LSM", "LTH", "LTZ", "LUA", "LUB", "LUG", "LUH", "LUO", "LUT", "LVI", "MAD", "MAG", "MAH", "MAJ", "MAK",
+      "MAL", "MAM", "MAN", "MAP", "MAR", "MAW", "MBN", "MBO", "MCH", "MCR", "MDE", "MDR", "MEN", "MER", "MEV",
+      "MFA", "MFE", "MIN", "MIZ", "MKD", "MKR", "MKW", "MLE", "MLG", "MLN", "MLR", "MLY", "MND", "MNG", "MNI",
+      "MNK", "MNX", "MOH", "MOK", "MOL", "MON", "MONT", "MOR", "MOS", "MRI", "MTH", "MTS", "MUN", "MUS",
+      "MWL", "MWW", "MYN", "MZN", "NAG", "NAH", "NAN", "NAP", "NAS", "NAU", "NAV", "NCR", "NDB", "NDC", "NDG",
+      "NDS", "NEP", "NEW", "NGA", "NGR", "NHC", "NIS", "NIU", "NKL", "NKO", "NLD", "NOE", "NOG", "NOP", "NOR",
+      "NOV", "NSM", "NSO", "NTA", "NTO", "NUK", "NYM", "NYN", "NZA", "OCI", "OCR", "OJB", "ONE", "ONO", "ORI",
+      "ORO", "OSS", "PAA", "PAG", "PAL", "PAM", "PAN", "PAP", "PAS", "PAU", "PCC", "PCD", "PDC", "PGR", "PHK",
+      "PIH", "PIL", "PLG", "PLG0", "PLK", "PMS", "PNB", "POH", "PON", "PRO", "PTG", "PWO", "QIN", "QUC",
+      "QUH", "QUZ", "QVI", "QWH", "RAJ", "RAR", "RBU", "RCR", "REJ", "RIA", "RHG", "RIF", "RIT", "RKW", "RMS",
+      "RMY", "ROM", "ROY", "RSY", "RTM", "RUA", "RUN", "RUP", "RUS", "SAD", "SAN", "SAS", "SAT", "SAY", "SCN",
+      "SCO", "SCS", "SEE", "SEK", "SEL", "SFM", "SGA", "SGO", "SGS", "SHI", "SHN", "SIB", "SID", "SIG", "SJA",
+      "SJE", "SJU", "SKS", "SKY", "SLA", "SLV", "SML", "SMO", "SNA", "SND", "SNH", "SNK", "SOG", "SOP", "SOT",
+      "SQI", "SRB", "SRD", "SRK", "SRR", "SSL", "SSM", "STR", "STQ", "SUK", "SUN", "SUR", "SVA", "SVE", "SWA",
+      "SWK", "SWZ", "SXT", "SXU", "SYL", "SYR", "SZL", "TAB", "TAJ", "TAM", "TAQ", "TAT", "TBV", "TCR", "TDC",
+      "TDD", "TEL", "TET", "TGL", "TGN", "TGR", "TGY", "THA", "THT", "THP", "THV", "THZ", "TIB", "TIV", "TJL",
+      "TKM", "TLI", "TMH", "TLY", "TMN", "TNA", "TNE", "TNG", "TOD", "TPI", "TRK", "TSG", "TSJ", "TTQ", "TUA",
+      "TUL", "TUM", "TUS", "TUV", "TVL", "TWI", "TYZ", "TZM", "TZO", "UDI", "UDM", "UKR", "UMB", "UPPH",
+      "URD", "USB", "UYG", "UZB", "VEC", "VEN", "VIT", "VOL", "VRO", "WA ", "WAG", "WAR", "WBL", "WCI", "WCR",
+      "WDT", "WEL", "WLF", "WLN", "WTM", "WYN", "XBD", "XHS", "XJB", "XKF", "XOG", "XPE", "XUB", "XUJ", "YAK",
+      "YAO", "YAP", "YBA", "YCR", "YGP", "YIC", "YIM", "YNA", "YUF", "YWQ", "ZEA", "ZGH", "ZHA", "ZHH", "ZHP",
+      "ZHS", "ZHT", "ZHTM", "ZND", "ZUL", "ZZA"
+      }
+  },
+  { Id=5,
+    -- script tags, taken from https://learn.microsoft.com/en-us/typography/opentype/spec/scripttags
+    List= {
+      "DFLT",
+      "adlm", "ahom", "hluw", "arab", "armn", "avst", "bali", "bamu", "bass", "batk", "beng", "bng2", "berf", "bhks", "bopo", "brah",
+      "brai", "bugi", "buhd", "byzm", "cans", "cari", "aghb", "cakm", "cham", "cher", "chrs", "hani", "copt", "cprt", "cpmn", "cyrl",
+      "dsrt", "deva", "dev2", "diak", "dogr", "dupl", "egyp", "elba", "elym", "ethi", "gara", "geor", "glag", "goth", "gran", "grek",
+      "gujr", "gjr2", "gong", "guru", "gur2", "gukh", "hang", "jamo", "rohg", "hano", "hatr", "hebr", "kana", "armi", "phli", "prti",
+      "java", "kthi", "knda", "knd2", "kana", "kawi", "kali", "khar", "kits", "khmr", "khoj", "sind", "krai", "lao", "latn", "lepc",
+      "limb", "lina", "linb", "lisu", "lyci", "lydi", "mahj", "maka", "mlym", "mlm2", "mand", "mani", "marc", "gonm", "math", "medf",
+      "mtei", "mend", "merc", "mero", "plrd", "modi", "mong", "mroo", "mult", "musc", "mymr", "mym2", "nbat", "nagm", "nand", "newa",
+      "talu", "nko", "nshu", "hmnp", "orya", "ory2", "ogam", "olck", "onao", "ital", "hung", "narb", "perm", "xpeo", "sogo", "sarb",
+      "orkh", "ougr", "osge", "osma", "hmng", "palm", "pauc", "phag", "phnx", "phlp", "rjng", "runr", "samr", "saur", "shrd", "shaw",
+      "sidd", "sidt", "sgnw", "sinh", "sogd", "sora", "soyo", "xsux", "sund", "sunu", "sylo", "syrc", "tglg", "tagb", "tale", "lana",
+      "tavt", "tayo", "takr", "taml", "tml2", "tnsa", "tang", "telu", "tel2", "thaa", "thai", "tibt", "tfng", "tirh", "todr", "tols",
+      "toto", "tutg", "ugar", "vai", "vith", "wcho", "wara", "yezi", "yi", "zanb",
+      }
+  },
+}
+
+-- KeywordFormatHints={
+-- not sure this works?
+--    {
+--     Id=0,
+--     Italic=true,
+--    }
+-- }
+
+Strings = {
+  Delimiter=[["]],
+
+  -- using escape for CIDs
+  Escape=[[ \\[\da-fA-F]* ]]
+}
+
+Comments = {
+  {
+    Block=false,
+    Delimiter = { [[#]] }
+  }
+}
+
+IgnoreCase=false
+
+Operators=[[;|:|=]]
+
+EnableIndentation=true

@@ -1,0 +1,77 @@
+Description="C# Unity"
+
+Categories = {"source"}
+
+Keywords={
+  { Id=1,
+    List = {
+      "abstract", "as", "base", "bool", "break", "byte", "case", "catch", "char",
+      "checked", "class", "const", "continue", "decimal", "default", "delegate", "do",
+      "double", "else", "enum", "event", "explicit", "extern", "false", "finally", "fixed",
+      "float", "for", "foreach", "goto", "if", "implicit", "in", "int", "interface", "internal",
+      "is", "lock", "long", "namespace", "new", "null", "object", "operator", "out",
+      "override", "params", "private", "protected", "public", "readonly", "ref", "return",
+      "sbyte", "sealed", "short", "sizeof", "stackalloc", "static", "string", "struct",
+      "switch", "this", "throw", "true", "try", "typeof", "uint", "ulong", "unchecked",
+      "unsafe", "ushort", "using", "virtual", "void", "volatile", "while", "add", "alias",
+      "ascending", "async", "await", "descending", "dynamic", "from", "get", "global", "group",
+      "into", "join", "let", "orderby", "partial", "remove", "select", "set", "value", "var", "where", "yield"
+    },
+  },
+  { Id=2,
+    List={
+      "object", "bool", "byte", "char", "const", "decimal", "double",
+      "enum", "float", "int", "long", "sbyte", "short", "string", "struct", "uint",
+      "ulong", "ushort", "void", "SerializeField", "HideInInspector", "Header", "Space", "Tooltip",
+      "Range", "Min", "Multiline",
+      "TextArea", "ContextMenu", "ContextMenuItem", "ExecuteInEditMode", "ExecuteAlways", "RequireComponent",
+      "DisallowMultipleComponent", "AddComponentMenu", "CreateAssetMenu", "RuntimeInitializeOnLoadMethod",
+      "InitializeOnLoad", "InitializeOnLoadMethod", "FormerlySerializedAs", "PreferBinarySerialization",
+      "SelectionBase", "HelpURL", "DefaultExecutionOrder", "SerializeReference",
+      "NonReorderable", "Delayed", "ColorUsage", "GradientUsage", "InspectorName",
+      "HideReferenceObjectPicker", "Scene", "Layer", "Tag", "DrawGizmo"
+    },
+  },
+  { Id=3,
+    Regex=[[^\s*(\w+):]],
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]],
+  },
+}
+
+Strings={
+  Delimiter=[["|']],
+  RawPrefix="@",
+  Interpolation=[[ \{\{?.+?\}\}? ]]
+}
+
+IgnoreCase=false
+
+Comments={
+  { Block=false,
+    Delimiter= { [[//]] },
+  },
+  { Block=true,
+    Nested=false,
+    Delimiter= { [[\/\*]],[[\*\/]],}
+  }
+}
+
+PreProcessor={
+  Prefix=[[#]],
+  Continuation="\\",
+}
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|@|\?|\$|\|]]
+
+Digits=[[ (?:0x|0X|0b)[0-9a-fA-F_]+|\d*[\.\_]?\d+(?:[eE][\-\+]?\d+)?[fFlLuU]? ]]
+
+EnableIndentation=true
+
+-- resolve issue with one liner blocks and strings
+function OnStateChange(oldState, newState, token, groupID)
+  if oldState~=HL_STRING and newState==HL_INTERPOLATION then
+    return HL_REJECT
+  end
+end

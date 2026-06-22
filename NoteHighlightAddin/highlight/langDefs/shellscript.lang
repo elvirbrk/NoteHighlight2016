@@ -3,7 +3,7 @@ Description="Bash"
 
 Categories = {"script", "shell"}
 
-Identifiers=[[ [a-zA-Z_]\w*(?!\w*\/) ]]
+Identifiers=[[ [a-zA-Z_][\w\-]*(?!\w*\/) ]]
 
 Keywords={
   { Id=1,
@@ -39,13 +39,13 @@ Keywords={
   -- fixes issue with expressions like ${SHELL="${CONFIG_SHELL-/bin/sh}"}
   -- the [^\}]+ part fixes issue with "s#@PATH@#/opt/${pkgname}/bin/# ${pkgdir}/etc/profile.d/${pkgname}.sh"
   { Id=4,
-    Regex=[[\$\{[^\}]+\$\{.+?\}.+?\}|\$\{.+?\}|\$\(.+?\) ]],
+    Regex=[[\$\{[^\}]+\$\{.+?\}.+?\}|\$\{.+?\} ]],
   },
   { Id=4,
     Regex=[[ \$[\w\#]+ ]],
   },
   { Id=2,
-    Regex=[[ \-\-?[\w\-]+ ]],
+    Regex=[[ \s(\-\-?[\w\-]+) ]],
   },
 
   --see OnStateChange
@@ -69,14 +69,49 @@ Comments={
 
 Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\:|\&|<|>|\!|\=|\/|\*|\%|\+|\-|\|]]
 
+-- state vars for nested command substitution tracking
+cmdSubStack = {}
+
 function OnStateChange(oldState, newState, token, kwClass)
 
-  if oldState==HL_STRING and token==hereDoc then
+  if oldState == HL_STRING and token == hereDoc then
     hereDoc = nil
     return HL_STRING_END
   end
 
-  if  (string.sub(token,1,1) =="$" )  and oldState==HL_STRING and newState==HL_KEYWORD then
+  --handling for nested command substitution within strings
+
+  if oldState == HL_STRING then
+
+    cmdSubStart = string.find(token, "%$%(")
+    if cmdSubStart and cmdSubStack ~= nil then
+      table.insert(cmdSubStack, {depth = #cmdSubStack + 1, inString = true})
+      return HL_STRING
+    end
+
+    cmdSubEnd = string.find(token, "%)")
+    if cmdSubEnd and cmdSubStack ~= nil and #cmdSubStack > 0  then
+      table.remove(cmdSubStack)
+      return HL_STRING
+    end
+
+    if cmdSubStack ~= nil and #cmdSubStack > 0  then
+      quoteStart = string.find(token, '["\']')
+      if quoteStart then
+        return HL_STRING
+      end
+    end
+
+  end
+
+  if oldState == HL_STRING and newState ~= HL_STRING then
+    if cmdSubStack ~= nil and #cmdSubStack > 0 and string.find(token, "%)") then
+      table.remove(cmdSubStack)
+      return HL_STRING
+    end
+  end
+
+  if (string.sub(token,1,1) == "$" )  and oldState == HL_STRING and newState == HL_KEYWORD then
     return HL_INTERPOLATION
   end
 

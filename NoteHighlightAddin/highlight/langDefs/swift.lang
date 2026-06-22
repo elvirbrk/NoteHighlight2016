@@ -10,13 +10,11 @@ Keywords={
             "struct", "subscript", "typealias", "var", "fileprivate", "open", "final",
             "break", "case", "continue", "default", "do", "else", "fallthrough",
             "for", "if", "in", "return", "switch", "where", "while", "try","throw","catch",
-            "guard", "mutating", "throws"
+            "guard", "mutating", "throws", "associatedtype", "defer", "inout", "rethrows", "repeat", "override", "didSet", "willSet", "lazy", "weak", "unowned"
         }
   },
   { Id=2,
-    List= { "as", "dynamicType", "false", "is", "nil", "self", "Self", "super",
-            "true", "__COLUMN__", "__FILE__", "__FUNCTION__", "__LINE__",
-            "Bool", "UInt", "Int", "Int8", "Float", "Double", "Character", "String"
+    List= { "Any", "as", "async", "await", "Bool", "Character", "Double", "false", "Float", "Int", "Int8", "is", "nil", "self", "Self", "String", "super", "true", "UInt"
         }
   },
   { Id=3,

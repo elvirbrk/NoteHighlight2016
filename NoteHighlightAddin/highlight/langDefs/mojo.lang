@@ -1,0 +1,20 @@
+-- Load Python definition
+
+dofile(HL_LANG_DIR.."python.lang")
+
+Description="Mojo"
+
+Categories = {"source"}
+
+-- append keywords to Java keywords
+table.insert(Keywords,
+  { Id=1,
+    List={"fn", "struct", "let", "var", "trait", "raises"},
+  }
+)
+
+table.insert(Keywords,
+  { Id=5,
+    List={"inout", "owned", "borrowed"},
+  }
+)

@@ -8,7 +8,7 @@ Digits = [[ (?:0x|0X|0b)[0-9a-fA-F']+|\d*[\.]?\d+(?:[eE][\-\+]\d+)?[lLuU]* ]]
 Keywords={
   { Id=1,
     List={
-      "align", "allowzero", "and", "anyframe", "anytype", "asm", "async", "await", "break", "callconv", "catch",
+      "align", "addrspace", "allowzero", "and", "anyframe", "anytype", "asm", "async", "await", "break", "callconv", "catch",
       "comptime", "const", "continue", "defer", "else", "enum", "errdefer", "error", "export", "extern", "fn",
       "for", "if", "inline", "noalias", "nosuspend", "noinline", "opaque", "or", "orelse", "packed", "pub",
       "resume", "return", "linksection", "struct", "suspend", "switch", "test", "threadlocal", "try", "union",

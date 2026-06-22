@@ -16,7 +16,7 @@ Keywords={
           "program", "property", "protected", "public", "published", "raise", "record",
           "register",  "resourcestring", "safecall", "set", "shl", "shr", "stdcall",
           "threadvar", "try", "type", "unit", "uses", "var", "virtual", "xor",
-          "if", "else", "then", "downto", "do", "for", "repeat", "while", "to", "until", "with"},
+          "if", "else", "then", "downto", "do", "for", "repeat", "while", "to", "until", "with", "break", "continue", "on", "self", "dispose", "exit", "new"},
   },
   { Id=2,
     List={"boolean", "char", "integer", "pointer", "real", "text", "true", "false", "cardinal",

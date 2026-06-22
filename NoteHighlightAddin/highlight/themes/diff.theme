@@ -1,0 +1,45 @@
+-- Theme based on the Andes theme, optimized for generating diffs.
+
+Description = "Diff"
+
+Categories = {"dark"}
+
+Default	= { Colour="#f0f0f0" }
+Canvas	= { Colour="#0f0f0f" }
+Number	= { Colour="#dfaf87" }
+Escape	= { Colour="#df8787" }
+BlockComment	= { Colour="#33ff00" }
+PreProcessor	= { Colour="#afdf87" }
+LineNum	= { Colour="#993366" }
+String=   { Colour="#ffff77" }
+StringPreProc = String
+LineComment   = { Colour="#33ff00" }
+Operator = { Colour="#ff00cc" }
+Interpolation  = { Colour="#8FDBDF" }
+
+Keywords = {
+  { Colour="#ff99aa" },
+  { Colour="#66ff99" },
+  { Colour="#cc9966" },
+  { Colour="#66aaff" },
+  { Colour="#687fc4" },
+  { Colour="#bdbdbd" },
+}
+
+-- new LSP based elements:
+
+SemanticTokenTypes  = {
+  { Type = 'type', Style = Keywords[2] },
+  { Type = 'class', Style =  Keywords[1] },
+  { Type = 'struct', Style =  Keywords[4] },
+  { Type = 'interface', Style = Keywords[1] },
+  { Type = 'parameter', Style = Keywords[6] },
+  { Type = 'variable', Style = Keywords[5] },
+  { Type = 'enumMember', Style = Keywords[5] },
+  { Type = 'function', Style = Keywords[4] },
+  { Type = 'method', Style = Keywords[4] },
+  { Type = 'keyword', Style =  Keywords[1]},
+  { Type = 'number', Style = Number },
+  { Type = 'regexp', Style = String },
+  { Type = 'operator', Style = Operator },
+}

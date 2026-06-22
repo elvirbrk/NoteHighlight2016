@@ -5,8 +5,8 @@ Categories = {"config", "script"}
 
 Keywords={
   { Id=1,
-    List={  "Summary", "Name", "Version", "Release", "Copyright", "Group", "URL",
-            "Packager", "Prefix", "Distribution", "Vendor",  "Icon", "Provides", "Requires",
+    List={  "Summary", "Name", "Epoch", "Version", "Release", "Copyright", "Group", "URL",
+            "Packager", "Prefix", "Distribution", "Vendor",  "Icon", "Provides", "BuildRequires", "Requires",
             "Serial", "Conflicts", "AutoReqProv", "BuildArch", "ExcludeArch",
             "ExclusiveArch", "ExclusiveOS",  "BuildRoot", "NoSource", "NoPatch", "License",
             "Buildroot", "Source", "Patch", "case", "in", "esac", "for", "do", "done",

@@ -1,0 +1,53 @@
+
+Description="V"
+
+Categories = {"source"}
+
+Digits = [[ (?:0x|0o|0b)[0-9a-fA-F'_]+|[\d_]*[\.]?\d+(?:[eE][\-\+]?\d+)?[lLuU]* ]]
+
+Keywords={
+  { Id=1,
+    List={
+        "as", "asm", "assert", "atomic", "break", "const", "continue", "defer", "else", "enum", "false",
+        "fn", "for", "go", "goto", "if", "import", "in", "interface", "is", "isreftype", "lock", "match",
+        "module", "mut", "none", "or", "pub", "return", "rlock", "select", "shared", "sizeof", "spawn",
+        "static", "struct", "true", "type", "typeof", "union", "unsafe", "volatile",
+        "__global", "__offsetof"
+    }
+  },
+  { Id=2,
+    List= {
+      "bool", "string", "i8", "i16", "int", "i32", "i64", "i128", "u8", "u16", "u32", "u64", "u128",
+      "rune", "f32", "f64", "isize", "usize", "voidptr", "any"
+    }
+  },
+  { Id=3,
+    Regex=[=[ @\[\w+?\] ]=]
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  },
+}
+
+Strings = {
+  Delimiter=[[']],
+  RawPrefix="r",
+  Interpolation = [[ \$\{.+?\} ]],
+}
+
+Comments = {
+  { Block=true,
+    Nested=true,
+    Delimiter = { [[\/\*]], [[\*\/]] }
+  },
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^|\?]]
+
+EnableIndentation=false

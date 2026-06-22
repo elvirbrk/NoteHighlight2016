@@ -6,12 +6,15 @@ Categories = {"source"}
 Keywords={
   { Id=1,
     List={
-      "package", "as", "typealias", "class", "this", "super", "val", "var",
-      "fun", "for", "null", "true", "false", "is", "in", "throw", "return", "break",
-      "continue", "object", "if", "try", "else", "while", "do", "when", "interface",
-      "yield", "typeof", "yield", "typeof", "import", "internal", "private", "protected",
-      "public", "override",  "open",  "final",  "abstract",  "final",
-      "enum",  "open",  "annotation"}
+      "abstract", "actual", "annotation", "as", "break", "by", "catch", "class",
+      "companion", "const", "constructor", "continue", "crossinline", "data",
+      "delegate", "do", "dynamic", "else", "enum", "expect", "external", "false",
+      "final", "finally", "for", "fun", "get", "if", "import", "in", "infix",
+      "init", "inline", "inner", "interface", "internal", "is", "lateinit",
+      "noinline", "null", "object", "open", "operator", "out", "override",
+      "package", "private", "protected", "public", "reified", "return", "sealed",
+      "set", "super", "suspend", "tailrec", "this", "throw", "true", "try",
+      "typealias", "typeof", "val", "var", "vararg", "when", "where", "while"}
   },
   { Id=2,
     List={

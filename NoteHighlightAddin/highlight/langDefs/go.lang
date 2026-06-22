@@ -4,27 +4,36 @@ Categories = {"source"}
 
 Keywords={
   { Id=1,
-    List={  "break", "default", "func", "interface", "select", "case", "defer",
-            "go", "map", "struct", "chan", "else", "goto", "package", "switch", "const",
-            "fallthrough", "if", "range", "type", "continue", "for", "import", "return",
-            "var"},
+    List={
+      "break", "default", "func", "interface", "select", "case", "defer",
+      "go", "map", "struct", "chan", "else", "goto", "package", "switch", "const",
+      "fallthrough", "if", "range", "type", "continue", "for", "import", "return",
+      "var"
+    },
   },
   { Id=2,
-    List={  "bool", "byte", "float32", "float64", "int8", "int16", "int32",
-            "int64", "string", "uint8", "uint16", "uint32", "uint64", "float", "int",
-            "uint", "uintptr", "", "true", "false", "iota", "nil", "cap", "close", "closed",
-            "len", "make", "new", "panic", "panicln", "print", "printlnr"},
+    List={
+      "bool", "byte", "float32", "float64", "int8", "int16", "int32",
+      "int64", "string", "uint8", "uint16", "uint32", "uint64", "float", "int",
+      "uint", "uintptr", "complex64", "complex128", "rune", "any", "comparable", "error",
+      "true", "false", "iota", "nil", "cap", "close", "len", "make", "new",
+      "panic", "print", "println", "append", "delete", "copy", "complex",
+      "real", "imag", "recover"
+    },
   },
   { Id=4,
     Regex=[[(\w+)\s*\(]],
   },
 }
 
---# raw strings ` not implemented yet
+-- Raw string literals are supported with backticks
 Strings={
-  Delimiter=[["|'|`]],
+  Delimiter=[["|']],
   Escape=[=[ \\\d{3}|\\x[[:xdigit:]]{2}|\\u[[:xdigit:]]{4}|\\U[[:xdigit:]]{8}|\\[ntvbrfa\\\?'"] ]=],
   Interpolation=[[ %\w ]],
+  DelimiterPairs = {
+    { Open = [[`]], Close = [[`]], Raw = true }
+  }
 }
 
 IgnoreCase=false

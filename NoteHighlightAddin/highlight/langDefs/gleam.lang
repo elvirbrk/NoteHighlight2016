@@ -1,0 +1,40 @@
+
+Description="Gleam"
+
+Categories = {"source"}
+
+Digits = [[ (?:0x|0o|0b)[0-9a-fA-F'_]+|[\d_]*[\.]?\d+(?:[eE][\-\+]?\d+)?[lLuU]* ]]
+
+Keywords={
+  { Id=1,
+    List={
+        "module", "import", "pub", "panic", "use", "type", "let", "as", "if", "else",
+        "todo", "const", "case", "assert", "tuple", "try", "opaque"
+    }
+  },
+  { Id=2,
+    List= {
+      "fn"
+    }
+  },
+  { Id=4,
+    Regex=[[(\w+)\s*\(]]
+  },
+}
+
+Strings = {
+  Delimiter=[["]],
+}
+
+Comments = {
+  {
+    Block=false,
+    Delimiter = { [[//]] }
+  }
+}
+
+IgnoreCase=false
+
+Operators=[[\(|\)|\[|\]|\{|\}|\,|\;|\.|\:|\&|<|>|\!|=|\/|\*|\%|\+|\-|\~|\||\^|\?]]
+
+EnableIndentation=false
