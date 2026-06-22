@@ -1,4 +1,4 @@
-﻿namespace NoteHighlightAddin
+namespace NoteHighlightAddin
 {
     partial class SettingsForm
     {
@@ -31,6 +31,12 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.btnFont = new System.Windows.Forms.Button();
             this.cbShowTableBorder = new System.Windows.Forms.CheckBox();
+            this.lblLanguages = new System.Windows.Forms.Label();
+            this.lbxLanguages = new System.Windows.Forms.ListBox();
+            this.btnRemoveLanguage = new System.Windows.Forms.Button();
+            this.lblAddLanguage = new System.Windows.Forms.Label();
+            this.cmbAvailableLanguages = new System.Windows.Forms.ComboBox();
+            this.btnAddLanguage = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fontDialog1
@@ -62,11 +68,71 @@
             this.cbShowTableBorder.UseVisualStyleBackColor = true;
             this.cbShowTableBorder.CheckedChanged += new System.EventHandler(this.ChShowTableBorder_CheckedChanged);
             // 
+            // lblLanguages
+            // 
+            this.lblLanguages.AutoSize = true;
+            this.lblLanguages.Location = new System.Drawing.Point(34, 110);
+            this.lblLanguages.Name = "lblLanguages";
+            this.lblLanguages.Size = new System.Drawing.Size(120, 13);
+            this.lblLanguages.TabIndex = 3;
+            this.lblLanguages.Text = "Active Languages:";
+            // 
+            // lbxLanguages
+            // 
+            this.lbxLanguages.FormattingEnabled = true;
+            this.lbxLanguages.Location = new System.Drawing.Point(34, 130);
+            this.lbxLanguages.Name = "lbxLanguages";
+            this.lbxLanguages.Size = new System.Drawing.Size(339, 95);
+            this.lbxLanguages.TabIndex = 4;
+            // 
+            // btnRemoveLanguage
+            // 
+            this.btnRemoveLanguage.Location = new System.Drawing.Point(34, 235);
+            this.btnRemoveLanguage.Name = "btnRemoveLanguage";
+            this.btnRemoveLanguage.Size = new System.Drawing.Size(339, 23);
+            this.btnRemoveLanguage.TabIndex = 5;
+            this.btnRemoveLanguage.Text = "Remove Selected Language";
+            this.btnRemoveLanguage.UseVisualStyleBackColor = true;
+            this.btnRemoveLanguage.Click += new System.EventHandler(this.BtnRemoveLanguage_Click);
+            // 
+            // lblAddLanguage
+            // 
+            this.lblAddLanguage.AutoSize = true;
+            this.lblAddLanguage.Location = new System.Drawing.Point(34, 270);
+            this.lblAddLanguage.Name = "lblAddLanguage";
+            this.lblAddLanguage.Size = new System.Drawing.Size(108, 13);
+            this.lblAddLanguage.TabIndex = 6;
+            this.lblAddLanguage.Text = "Add New Language:";
+            // 
+            // cmbAvailableLanguages
+            // 
+            this.cmbAvailableLanguages.FormattingEnabled = true;
+            this.cmbAvailableLanguages.Location = new System.Drawing.Point(34, 290);
+            this.cmbAvailableLanguages.Name = "cmbAvailableLanguages";
+            this.cmbAvailableLanguages.Size = new System.Drawing.Size(339, 21);
+            this.cmbAvailableLanguages.TabIndex = 7;
+            // 
+            // btnAddLanguage
+            // 
+            this.btnAddLanguage.Location = new System.Drawing.Point(34, 320);
+            this.btnAddLanguage.Name = "btnAddLanguage";
+            this.btnAddLanguage.Size = new System.Drawing.Size(339, 23);
+            this.btnAddLanguage.TabIndex = 8;
+            this.btnAddLanguage.Text = "Add Language to Ribbon";
+            this.btnAddLanguage.UseVisualStyleBackColor = true;
+            this.btnAddLanguage.Click += new System.EventHandler(this.BtnAddLanguage_Click);
+            // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(408, 355);
+            this.ClientSize = new System.Drawing.Size(408, 365);
+            this.Controls.Add(this.btnAddLanguage);
+            this.Controls.Add(this.cmbAvailableLanguages);
+            this.Controls.Add(this.lblAddLanguage);
+            this.Controls.Add(this.btnRemoveLanguage);
+            this.Controls.Add(this.lbxLanguages);
+            this.Controls.Add(this.lblLanguages);
             this.Controls.Add(this.cbShowTableBorder);
             this.Controls.Add(this.btnFont);
             this.Name = "SettingsForm";
@@ -82,5 +148,11 @@
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.Button btnFont;
         private System.Windows.Forms.CheckBox cbShowTableBorder;
+        private System.Windows.Forms.Label lblLanguages;
+        private System.Windows.Forms.ListBox lbxLanguages;
+        private System.Windows.Forms.Button btnRemoveLanguage;
+        private System.Windows.Forms.Label lblAddLanguage;
+        private System.Windows.Forms.ComboBox cmbAvailableLanguages;
+        private System.Windows.Forms.Button btnAddLanguage;
     }
 }

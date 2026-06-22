@@ -105,6 +105,7 @@
     <Compile Include="CCOMStreamWrapper.cs" />
     <Compile Include="AddIn.cs" />
     <Compile Include="HtmlFragment.cs" />
+    <Compile Include="LanguageManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
