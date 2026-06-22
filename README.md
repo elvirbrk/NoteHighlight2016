@@ -1,7 +1,7 @@
 # NoteHighlight2016
 ![Alt text](/img/menu.png?raw=true "Menu")
 
-[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.8)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.8)
+[![GitHub release](https://img.shields.io/github/release/elvirbrk/NoteHighlight2016.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.9)[![Github Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/latest/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.9)
 [![Github previous](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/v3.7/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases/tag/v3.7)
 [![Github All Releases](https://img.shields.io/github/downloads/elvirbrk/NoteHighlight2016/total.svg)](https://github.com/elvirbrk/NoteHighlight2016/releases)
 
@@ -33,11 +33,9 @@ In case AddIn doesn't show after install, check if this helps [Not showing after
 4. Edit text or change formatting same as for new code
 
 # Additional languages
-1. Go to installation folder and find file ribbon.xml and open it with text editor <br />
-Default installation folder: C:\Program Files (x86)\CodingRoad\NoteHighlight2016\ or C:\Program Files\CodingRoad\NoteHighlight2016\
-2. Edit property "visible" from "false" to "true" for languages that you want to use. It is necessary to restart OneNote for changes to take effect
-
-It is also possible to add new languages (supported by highlight tool) by adding new rows to ribbon.xml but if you need new language then you are smart enough to figure it out :)
-
+Go to settings.
+1. To remove language from ribbon, select language from list and click Remove button. Restart OneNote to apply changes.
+2. To add language to ribbon, choose language from drop down picker and click Add button. Restart OneNote to apply changes.
+![Alt text](/img/Settings.png?raw=true "Settings")
 # Sample of Themes
 samples directory [Theme Samples](./img/Theme%20Samples/ThemeSample.md)
