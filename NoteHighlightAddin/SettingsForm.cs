@@ -37,7 +37,7 @@ namespace NoteHighlightAddin
             try
             {
                 var assemblyDir = Path.GetDirectoryName(Assembly.GetCallingAssembly().Location);
-                var ribbonXmlPath = Path.Combine(assemblyDir, "ribbon.xml");
+                var ribbonXmlPath = Path.Combine(Environment.GetEnvironmentVariable("APPDATA").ToString(), "NoteHighlight2016\\ribbon.xml");
                 var langDefPath = Path.Combine(assemblyDir, "highlight", "langDefs");
 
                 _languageManager = new LanguageManager(ribbonXmlPath, langDefPath);
