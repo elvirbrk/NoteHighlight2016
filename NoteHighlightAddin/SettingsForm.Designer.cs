@@ -73,7 +73,7 @@ namespace NoteHighlightAddin
             this.lblLanguages.AutoSize = true;
             this.lblLanguages.Location = new System.Drawing.Point(34, 110);
             this.lblLanguages.Name = "lblLanguages";
-            this.lblLanguages.Size = new System.Drawing.Size(120, 13);
+            this.lblLanguages.Size = new System.Drawing.Size(96, 13);
             this.lblLanguages.TabIndex = 3;
             this.lblLanguages.Text = "Active Languages:";
             // 
@@ -82,14 +82,14 @@ namespace NoteHighlightAddin
             this.lbxLanguages.FormattingEnabled = true;
             this.lbxLanguages.Location = new System.Drawing.Point(34, 130);
             this.lbxLanguages.Name = "lbxLanguages";
-            this.lbxLanguages.Size = new System.Drawing.Size(339, 95);
+            this.lbxLanguages.Size = new System.Drawing.Size(213, 95);
             this.lbxLanguages.TabIndex = 4;
             // 
             // btnRemoveLanguage
             // 
-            this.btnRemoveLanguage.Location = new System.Drawing.Point(34, 235);
+            this.btnRemoveLanguage.Location = new System.Drawing.Point(253, 130);
             this.btnRemoveLanguage.Name = "btnRemoveLanguage";
-            this.btnRemoveLanguage.Size = new System.Drawing.Size(339, 23);
+            this.btnRemoveLanguage.Size = new System.Drawing.Size(120, 36);
             this.btnRemoveLanguage.TabIndex = 5;
             this.btnRemoveLanguage.Text = "Remove Selected Language";
             this.btnRemoveLanguage.UseVisualStyleBackColor = true;
@@ -98,25 +98,26 @@ namespace NoteHighlightAddin
             // lblAddLanguage
             // 
             this.lblAddLanguage.AutoSize = true;
-            this.lblAddLanguage.Location = new System.Drawing.Point(34, 270);
+            this.lblAddLanguage.Location = new System.Drawing.Point(34, 246);
             this.lblAddLanguage.Name = "lblAddLanguage";
-            this.lblAddLanguage.Size = new System.Drawing.Size(108, 13);
+            this.lblAddLanguage.Size = new System.Drawing.Size(105, 13);
             this.lblAddLanguage.TabIndex = 6;
             this.lblAddLanguage.Text = "Add New Language:";
+            this.lblAddLanguage.Click += new System.EventHandler(this.lblAddLanguage_Click);
             // 
             // cmbAvailableLanguages
             // 
             this.cmbAvailableLanguages.FormattingEnabled = true;
-            this.cmbAvailableLanguages.Location = new System.Drawing.Point(34, 290);
+            this.cmbAvailableLanguages.Location = new System.Drawing.Point(34, 262);
             this.cmbAvailableLanguages.Name = "cmbAvailableLanguages";
-            this.cmbAvailableLanguages.Size = new System.Drawing.Size(339, 21);
+            this.cmbAvailableLanguages.Size = new System.Drawing.Size(213, 21);
             this.cmbAvailableLanguages.TabIndex = 7;
             // 
             // btnAddLanguage
             // 
-            this.btnAddLanguage.Location = new System.Drawing.Point(34, 320);
+            this.btnAddLanguage.Location = new System.Drawing.Point(253, 246);
             this.btnAddLanguage.Name = "btnAddLanguage";
-            this.btnAddLanguage.Size = new System.Drawing.Size(339, 23);
+            this.btnAddLanguage.Size = new System.Drawing.Size(120, 37);
             this.btnAddLanguage.TabIndex = 8;
             this.btnAddLanguage.Text = "Add Language to Ribbon";
             this.btnAddLanguage.UseVisualStyleBackColor = true;

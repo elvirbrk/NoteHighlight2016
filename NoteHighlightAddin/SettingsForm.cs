@@ -160,5 +160,10 @@ namespace NoteHighlightAddin
                 MessageBox.Show("Failed to add language.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void lblAddLanguage_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
