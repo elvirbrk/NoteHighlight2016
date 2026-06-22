@@ -70,7 +70,7 @@ namespace NoteHighlightAddin
             try
             {
 
-                var workingDirectory = Path.Combine(ProcessHelper.GetDirectoryFromPath(Assembly.GetCallingAssembly().Location), "ribbon.xml");
+                var workingDirectory = Path.Combine(Environment.GetEnvironmentVariable("APPDATA").ToString(), "NoteHighlight2016\\ribbon.xml");
 
                 string file = File.ReadAllText(workingDirectory);
 
